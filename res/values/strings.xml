@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">Muscle Reboot</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Body Profile</string>
+    <string name="nav_item_notifications">Body Status</string>
+
+    <!-- navigation drawer item labels -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="title_messages">Body Status Result</string>
+    <string name="title_friends">Body Profile</string>
+    <string name="title_home">Home</string>
+
+    <string-array name="activity_level">
+        <item>Select Your Activity Level</item>
+        <item>Little Or No Excercise</item>
+        <item>Light Excercise 1 to 3 Days A Week</item>
+        <item>Moderate Excercise 3 to 5 Days A Week</item>
+        <item>Hard Excercise 6 to 7 Days A Week</item>
+        <item>Very Hard Ecercise Along Physical Job</item>
+    </string-array>
+
+</resources>
