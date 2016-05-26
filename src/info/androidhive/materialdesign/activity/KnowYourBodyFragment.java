@@ -2,6 +2,7 @@ package info.androidhive.materialdesign.activity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import info.androidhive.materialdesign.R;
 
@@ -32,7 +34,7 @@ public class KnowYourBodyFragment extends Fragment {
 	double edit_txt_age,edit_txt_weight_in_kg,edit_txtheight_in_feet,edit_txt_height_in_inches;
 	double height_in_inches,weight_in_lbs;
 	String selected;
-	
+
 	SharedPreferences pref;
 
 	//Final Result
@@ -111,8 +113,8 @@ public class KnowYourBodyFragment extends Fragment {
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 			{
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
 				selected = parentView.getItemAtPosition(position).toString();
-
 			}
 
 			@Override
@@ -130,10 +132,10 @@ public class KnowYourBodyFragment extends Fragment {
 			@Override
 			public void onClick(View v)
 			{
-				
+
 				pref = getActivity().getPreferences(0);
 				SharedPreferences.Editor edt = pref.edit();
-				
+
 				//For Age
 				try {
 					String txtage=edit_age.getText().toString();
@@ -343,7 +345,7 @@ public class KnowYourBodyFragment extends Fragment {
 					{
 						cal_req=Math.round(bmr_men*1.9);	
 					}
-                     
+
 					String cal_rer_result_txt=""+cal_req;
 					edt.putString("cal_req_result", cal_rer_result_txt);
 				}
@@ -375,24 +377,24 @@ public class KnowYourBodyFragment extends Fragment {
 					edt.putString("cal_req_result", cal_rer_result_txt);
 				}
 
-			if (cal_req==0)
-			{}
-			else{
-				Fragment newFragment = new YourResultFragment();
-	            FragmentTransaction transaction = getFragmentManager()
-	                    .beginTransaction();
+				if (cal_req==0)
+				{}
+				else{
+					Fragment newFragment = new YourResultFragment();
+					FragmentTransaction transaction = getFragmentManager()
+							.beginTransaction();
 
-	            // Replace whatever is in the fragment_container view with this
-	            // fragment,
-	            // and add the transaction to the back stack
-	            transaction.replace(android.R.id.content, newFragment);
-	            transaction.addToBackStack("tag");
+					// Replace whatever is in the fragment_container view with this
+					// fragment,
+					// and add the transaction to the back stack
+					transaction.replace(android.R.id.content, newFragment);
+					transaction.addToBackStack("tag");
 
-	            // Commit the transaction
-	            transaction.commitAllowingStateLoss();
-	            edt.commit();
+					// Commit the transaction
+					transaction.commitAllowingStateLoss();
+					edt.commit();
 
-			}
+				}
 			}
 		}); 
 

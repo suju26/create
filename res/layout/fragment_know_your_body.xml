@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@android:color/white" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -11,7 +12,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/windowBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingTop="10dp" >
@@ -20,12 +20,12 @@
                 android:id="@+id/label"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center_horizontal"
                 android:text="HELP US TO KNOW YOUR BODY"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:textColor="@android:color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/edit_age"
@@ -33,11 +33,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="25dp"
+                android:background="@drawable/textviewbd"
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="Enter Your Age"
                 android:inputType="number"
-                android:textColorHint="@color/textColorPrimary"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
                 android:textSize="16dip" >
             </EditText>
 
@@ -64,21 +67,20 @@
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="MALE"
-                        android:textColor="@color/textColorPrimary" />
+                        android:textColor="@android:color/white" />
 
                     <RadioButton
                         android:id="@+id/radioButton2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FEMALE"
-                        android:textColor="@color/textColorPrimary" />
+                        android:textColor="@android:color/white" />
                 </RadioGroup>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/windowBackground"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:paddingTop="10dp" >
@@ -88,10 +90,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:background="@drawable/textviewbd"
                     android:gravity="center_horizontal"
                     android:hint="Enter Your Weight In KG"
                     android:inputType="number"
-                    android:textColorHint="@color/textColorPrimary"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
                     android:textSize="16dip" />
             </LinearLayout>
 
@@ -108,10 +113,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/textviewbd"
                     android:gravity="center"
-                    android:hint="Enter Your Height (In Feet)"
+                    android:hint="Height (In Feet)"
                     android:inputType="number"
-                    android:textColorHint="@color/textColorPrimary"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
                     android:textSize="16dip" />
 
                 <EditText
@@ -121,10 +129,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/textviewbd"
                     android:gravity="center"
-                    android:hint="Enter Your Height (In Inch)"
+                    android:hint="Height (In Inch)"
                     android:inputType="number"
-                    android:textColorHint="@color/textColorPrimary"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
                     android:textSize="16dip" />
             </LinearLayout>
 
@@ -135,38 +146,61 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" >
 
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Days Per Week Plan To Workout."
+                    android:textColor="@android:color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
                 <Spinner
                     android:id="@+id/spinner_activity_level"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.94" />
+                    android:layout_weight="1"
+                    android:background="@drawable/textviewbd"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
             </LinearLayout>
         </LinearLayout>
-        
-        <FrameLayout
-            android:id="@+id/know_your_body_container"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/know_your_body_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
     <Button
         android:id="@+id/button2"
-        style="?android:attr/borderlessButtonStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorbtn"
+        android:background="@drawable/textviewbd"
         android:onClick="calculation"
         android:text="NEXT"
         android:textColor="#ECF0F1"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:typeface="monospace" />
-    
-    
 
 </RelativeLayout>

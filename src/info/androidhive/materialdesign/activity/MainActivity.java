@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 fragment = new YourResultFragment();
                 title = getString(R.string.title_messages);
                 break;
+            case 3:
+                fragment = new YourMacroResultFragment();
+                title = getString(R.string.title_messages);
+                break;
             default:
                 break;
         }
