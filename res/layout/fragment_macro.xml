@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white" >
+    android:background="#004C79" >
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -13,10 +13,10 @@
             android:id="@+id/macro"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
-            android:padding="5.0dip" 
-             android:layout_centerInParent="true">
+            android:padding="5.0dip" >
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -249,41 +249,42 @@
                             android:textColor="@color/colorAccent" />
                     </LinearLayout>
                 </LinearLayout>
-               <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp" >
 
-                <RadioGroup
-                    android:id="@+id/radioGroup2"
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:checkedButton="@+id/profile_ui_male_radio"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal"
-                    android:padding="10dp"
-                    android:layout_marginTop="10dp" >
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp" >
 
-                    <RadioButton
-                        android:id="@+id/radioButton_veg"
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/radioGroup2"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:checked="false"
-                        android:text="Vegetarian"
-                        android:textColor="@android:color/black" />
+                        android:layout_marginTop="10dp"
+                        android:checkedButton="@+id/profile_ui_male_radio"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
 
-                    <RadioButton
-                        android:id="@+id/radioButton_non_veg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Non_Vegetarian"
-                        android:textColor="@android:color/black" />
-                </RadioGroup>
-            </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/radioButton_veg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Vegetarian"
+                            android:textColor="@android:color/black" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton_non_veg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Non_Vegetarian"
+                            android:textColor="@android:color/black" />
+                    </RadioGroup>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

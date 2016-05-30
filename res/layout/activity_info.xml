@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="info.muscle.reboot.InfoActivity" >
+    tools:context="info.muscle.reboot.InfoActivity"
+    android:background="#004C79" >
 
     <TextView
         android:layout_width="wrap_content"

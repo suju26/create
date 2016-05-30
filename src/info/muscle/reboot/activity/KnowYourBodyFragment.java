@@ -69,10 +69,10 @@ public class KnowYourBodyFragment extends Fragment {
 		//Saved Value
 
 		sharedPreferences = getActivity().getPreferences(1);
-		String entered_age=sharedPreferences.getString("age", "0");
-		String entered_feet=sharedPreferences.getString("feet", "0");
-		String entered_inch=sharedPreferences.getString("inch", "0");
-		String entered_weight=sharedPreferences.getString("weight", "0");
+		String entered_age=sharedPreferences.getString("age", "Enter Your Age");
+		String entered_feet=sharedPreferences.getString("feet", "Height In Feet");
+		String entered_inch=sharedPreferences.getString("inch", "Height In Inch");
+		String entered_weight=sharedPreferences.getString("weight", "Weight In Kg");
 
 
 
