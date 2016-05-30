@@ -49,47 +49,49 @@ public class WelcomeActivity extends AppCompatActivity {
 
 		viewPager = (ViewPager) findViewById(R.id.view_pager);
 		dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-		btnSkip = (Button) findViewById(R.id.btn_skip);
-		btnNext = (Button) findViewById(R.id.btn_next);
+		/*		btnSkip = (Button) findViewById(R.id.btn_skip);
+		 */		btnNext = (Button) findViewById(R.id.btn_next);
 
 
-		// layouts of all welcome sliders
-		// add few more layouts if you want
-		layouts = new int[]{
-				R.layout.welcome_slide1,
-				R.layout.welcome_slide2};
+		 // layouts of all welcome sliders
+		 // add few more layouts if you want
+		 layouts = new int[]{
+				 R.layout.welcome_slide1,
+				 R.layout.welcome_slide2,
+				 R.layout.fragment_know_your_body,
+		 };
 
-		// adding bottom dots
-		addBottomDots(0);
+		 // adding bottom dots
+		 addBottomDots(0);
 
-		// making notification bar transparent
-		changeStatusBarColor();
+		 // making notification bar transparent
+		 changeStatusBarColor();
 
-		myViewPagerAdapter = new MyViewPagerAdapter();
-		viewPager.setAdapter(myViewPagerAdapter);
-		viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+		 myViewPagerAdapter = new MyViewPagerAdapter();
+		 viewPager.setAdapter(myViewPagerAdapter);
+		 viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
-		btnSkip.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				launchHomeScreen();
-			}
-		});
+		 btnSkip.setOnClickListener(new View.OnClickListener() {
+			 @Override
+			 public void onClick(View v) {
+				 launchHomeScreen();
+			 }
+		 });
 
-		btnNext.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// checking for last page
-				// if last page home screen will be launched
-				int current = getItem(+1);
-				if (current < layouts.length) {
-					// move to next screen
-					viewPager.setCurrentItem(current);
-				} else {
-					launchHomeScreen();
-				}
-			}
-		});
+		 btnNext.setOnClickListener(new View.OnClickListener() {
+			 @Override
+			 public void onClick(View v) {
+				 // checking for last page
+				 // if last page home screen will be launched
+				 int current = getItem(+1);
+				 if (current < layouts.length) {
+					 // move to next screen
+					 viewPager.setCurrentItem(current);
+				 } else {
+					 launchHomeScreen();
+				 }
+			 }
+		 });
 	}
 
 	private void addBottomDots(int currentPage) {

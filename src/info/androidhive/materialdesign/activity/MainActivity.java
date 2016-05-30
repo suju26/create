@@ -13,6 +13,10 @@ import android.view.View;
 import info.androidhive.materialdesign.R;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
+	
+	public MainActivity() {
+		// Required empty public constructor
+	}
 
     private static String TAG = MainActivity.class.getSimpleName();
 

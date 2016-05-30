@@ -38,7 +38,7 @@ public class YourResultFragment extends Fragment {
 
 		//Getting Calculated Result
 
-		pref = getActivity().getPreferences(0);
+		pref = getActivity().getPreferences(1);
 		String diet = pref.getString("cal_req_result", "0");
 		String bmi_get=pref.getString("bmi_result", "0");
 		String bf_health=pref.getString("bf_status", "Unknown");

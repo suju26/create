@@ -1,11 +1,10 @@
 package info.androidhive.materialdesign.activity;
 
-import android.R.integer;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,7 +61,7 @@ public class YourMacroResultFragment extends Fragment {
 
 
 
-		SharedPreferences pref = getActivity().getPreferences(0);
+		SharedPreferences pref = getActivity().getPreferences(1);
 		bmr=pref.getString("cal_req_result", "0");
 		req_diet_goal=Double.parseDouble(bmr);
 
@@ -85,11 +84,7 @@ public class YourMacroResultFragment extends Fragment {
 			{
 				selected_goal = parentView.getItemAtPosition(position).toString();
 
-				if(selected_goal.equals("Select Your Fitness Goal"))
-				{
-					Toast.makeText(getActivity(), "Select Your Fitness Goal You Want.", 
-							Toast.LENGTH_SHORT).show();
-				}
+				
 				if(selected_goal.equals("Loose Fat"))
 				{
 					diet_goal=req_diet_goal-10/100;
@@ -194,7 +189,17 @@ public class YourMacroResultFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-							
+				
+				if(selected_goal.equals("Select Your Fitness Goal"))
+				{
+					Toast.makeText(getActivity(), "Select Your Fitness Goal You Want.", 
+							Toast.LENGTH_SHORT).show();
+				}
+				else{
+				
+					Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent); 
+				}	
 			}
 		});
 

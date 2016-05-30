@@ -32,8 +32,11 @@ public class KnowYourBodyFragment extends Fragment {
 	Spinner spinner_level;
 	Typeface face;
 	double edit_txt_age,edit_txt_weight_in_kg,edit_txtheight_in_feet,edit_txt_height_in_inches;
-	double height_in_inches,weight_in_lbs;
+	double height_in_inches,weight_in_lbs, ideal_weight_male,ideal_weight_female;
 	String selected;
+	int selectedPosition;
+	SharedPreferences.Editor edt ;
+	Object obj;
 
 	SharedPreferences pref;
 
@@ -59,6 +62,19 @@ public class KnowYourBodyFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_know_your_body, container, false);
 
+		//Saved Value
+
+		pref = getActivity().getPreferences(1);
+		String entered_age=pref.getString("age", "0");
+		String entered_feet=pref.getString("feet", "0");
+		String entered_inch=pref.getString("inch", "0");
+		String entered_weight=pref.getString("weight", "0");
+		Boolean selected_radio1=pref.getBoolean("rdm1", false);
+		Boolean selected_radio2=pref.getBoolean("rdf2", false);
+
+
+
+
 		//Fonts call
 
 		Typeface fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
@@ -67,26 +83,35 @@ public class KnowYourBodyFragment extends Fragment {
 		//Getting Component reff
 		edit_age=(EditText)rootView.findViewById(R.id.edit_age);
 		edit_age.setTypeface(fontB);
+		edit_age.setText(entered_age);
 
 		edit_ft=(EditText)rootView.findViewById(R.id.edit_feet);
 		edit_ft.setTypeface(fontB);
+		edit_ft.setText(entered_feet);
 
 		edit_inch=(EditText)rootView.findViewById(R.id.edit_inch);
 		edit_inch.setTypeface(fontB);
+		edit_inch.setText(entered_inch);
 
 		edit_weight=(EditText)rootView.findViewById(R.id.edit_weight);
 		edit_weight.setTypeface(fontB);
+		edit_weight.setText(entered_weight);
 
 		radiogender=(RadioGroup)rootView.findViewById(R.id.radioGroup1);
+
+
 
 		radiogender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
 				// find which radio button is selected
 				if(checkedId == R.id.radioButton1) {
 					Toast.makeText(getActivity(), "You: Dude !!!", 
 							Toast.LENGTH_SHORT).show();
+
 				} else if(checkedId == R.id.radioButton2) {
 					Toast.makeText(getActivity(), "You: Babe !!!", 
 							Toast.LENGTH_SHORT).show();
@@ -101,25 +126,41 @@ public class KnowYourBodyFragment extends Fragment {
 		rdf=(RadioButton)rootView.findViewById(R.id.radioButton2);
 		rdf.setTypeface(fontB);
 
+		if(selected_radio1==true)
+		{
+			rdm.isChecked();
+		}
+
+		if(selected_radio2==true)
+		{
+			rdf.isChecked();
+		}
+
 		spinner_level=(Spinner)rootView.findViewById(R.id.spinner_activity_level);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(rootView.getContext(), R.array.activity_level,
 				android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_level.setAdapter(adapter);
 		spinner_level.setGravity(Gravity.CENTER);
+		spinner_level.getSelectedItemPosition();
 
 		spinner_level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 			{
-				((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
 				selected = parentView.getItemAtPosition(position).toString();
+
+
+
+
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> parentView) {
-				// your code here
+
+
 			}
 		});
 
@@ -133,8 +174,10 @@ public class KnowYourBodyFragment extends Fragment {
 			public void onClick(View v)
 			{
 
-				pref = getActivity().getPreferences(0);
-				SharedPreferences.Editor edt = pref.edit();
+
+				pref = getActivity().getPreferences(1);
+				edt = pref.edit();
+
 
 				//For Age
 				try {
@@ -162,7 +205,7 @@ public class KnowYourBodyFragment extends Fragment {
 				//Check for Height 
 				try {
 					String txtfeet=edit_ft.getText().toString();
-					edt.putString("weight", txtfeet);
+					edt.putString("feet", txtfeet);
 					edit_txtheight_in_feet=Double.parseDouble(edit_ft.getText().toString());
 				} catch (NumberFormatException e) {
 					Toast.makeText(getActivity(), "Tell Me How Much Feet You Are Now .", Toast.LENGTH_SHORT).show();
@@ -218,7 +261,7 @@ public class KnowYourBodyFragment extends Fragment {
 
 				if(rdm.isChecked())
 				{
-					edt.putBoolean("is_male", true);
+					edt.putBoolean("radiostatus", true);
 					body_fat_percent_men=Math.round((1.20 * bmi) + (0.23 * edit_txt_age) - (10.8 * 1) - 5.4);
 					String bf_re=""+body_fat_percent_men;
 					edt.putString("bf_r", bf_re);
@@ -249,11 +292,22 @@ public class KnowYourBodyFragment extends Fragment {
 						String body_fats_status="Your Body Fat Level : Obese";
 						edt.putString("bf_status", body_fats_status);
 					}
+
+					if(edit_txtheight_in_feet<=5){
+
+						ideal_weight_male=52+1.9;
+						edt.putString("ideal_weight", ""+ideal_weight_male);
+					}
+					else
+					{
+						ideal_weight_male=52+(1.9*edit_txt_height_in_inches);
+						edt.putString("ideal_weight", ""+ideal_weight_male);
+					}
 				}
 
 				if(rdf.isChecked())
 				{
-					edt.putBoolean("is_female", true);
+					edt.putBoolean("radiostatus", true);
 					body_fat_percent_women=Math.round((1.20 * bmi) + (0.23 * edit_txt_age) - (10.8 * 0) - 5.4);
 					String bf_re=""+body_fat_percent_women;
 					edt.putString("bf_r", bf_re);
@@ -289,6 +343,18 @@ public class KnowYourBodyFragment extends Fragment {
 						edt.putString("bf_status", body_fats_status);
 						System.out.println("Your Body Fat Level : Obese"+"\n");
 					}
+
+
+					if(edit_txtheight_in_feet<=5){
+
+						ideal_weight_female=49+1.7;
+						edt.putString("ideal_weight", ""+ideal_weight_male);
+					}else
+					{
+						ideal_weight_male=49+(1.7*edit_txt_height_in_inches);
+						edt.putString("ideal_weight", ""+ideal_weight_male);
+					}
+
 				}
 
 
@@ -392,7 +458,7 @@ public class KnowYourBodyFragment extends Fragment {
 
 					// Commit the transaction
 					transaction.commitAllowingStateLoss();
-					edt.commit();
+					edt.apply();
 
 				}
 			}

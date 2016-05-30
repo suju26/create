@@ -304,7 +304,7 @@
         android:layout_marginRight="5dp"
         android:background="@color/colorbtn"
         android:onClick="calculation"
-        android:text="NEXT"
+        android:text="DONE"
         android:textColor="#ECF0F1"
         android:textSize="20dp"
         android:textStyle="bold"
