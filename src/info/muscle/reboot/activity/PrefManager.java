@@ -1,4 +1,4 @@
-package info.androidhive.materialdesign.activity;
+package info.muscle.reboot.activity;
  
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -27,7 +27,7 @@ public class PrefManager {
  
     public void setFirstTimeLaunch(boolean isFirstTime) {
         editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime);
-        editor.commit();
+        editor.apply();
     }
  
     public boolean isFirstTimeLaunch() {

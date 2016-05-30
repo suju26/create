@@ -1,4 +1,4 @@
-package info.androidhive.materialdesign.activity;
+package info.muscle.reboot.activity;
 
 import android.annotation.SuppressLint;
 
@@ -23,9 +23,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.materialdesign.R;
-import info.androidhive.materialdesign.adapter.NavigationDrawerAdapter;
-import info.androidhive.materialdesign.model.NavDrawerItem;
+import info.muscle.reboot.R;
+import info.muscle.reboot.adapter.NavigationDrawerAdapter;
+import info.muscle.reboot.model.NavDrawerItem;
 
 public class FragmentDrawer extends Fragment {
 

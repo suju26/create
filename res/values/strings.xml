@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Muscle Reboot</string>
@@ -8,21 +9,23 @@
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Body Profile</string>
     <string name="nav_item_notifications">Body Status</string>
-        <string name="nav_item_macro">Your Macro</string>
-    
+    <string name="nav_item_macro">Your Macro</string>
+    <string name="nav_item_info">Information</string>
 
     <!-- navigation drawer item labels -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
         <item>@string/nav_item_friends</item>
         <item>@string/nav_item_notifications</item>
-         <item>@string/nav_item_macro</item>
+        <item>@string/nav_item_macro</item>
+        <item>@string/nav_item_info</item>
     </string-array>
 
     <string name="title_messages">Body Status Result</string>
     <string name="title_friends">Body Profile</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Muscle Reboot</string>
     <string name="title_macro">Your Macro</string>
+    <string name="title_info">Information</string>
 
     <string-array name="activity_level">
         <item>Select Your Activity Level</item>
@@ -32,7 +35,6 @@
         <item>Hard Excercise 6 to 7 Days A Week</item>
         <item>Very Hard Ecercise Along Physical Job</item>
     </string-array>
-    
     <string-array name="fitness_goal">
         <item>Select Your Fitness Goal</item>
         <item>Loose Fat</item>
@@ -40,27 +42,26 @@
         <item>Maintain</item>
         <item>Extreme Loss(Consult Doctor)</item>
     </string-array>
-    
-    
-    
+
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
- 
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
- 
     <string name="slide_2_title">Movie Tickets</string>
     <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
- 
     <string name="slide_3_title">Great Discounts</string>
     <string name="slide_3_desc">Best discounts on every single service we offer!</string>
- 
     <string name="slide_4_title">World Travel</string>
     <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
- 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+
+    <!-- Button text -->
+    <string name="btn_logout_from_google">Logout from Google</string>
+    <string name="btn_revoke_access">Revoke Access</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package info.androidhive.materialdesign.activity;
+package info.muscle.reboot.activity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import info.androidhive.materialdesign.R;
+import info.muscle.reboot.R;
 
 
 public class YourResultFragment extends Fragment {

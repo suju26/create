@@ -1,4 +1,4 @@
-package info.androidhive.materialdesign.activity;
+package info.muscle.reboot.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import info.androidhive.materialdesign.R;
+import info.muscle.reboot.R;
 
 
 public class YourMacroResultFragment extends Fragment {
@@ -25,6 +25,9 @@ public class YourMacroResultFragment extends Fragment {
 	String selected_goal,bmr;
 	double req_diet_goal,diet_goal;
 	TextView macro_goal,pro_per,carb_per,fats_per,pro_cal,fat_cal,carb_cal;
+	SharedPreferences.Editor edt ;
+	int saved_spinner_goal;
+	SharedPreferences pref;
 	public YourMacroResultFragment() {
 		// Required empty public constructor
 	}
@@ -61,7 +64,7 @@ public class YourMacroResultFragment extends Fragment {
 
 
 
-		SharedPreferences pref = getActivity().getPreferences(1);
+		pref = getActivity().getPreferences(1);
 		bmr=pref.getString("cal_req_result", "0");
 		req_diet_goal=Double.parseDouble(bmr);
 
@@ -77,6 +80,12 @@ public class YourMacroResultFragment extends Fragment {
 
 		spinner_goal.setGravity(Gravity.CENTER);
 
+		spinner_goal.getSelectedItemPosition();
+		
+		int indexOfPreviousSelection = pref.getInt("spinner_goal_key", 0);
+
+		spinner_goal.setSelection(indexOfPreviousSelection);
+
 		spinner_goal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
 			@Override
@@ -84,7 +93,7 @@ public class YourMacroResultFragment extends Fragment {
 			{
 				selected_goal = parentView.getItemAtPosition(position).toString();
 
-				
+
 				if(selected_goal.equals("Loose Fat"))
 				{
 					diet_goal=req_diet_goal-10/100;
@@ -189,19 +198,25 @@ public class YourMacroResultFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				if(selected_goal.equals("Select Your Fitness Goal"))
 				{
 					Toast.makeText(getActivity(), "Select Your Fitness Goal You Want.", 
 							Toast.LENGTH_SHORT).show();
 				}
 				else{
-				
+					pref = getActivity().getPreferences(1);
+					edt = pref.edit();
+					edt.putInt("spinner_goal_key", spinner_goal.getSelectedItemPosition());	
+					edt.apply();
 					Intent intent = new Intent(getActivity(), MainActivity.class);
 					getActivity().startActivity(intent); 
 				}	
 			}
 		});
+
+		
+
 
 		// Inflate the layout for this fragment
 		return rootView;

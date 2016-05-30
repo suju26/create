@@ -1,4 +1,4 @@
-package info.androidhive.materialdesign.model;
+package info.muscle.reboot.model;
 
 /**
  * Created by Ravi on 29/07/15.

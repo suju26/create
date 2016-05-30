@@ -1,10 +1,11 @@
-package info.androidhive.materialdesign.activity;
+package info.muscle.reboot.activity;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
@@ -21,7 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import info.androidhive.materialdesign.R;
+import info.muscle.reboot.R;
 
 
 public class KnowYourBodyFragment extends Fragment {
@@ -36,9 +37,12 @@ public class KnowYourBodyFragment extends Fragment {
 	String selected;
 	int selectedPosition;
 	SharedPreferences.Editor edt ;
+	SharedPreferences sharedPreferences;
 	Object obj;
+	int selectedindex ;
 
 	SharedPreferences pref;
+	int radio_saved;
 
 	//Final Result
 	double bmi,
@@ -64,13 +68,12 @@ public class KnowYourBodyFragment extends Fragment {
 
 		//Saved Value
 
-		pref = getActivity().getPreferences(1);
-		String entered_age=pref.getString("age", "0");
-		String entered_feet=pref.getString("feet", "0");
-		String entered_inch=pref.getString("inch", "0");
-		String entered_weight=pref.getString("weight", "0");
-		Boolean selected_radio1=pref.getBoolean("rdm1", false);
-		Boolean selected_radio2=pref.getBoolean("rdf2", false);
+		sharedPreferences = getActivity().getPreferences(1);
+		String entered_age=sharedPreferences.getString("age", "0");
+		String entered_feet=sharedPreferences.getString("feet", "0");
+		String entered_inch=sharedPreferences.getString("inch", "0");
+		String entered_weight=sharedPreferences.getString("weight", "0");
+
 
 
 
@@ -99,7 +102,22 @@ public class KnowYourBodyFragment extends Fragment {
 
 		radiogender=(RadioGroup)rootView.findViewById(R.id.radioGroup1);
 
+		rdm=(RadioButton)rootView.findViewById(R.id.radioButton1);
+		rdm.setTypeface(fontB);
 
+		rdf=(RadioButton)rootView.findViewById(R.id.radioButton2);
+		rdf.setTypeface(fontB);
+
+		radio_saved=sharedPreferences.getInt("radio_checked", 0);
+
+		if(radio_saved == R.id.radioButton1) {
+
+			rdm.setChecked(true);
+
+		} else if(radio_saved == R.id.radioButton2) {
+
+			rdf.setChecked(true);
+		} 
 
 		radiogender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -108,33 +126,17 @@ public class KnowYourBodyFragment extends Fragment {
 
 
 				// find which radio button is selected
-				if(checkedId == R.id.radioButton1) {
+				/*if(radio_saved == R.id.radioButton1) {
 					Toast.makeText(getActivity(), "You: Dude !!!", 
 							Toast.LENGTH_SHORT).show();
 
 				} else if(checkedId == R.id.radioButton2) {
 					Toast.makeText(getActivity(), "You: Babe !!!", 
 							Toast.LENGTH_SHORT).show();
-				} 
+				} */
 			}
 
 		});
-
-		rdm=(RadioButton)rootView.findViewById(R.id.radioButton1);
-		rdm.setTypeface(fontB);
-
-		rdf=(RadioButton)rootView.findViewById(R.id.radioButton2);
-		rdf.setTypeface(fontB);
-
-		if(selected_radio1==true)
-		{
-			rdm.isChecked();
-		}
-
-		if(selected_radio2==true)
-		{
-			rdf.isChecked();
-		}
 
 		spinner_level=(Spinner)rootView.findViewById(R.id.spinner_activity_level);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(rootView.getContext(), R.array.activity_level,
@@ -143,6 +145,8 @@ public class KnowYourBodyFragment extends Fragment {
 		spinner_level.setAdapter(adapter);
 		spinner_level.setGravity(Gravity.CENTER);
 		spinner_level.getSelectedItemPosition();
+		int indexOfPreviousSelection = sharedPreferences.getInt("selectionText", 0);
+		spinner_level.setSelection(indexOfPreviousSelection);
 
 		spinner_level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
@@ -177,6 +181,11 @@ public class KnowYourBodyFragment extends Fragment {
 
 				pref = getActivity().getPreferences(1);
 				edt = pref.edit();
+
+				//Storing Spinner Value 
+
+				edt.putInt("selectionText", spinner_level.getSelectedItemPosition());
+				edt.putInt("radio_checked", radiogender.getCheckedRadioButtonId());
 
 
 				//For Age
@@ -471,8 +480,11 @@ public class KnowYourBodyFragment extends Fragment {
 
 
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+
 	}
 
 	@Override
