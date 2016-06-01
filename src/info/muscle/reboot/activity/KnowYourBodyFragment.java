@@ -43,6 +43,10 @@ public class KnowYourBodyFragment extends Fragment {
 
 	SharedPreferences pref;
 	int radio_saved;
+	
+	//Fonts Declaration
+	
+	Typeface fontB,fontR,fontReg,fontThin,fontMed;
 
 	//Final Result
 	double bmi,
@@ -80,33 +84,50 @@ public class KnowYourBodyFragment extends Fragment {
 
 		//Fonts call
 
-		Typeface fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
-		Typeface fontR = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto_Light.ttf");
+		 fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
+		 fontR = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto_Light.ttf");
+		 fontReg = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Regular.ttf");
+		 fontThin = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
+		 fontMed = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
+
+
 
 		//Getting Component reff
+		 
+		 TextView lblage=(TextView)rootView.findViewById(R.id.label);
+		 lblage.setTypeface(fontB);
+		 
+		 EditText lblweight=(EditText)rootView.findViewById(R.id.edit_weight);
+		 lblweight.setTypeface(fontB);
+		 
+		 TextView lblact=(TextView)rootView.findViewById(R.id.label1);
+		 lblact.setTypeface(fontB);
+		 
+		 
+		 
 		edit_age=(EditText)rootView.findViewById(R.id.edit_age);
-		edit_age.setTypeface(fontB);
+		edit_age.setTypeface(fontThin);
 		edit_age.setText(entered_age);
 
 		edit_ft=(EditText)rootView.findViewById(R.id.edit_feet);
-		edit_ft.setTypeface(fontB);
+		edit_ft.setTypeface(fontThin);
 		edit_ft.setText(entered_feet);
 
 		edit_inch=(EditText)rootView.findViewById(R.id.edit_inch);
-		edit_inch.setTypeface(fontB);
+		edit_inch.setTypeface(fontThin);
 		edit_inch.setText(entered_inch);
 
 		edit_weight=(EditText)rootView.findViewById(R.id.edit_weight);
-		edit_weight.setTypeface(fontB);
+		edit_weight.setTypeface(fontThin);
 		edit_weight.setText(entered_weight);
 
 		radiogender=(RadioGroup)rootView.findViewById(R.id.radioGroup1);
 
 		rdm=(RadioButton)rootView.findViewById(R.id.radioButton1);
-		rdm.setTypeface(fontB);
+		rdm.setTypeface(fontReg);
 
 		rdf=(RadioButton)rootView.findViewById(R.id.radioButton2);
-		rdf.setTypeface(fontB);
+		rdf.setTypeface(fontReg);
 
 		radio_saved=sharedPreferences.getInt("radio_checked", 0);
 
@@ -147,13 +168,14 @@ public class KnowYourBodyFragment extends Fragment {
 		spinner_level.getSelectedItemPosition();
 		int indexOfPreviousSelection = sharedPreferences.getInt("selectionText", 0);
 		spinner_level.setSelection(indexOfPreviousSelection);
-
 		spinner_level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 			{
 				((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
+				((TextView) parentView.getChildAt(0)).setTypeface(fontThin);
+
 				selected = parentView.getItemAtPosition(position).toString();
 
 
@@ -172,6 +194,7 @@ public class KnowYourBodyFragment extends Fragment {
 		//
 
 		Button button = (Button)rootView.findViewById(R.id.button2);
+		button.setTypeface(fontMed);
 		button.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -357,11 +380,11 @@ public class KnowYourBodyFragment extends Fragment {
 					if(edit_txtheight_in_feet<=5){
 
 						ideal_weight_female=49+1.7;
-						edt.putString("ideal_weight", ""+ideal_weight_male);
+						edt.putString("ideal_weight", ""+ideal_weight_female);
 					}else
 					{
-						ideal_weight_male=49+(1.7*edit_txt_height_in_inches);
-						edt.putString("ideal_weight", ""+ideal_weight_male);
+						ideal_weight_female=49+(1.7*edit_txt_height_in_inches);
+						edt.putString("ideal_weight", ""+ideal_weight_female);
 					}
 
 				}

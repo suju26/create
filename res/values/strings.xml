@@ -10,7 +10,7 @@
     <string name="nav_item_friends">Body Profile</string>
     <string name="nav_item_notifications">Body Status</string>
     <string name="nav_item_macro">Your Macro</string>
-    <string name="nav_item_info">Information</string>
+    <string name="nav_item_info">Diet Plan</string>
 
     <!-- navigation drawer item labels -->
     <string-array name="nav_drawer_labels">
@@ -21,11 +21,11 @@
         <item>@string/nav_item_info</item>
     </string-array>
 
-    <string name="title_messages">Body Status Result</string>
+    <string name="title_messages">Diet Plan</string>
     <string name="title_friends">Body Profile</string>
     <string name="title_home">Muscle Reboot</string>
     <string name="title_macro">Your Macro</string>
-    <string name="title_info">Information</string>
+    <string name="title_Diet">My Diet</string>
 
     <string-array name="activity_level">
         <item>Select Your Activity Level</item>
@@ -63,5 +63,44 @@
     <string name="btn_revoke_access">Revoke Access</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_intro1">Intro1</string>
+
+    <string-array name="diet_qty">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="diet_gm">
+        <item>0</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+    </string-array>
+    <string-array name="diet_ml">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+
+    <string name="title_activity_page_fragment">PageFragment</string>
 
 </resources>

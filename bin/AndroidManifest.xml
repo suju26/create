@@ -19,7 +19,7 @@
         <!--
              <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version" />
         -->
 
         <activity
@@ -31,15 +31,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--
-             <activity
-            android:name="info.androidhive.introslider.MainActivity"
-            android:label="@string/title_activity_welcome"></activity>
-        -->
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+        </activity>
         <activity
             android:name=".InfoActivity"
             android:label="@string/title_activity_info" >
+        </activity>
+        <activity
+            android:name=".DietFragment"
+            android:label="@string/title_activity_intro1" >
+        </activity>
+        <activity
+            android:name=".PageFragment"
+            android:label="@string/title_activity_page_fragment" >
         </activity>
     </application>
 

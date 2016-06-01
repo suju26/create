@@ -208,6 +208,7 @@ public class YourMacroResultFragment extends Fragment {
 					pref = getActivity().getPreferences(1);
 					edt = pref.edit();
 					edt.putInt("spinner_goal_key", spinner_goal.getSelectedItemPosition());	
+					edt.putString("macro_cal", macro_goal.getText().toString());
 					edt.apply();
 					Intent intent = new Intent(getActivity(), MainActivity.class);
 					getActivity().startActivity(intent); 

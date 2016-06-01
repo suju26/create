@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import info.muscle.reboot.InfoActivity;
 import info.muscle.reboot.R;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
@@ -79,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 		Fragment fragment = null;
 		String title = getString(R.string.app_name);
 		switch (position) {
+
+
 		case 0:
 			fragment = new HomeFragment();
 			title = getString(R.string.title_home);
@@ -95,10 +96,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			fragment = new YourMacroResultFragment();
 			title = getString(R.string.title_messages);
 			break;
-
 		case 4:
-			fragment = new InfoActivity();
-			title = getString(R.string.title_info);
+			fragment = new DietFragment();
+			title = getString(R.string.title_messages);
 			break;
 		default:
 		}
