@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -209,9 +210,76 @@ public class YourMacroResultFragment extends Fragment {
 					edt = pref.edit();
 					edt.putInt("spinner_goal_key", spinner_goal.getSelectedItemPosition());	
 					edt.putString("macro_cal", macro_goal.getText().toString());
+					edt.putString("protein_req", pro_cal.getText().toString());
+					edt.putString("fats_req", fat_cal.getText().toString());
+					edt.putString("carbs_req", carb_cal.getText().toString());
+
 					edt.apply();
-					Intent intent = new Intent(getActivity(), MainActivity.class);
-					getActivity().startActivity(intent); 
+					
+					if(selected_goal.equals("Loose Fat"))
+					{
+						Fragment newFragment = new LoosFragment();
+						FragmentTransaction transaction = getFragmentManager()
+								.beginTransaction();
+
+						// Replace whatever is in the fragment_container view with this
+						// fragment,
+						// and add the transaction to the back stack
+						transaction.replace(android.R.id.content, newFragment);
+						transaction.addToBackStack("tag");
+
+						// Commit the transaction
+						transaction.commitAllowingStateLoss();
+					}
+					
+					if(selected_goal.equals("Extreme Loss(Consult Doctor)"))
+					{
+						Fragment newFragment = new LoosFragment();
+						FragmentTransaction transaction = getFragmentManager()
+								.beginTransaction();
+
+						// Replace whatever is in the fragment_container view with this
+						// fragment,
+						// and add the transaction to the back stack
+						transaction.replace(android.R.id.content, newFragment);
+						transaction.addToBackStack("tag");
+
+						// Commit the transaction
+						transaction.commitAllowingStateLoss();
+					}
+					if(selected_goal.equals("Gain Muscle"))
+					{
+						Fragment newFragment = new GainFragment();
+						FragmentTransaction transaction = getFragmentManager()
+								.beginTransaction();
+
+						// Replace whatever is in the fragment_container view with this
+						// fragment,
+						// and add the transaction to the back stack
+						transaction.replace(android.R.id.content, newFragment);
+						transaction.addToBackStack("tag");
+
+						// Commit the transaction
+						transaction.commitAllowingStateLoss();
+					}
+					
+					if(selected_goal.equals("Maintain"))
+					{
+						Fragment newFragment = new GainFragment();
+						FragmentTransaction transaction = getFragmentManager()
+								.beginTransaction();
+
+						// Replace whatever is in the fragment_container view with this
+						// fragment,
+						// and add the transaction to the back stack
+						transaction.replace(android.R.id.content, newFragment);
+						transaction.addToBackStack("tag");
+
+						// Commit the transaction
+						transaction.commitAllowingStateLoss();
+					}
+					/*Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent); */
 				}	
 			}
 		});

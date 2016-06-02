@@ -1,5 +1,6 @@
 package info.muscle.reboot.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -22,11 +23,18 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
 	private Toolbar mToolbar;
 	private FragmentDrawer drawerFragment;
+	SharedPreferences pref;
+	String diet_saved;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+
+		pref = this.getPreferences(1);
+		diet_saved=pref.getString("diettype", "main");
 
 		mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -97,9 +105,26 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			title = getString(R.string.title_messages);
 			break;
 		case 4:
-			fragment = new DietFragment();
-			title = getString(R.string.title_messages);
-			break;
+
+			if(diet_saved=="loss")
+			{
+				fragment = new LoosFragment();
+				title = getString(R.string.title_messages);
+				break;
+			}
+			if(diet_saved=="gain")
+			{
+				fragment = new GainFragment();
+				title = getString(R.string.title_messages);
+				break;
+			}
+			if(diet_saved=="main")
+			{
+				fragment = new KnowYourBodyFragment();
+				title = getString(R.string.title_friends);
+				break;
+			}
+
 		default:
 		}
 

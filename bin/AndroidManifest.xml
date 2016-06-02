@@ -40,7 +40,7 @@
             android:label="@string/title_activity_info" >
         </activity>
         <activity
-            android:name=".DietFragment"
+            android:name=".LoosFragment"
             android:label="@string/title_activity_intro1" >
         </activity>
         <activity

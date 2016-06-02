@@ -267,10 +267,10 @@
         </LinearLayout>
     </ScrollView>
 
-    <FrameLayout
+ <!--    <FrameLayout
         android:id="@+id/your_macro_container"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent" /> -->
 
     <Button
         android:id="@+id/diet"

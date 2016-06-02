@@ -71,6 +71,7 @@ public class KnowYourBodyFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_know_your_body, container, false);
 
 		//Saved Value
+	
 
 		sharedPreferences = getActivity().getPreferences(1);
 		String entered_age=sharedPreferences.getString("age", "Enter Your Age");
