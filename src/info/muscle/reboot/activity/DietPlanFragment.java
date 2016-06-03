@@ -15,15 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import info.muscle.reboot.R;
 
 
-public class GainFragment extends Fragment {
+public class DietPlanFragment extends Fragment {
 
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor edt ;
 	String selected;
-
+	Button btnfinish;
 	TextView paneer_txt_pro,paneer_txt_fats,paneer_txt_carbs;
 	TextView pro_cmc,fats_cmc,carbs_cmc;
 	TextView ghee_txt_pro,ghee_br_txt_fats,ghee_txt_carbs,ghee_br_txt_fats22;
@@ -35,12 +36,12 @@ public class GainFragment extends Fragment {
 	TextView ghee_txt_pro2,ghee_br_txt_fats2,ghee_txt_carbs2;
 	TextView chk_br_txt_pro,chk_br_txt_fats,chk_br_txt_carbs;
 	TextView wr_pro2,wr_fats2,wr_carbs2;
-	TextView sc_pro2,sc_fats2,sc_carbs2;
+	TextView sc_pro21,sc_fats21,sc_carbs21;
 	TextView sc_proc,sc_fatsc,sc_carbsc;
 	TextView chk_br_txt_pro2,chk_br_txt_fats2,chk_br_txt_carbs2;
 
-
-
+	TextView pro_txt, fats_txt,carbs_txt;
+	TextView pro_txtm, fats_txtm,carbs_txtm;
 
 
 
@@ -54,7 +55,7 @@ public class GainFragment extends Fragment {
 	Spinner spinner_paneer,spinner_cmc,spinner_ghee,spinner_ew,spinner_ew1,spinner_brc,spinner_wr,spinner_sc,spinner_ghee2,spinner_chk_br;
 	Spinner spinner_wr2,spinner_sc2,spinner_c,spinner_ghee22,spinner_chk_br2;
 
-	public GainFragment() {
+	public DietPlanFragment() {
 		// Required empty public constructor
 	}
 
@@ -69,21 +70,35 @@ public class GainFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_gain, container, false);
 		sharedPreferences = getActivity().getPreferences(1);
-		
+
 		String pro_re=sharedPreferences.getString("protein_req", "0");
 		String fats_re=sharedPreferences.getString("fats_req", "0");
 		String carbs_re=sharedPreferences.getString("carbs_req", "0");
 
-        //Adding to Macro View 
-		
-		TextView pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
+		String pro_rec=sharedPreferences.getString("txt_prom", "0");
+		String fats_rec=sharedPreferences.getString("txt_fatsm", "0");
+		String carbs_rec=sharedPreferences.getString("txt_carbsm", "0");
+
+		//Adding to Macro View 
+
+		pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
 		pro_txt.setText(pro_re);
-		
-		TextView fats_txt=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manual);
+
+		fats_txt=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manual);
 		fats_txt.setText(fats_re);
-		
-		TextView carbs_txt=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manual);
+
+		carbs_txt=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manual);
 		carbs_txt.setText(carbs_re);
+
+
+
+		pro_txtm=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manualr);
+		pro_txtm.setText(pro_rec);
+		fats_txtm=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manualr);
+		fats_txtm.setText(fats_rec);
+		carbs_txtm=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manualr);
+		carbs_txtm.setText(carbs_rec);
+
 
 
 
@@ -98,7 +113,7 @@ public class GainFragment extends Fragment {
 		spinner_paneer.setAdapter(adapter1111);
 		spinner_paneer.setGravity(Gravity.CENTER);
 		spinner_paneer.getSelectedItemPosition();
-		int indexOfPreviousSelection11111 = sharedPreferences.getInt("spinner_paneer", 0);
+		int indexOfPreviousSelection11111 = sharedPreferences.getInt("spinner_paneer", 1);
 		spinner_paneer.setSelection(indexOfPreviousSelection11111);
 
 		spinner_paneer.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -135,7 +150,7 @@ public class GainFragment extends Fragment {
 		spinner_cmc.setAdapter(adapter1);
 		spinner_cmc.setGravity(Gravity.CENTER);
 		spinner_cmc.getSelectedItemPosition();
-		int indexOfPreviousSelectioncmc = sharedPreferences.getInt("spinner_cmc", 0);
+		int indexOfPreviousSelectioncmc = sharedPreferences.getInt("spinner_cmc", 1);
 		spinner_cmc.setSelection(indexOfPreviousSelectioncmc);
 
 		spinner_cmc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -171,7 +186,7 @@ public class GainFragment extends Fragment {
 		spinner_ghee.setAdapter(adapter111);
 		spinner_ghee.setGravity(Gravity.CENTER);
 		spinner_ghee.getSelectedItemPosition();
-		int indexOfPreviousSelection1111 = sharedPreferences.getInt("spinner_ghee", 0);
+		int indexOfPreviousSelection1111 = sharedPreferences.getInt("spinner_ghee", 1);
 		spinner_ghee.setSelection(indexOfPreviousSelection1111);
 
 		spinner_ghee.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -204,7 +219,7 @@ public class GainFragment extends Fragment {
 		spinner_ew.setAdapter(adapterew);
 		spinner_ew.setGravity(Gravity.CENTER);
 		spinner_ew.getSelectedItemPosition();
-		int indexOfPreviousSelectionew = sharedPreferences.getInt("spinner_ew", 0);
+		int indexOfPreviousSelectionew = sharedPreferences.getInt("spinner_ew", 2);
 		spinner_ew.setSelection(indexOfPreviousSelectionew);
 
 		spinner_ew.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -242,7 +257,7 @@ public class GainFragment extends Fragment {
 		spinner_ew1.setAdapter(adapterew1);
 		spinner_ew1.setGravity(Gravity.CENTER);
 		spinner_ew1.getSelectedItemPosition();
-		int indexOfPreviousSelectionew1 = sharedPreferences.getInt("spinner_ew1", 0);
+		int indexOfPreviousSelectionew1 = sharedPreferences.getInt("spinner_ew1", 2);
 		spinner_ew1.setSelection(indexOfPreviousSelectionew1);
 
 		spinner_ew1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -274,13 +289,13 @@ public class GainFragment extends Fragment {
 		brc_fats=(TextView)rootView.findViewById(R.id.fats_brc);
 		brc_carbs=(TextView)rootView.findViewById(R.id.carbs_brc);
 		spinner_brc=(Spinner)rootView.findViewById(R.id.spinner_brc);
-		ArrayAdapter<CharSequence> adapterbrc = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adapterbrc = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adapterbrc.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_brc.setAdapter(adapterbrc);
 		spinner_brc.setGravity(Gravity.CENTER);
 		spinner_brc.getSelectedItemPosition();
-		int indexOfPreviousSelectionbrc = sharedPreferences.getInt("spinner_brc", 0);
+		int indexOfPreviousSelectionbrc = sharedPreferences.getInt("spinner_brc", 3);
 		spinner_brc.setSelection(indexOfPreviousSelectionbrc);
 
 		spinner_brc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -312,13 +327,13 @@ public class GainFragment extends Fragment {
 		wr_fats=(TextView)rootView.findViewById(R.id.wr_fats);
 		wr_carbs=(TextView)rootView.findViewById(R.id.wr_carbs);
 		spinner_wr=(Spinner)rootView.findViewById(R.id.spinner_wr);
-		ArrayAdapter<CharSequence> adapterwr = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adapterwr = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adapterwr.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_wr.setAdapter(adapterwr);
 		spinner_wr.setGravity(Gravity.CENTER);
 		spinner_wr.getSelectedItemPosition();
-		int indexOfPreviousSelectionwr = sharedPreferences.getInt("spinner_wr", 0);
+		int indexOfPreviousSelectionwr = sharedPreferences.getInt("spinner_wr", 2);
 		spinner_wr.setSelection(indexOfPreviousSelectionwr);
 
 		spinner_wr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -351,13 +366,13 @@ public class GainFragment extends Fragment {
 		sc_fats=(TextView)rootView.findViewById(R.id.sc_fats);
 		sc_carbs=(TextView)rootView.findViewById(R.id.sc_carbs);
 		spinner_sc=(Spinner)rootView.findViewById(R.id.spinner_sc);
-		ArrayAdapter<CharSequence> adaptersc = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adaptersc = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adaptersc.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_sc.setAdapter(adaptersc);
 		spinner_sc.setGravity(Gravity.CENTER);
 		spinner_sc.getSelectedItemPosition();
-		int indexOfPreviousSelectionsc = sharedPreferences.getInt("spinner_sc", 0);
+		int indexOfPreviousSelectionsc = sharedPreferences.getInt("spinner_sc", 2);
 		spinner_sc.setSelection(indexOfPreviousSelectionsc);
 
 		spinner_sc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -394,7 +409,7 @@ public class GainFragment extends Fragment {
 		spinner_ghee2.setAdapter(adapter1112);
 		spinner_ghee2.setGravity(Gravity.CENTER);
 		spinner_ghee2.getSelectedItemPosition();
-		int indexOfPreviousSelection11112 = sharedPreferences.getInt("spinner_ghee2", 0);
+		int indexOfPreviousSelection11112 = sharedPreferences.getInt("spinner_ghee2", 2);
 		spinner_ghee2.setSelection(indexOfPreviousSelection11112);
 
 		spinner_ghee2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -426,7 +441,7 @@ public class GainFragment extends Fragment {
 		spinner_chk_br.setAdapter(adapter11);
 		spinner_chk_br.setGravity(Gravity.CENTER);
 		spinner_chk_br.getSelectedItemPosition();
-		int indexOfPreviousSelection111 = sharedPreferences.getInt("spinner_chk_br", 0);
+		int indexOfPreviousSelection111 = sharedPreferences.getInt("spinner_chk_br", 3);
 		spinner_chk_br.setSelection(indexOfPreviousSelection111);
 
 		spinner_chk_br.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -458,13 +473,13 @@ public class GainFragment extends Fragment {
 		wr_fats2=(TextView)rootView.findViewById(R.id.wr_fats2);
 		wr_carbs2=(TextView)rootView.findViewById(R.id.wr_carbs2);
 		spinner_wr2=(Spinner)rootView.findViewById(R.id.spinner_wr2);
-		ArrayAdapter<CharSequence> adapterwr2 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adapterwr2 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adapterwr2.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_wr2.setAdapter(adapterwr2);
 		spinner_wr2.setGravity(Gravity.CENTER);
 		spinner_wr2.getSelectedItemPosition();
-		int indexOfPreviousSelectionwr2 = sharedPreferences.getInt("spinner_wr2", 0);
+		int indexOfPreviousSelectionwr2 = sharedPreferences.getInt("spinner_wr2", 3);
 		spinner_wr2.setSelection(indexOfPreviousSelectionwr2);
 
 		spinner_wr2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -491,17 +506,17 @@ public class GainFragment extends Fragment {
 		});
 
 		//Soy Chunck 2
-		sc_pro2=(TextView)rootView.findViewById(R.id.sc_pro2);
-		sc_fats2=(TextView)rootView.findViewById(R.id.sc_fats2);
-		sc_carbs2=(TextView)rootView.findViewById(R.id.sc_carbs2);
+		sc_pro21=(TextView)rootView.findViewById(R.id.sc_pro2);
+		sc_fats21=(TextView)rootView.findViewById(R.id.sc_fats2);
+		sc_carbs21=(TextView)rootView.findViewById(R.id.sc_carbs2);
 		spinner_sc2=(Spinner)rootView.findViewById(R.id.spinner_sc2);
-		ArrayAdapter<CharSequence> adaptersc2 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adaptersc2 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adaptersc2.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_sc2.setAdapter(adaptersc2);
 		spinner_sc2.setGravity(Gravity.CENTER);
 		spinner_sc2.getSelectedItemPosition();
-		int indexOfPreviousSelectionsc2 = sharedPreferences.getInt("spinner_sc2", 0);
+		int indexOfPreviousSelectionsc2 = sharedPreferences.getInt("spinner_sc2", 2);
 		spinner_sc2.setSelection(indexOfPreviousSelectionsc2);
 
 		spinner_sc2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -513,11 +528,11 @@ public class GainFragment extends Fragment {
 				selected = parentView.getItemAtPosition(position).toString();
 
 				double pro=Double.parseDouble(selected)*0.17;
-				sc_pro2.setText(""+Math.round(pro));
+				sc_pro21.setText(""+Math.round(pro));
 				double fats=Double.parseDouble(selected)*0.09;
-				sc_fats2.setText(""+Math.round(fats));
+				sc_fats21.setText(""+Math.round(fats));
 				double carbs=Double.parseDouble(selected)*0.1;
-				sc_carbs2.setText(""+Math.round(carbs));
+				sc_carbs21.setText(""+Math.round(carbs));
 			}
 
 			@Override
@@ -535,16 +550,16 @@ public class GainFragment extends Fragment {
 		sc_fatsc=(TextView)rootView.findViewById(R.id.sc_fatsc);
 		sc_carbsc=(TextView)rootView.findViewById(R.id.sc_carbsc);
 		spinner_c=(Spinner)rootView.findViewById(R.id.spinner_c);
-		ArrayAdapter<CharSequence> adaptersc2c = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
+		ArrayAdapter<CharSequence> adaptersc2c = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_gm,
 				android.R.layout.simple_spinner_item);
 		adaptersc2c.setDropDownViewResource(android.R.layout.simple_spinner_item);
-		spinner_c.setAdapter(adaptersc2);
+		spinner_c.setAdapter(adaptersc2c);
 		spinner_c.setGravity(Gravity.CENTER);
 		spinner_c.getSelectedItemPosition();
-		int indexOfPreviousSelectionsc2c = sharedPreferences.getInt("spinner_sc2c", 0);
+		int indexOfPreviousSelectionsc2c = sharedPreferences.getInt("spinner_sc2c", 5);
 		spinner_c.setSelection(indexOfPreviousSelectionsc2c);
 
-		spinner_sc2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		spinner_c.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
@@ -570,14 +585,14 @@ public class GainFragment extends Fragment {
 		//Ghee 2
 
 		ghee_br_txt_fats22=(TextView)rootView.findViewById(R.id.ghee_fats22);
-		spinner_ghee22=(Spinner)rootView.findViewById(R.id.spinner_ghee2);
+		spinner_ghee22=(Spinner)rootView.findViewById(R.id.spinner_ghee22);
 		ArrayAdapter<CharSequence> adapter11122 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_ml,
 				android.R.layout.simple_spinner_item);
 		adapter11122.setDropDownViewResource(android.R.layout.simple_spinner_item);
 		spinner_ghee22.setAdapter(adapter11122);
 		spinner_ghee22.setGravity(Gravity.CENTER);
 		spinner_ghee22.getSelectedItemPosition();
-		int indexOfPreviousSelection111122 = sharedPreferences.getInt("spinner_ghee22", 0);
+		int indexOfPreviousSelection111122 = sharedPreferences.getInt("spinner_ghee22", 1);
 		spinner_ghee22.setSelection(indexOfPreviousSelection111122);
 
 		spinner_ghee22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -609,7 +624,7 @@ public class GainFragment extends Fragment {
 		spinner_chk_br2.setAdapter(adapter112);
 		spinner_chk_br2.setGravity(Gravity.CENTER);
 		spinner_chk_br2.getSelectedItemPosition();
-		int indexOfPreviousSelection1112 = sharedPreferences.getInt("spinner_chk_br2", 0);
+		int indexOfPreviousSelection1112 = sharedPreferences.getInt("spinner_chk_br2", 5);
 		spinner_chk_br.setSelection(indexOfPreviousSelection1112);
 
 		spinner_chk_br2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -639,67 +654,150 @@ public class GainFragment extends Fragment {
 
 		//Button
 
-		Button btnfinish=(Button)rootView.findViewById(R.id.finish_gain);
+		btnfinish=(Button)rootView.findViewById(R.id.finish_gain);
 		btnfinish.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
-				sharedPreferences = getActivity().getPreferences(1);
-				edt = sharedPreferences.edit();
-				//Paneer
-				edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
+				/*if(btnfinish.getText().equals("NEXT"))
+				{
+					double total_pro=Double.parseDouble(paneer_txt_pro.getText().toString())
+							+Double.parseDouble(pro_cmc.getText().toString())
+							+Double.parseDouble(ew_pro.getText().toString())
+							+Double.parseDouble(ew1_pro.getText().toString())
+							+Double.parseDouble(brc_pro.getText().toString())
+							+Double.parseDouble(wr_pro.getText().toString())
+							+Double.parseDouble(sc_pro.getText().toString())
+							+Double.parseDouble(chk_br_txt_pro.getText().toString())
+							+Double.parseDouble(wr_pro2.getText().toString())
+							+Double.parseDouble(sc_pro21.getText().toString())
+							+Double.parseDouble(sc_proc.getText().toString())
+							+Double.parseDouble(chk_br_txt_pro2.getText().toString())
+							+Double.parseDouble(chk_br_txt_pro2.getText().toString());
+					pro_txtm.setText(""+total_pro);
 
-				//Cheese Cube
-				edt.putInt("spinner_cmc", spinner_cmc.getSelectedItemPosition());
 
-				//Ghee
-				edt.putInt("spinner_ghee", spinner_ghee.getSelectedItemPosition());
+					double total_fats=Double.parseDouble(paneer_txt_fats.getText().toString())
+							+Double.parseDouble(fats_cmc.getText().toString())
+							+Double.parseDouble(ghee_br_txt_fats.getText().toString())
+							+Double.parseDouble(ew_fats.getText().toString())
+							+Double.parseDouble(ew1_fats.getText().toString())
+							+Double.parseDouble(brc_fats.getText().toString())
+							+Double.parseDouble(wr_fats.getText().toString())
+							+Double.parseDouble(sc_fats.getText().toString())
+							+Double.parseDouble(ghee_br_txt_fats2.getText().toString())
+							+Double.parseDouble(chk_br_txt_fats.getText().toString())
+							+Double.parseDouble(wr_fats2.getText().toString())
+							+Double.parseDouble(sc_fats21.getText().toString())
+							+Double.parseDouble(sc_fatsc.getText().toString())
+							+Double.parseDouble(ghee_br_txt_fats22.getText().toString())
+							+Double.parseDouble(chk_br_txt_fats2.getText().toString());
+					fats_txtm.setText(""+total_fats);
 
-				//Whole Egg
-				edt.putInt("spinner_ew", spinner_ew.getSelectedItemPosition());
+					double total_carbs=Double.parseDouble(paneer_txt_carbs.getText().toString())
+							+Double.parseDouble(carbs_cmc.getText().toString())
+							+Double.parseDouble(ghee_br_txt_fats.getText().toString())
+							+Double.parseDouble(ew_carbs.getText().toString())
+							+Double.parseDouble(ew1_carbs.getText().toString())
+							+Double.parseDouble(brc_carbs.getText().toString())
+							+Double.parseDouble(wr_carbs.getText().toString())
+							+Double.parseDouble(sc_carbs.getText().toString())
+							+Double.parseDouble(chk_br_txt_carbs.getText().toString())
+							+Double.parseDouble(wr_carbs2.getText().toString())
+							+Double.parseDouble(sc_carbs21.getText().toString())
+							+Double.parseDouble(sc_carbsc.getText().toString())
+							+Double.parseDouble(chk_br_txt_carbs2.getText().toString());
+					carbs_txtm.setText(""+total_carbs);
 
-				//Egg White
-				edt.putInt("spinner_ew1", spinner_ew1.getSelectedItemPosition());
 
-				//Brocolli
-				edt.putInt("spinner_brc", spinner_brc.getSelectedItemPosition());
+				if(Double.parseDouble(pro_txtm.getText().toString()) < Double.parseDouble(pro_txt.getText().toString()))
+				{
+					Toast.makeText(getActivity(), "You Are Less With Protein Intake , Choose Food With High Protein ,.", 
+							Toast.LENGTH_LONG).show();
+				}
+				if(Double.parseDouble(fats_txtm.getText().toString()) < Double.parseDouble(fats_txt.getText().toString()))
+				{
+					Toast.makeText(getActivity(), "You Are Less With Fats Intake ,Choose Food With High Fats.", 
+							Toast.LENGTH_LONG).show();
+				}
+				if(Double.parseDouble(carbs_txtm.getText().toString()) < Double.parseDouble(carbs_txt.getText().toString()))
+				{
+					Toast.makeText(getActivity(), "You Are Less With Carbs Intake ,Choose Food With High Carbs.", 
+							Toast.LENGTH_LONG).show();
+				}
+				}
+				else
+				{
+					btnfinish.setText("DONE");
+				}
 
-				//White Rice
-				edt.putInt("spinner_wr", spinner_wr.getSelectedItemPosition());
 
-				//Soy Chunck
-				edt.putInt("spinner_sc", spinner_sc.getSelectedItemPosition());
+					
+					if(btnfinish.getText().equals("DONE"))
+					{*/
 
-				//Ghee 2
-				edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
+						Toast.makeText(getActivity(), "Awesome , Dont Forget To Calculate Your Health Profile Weekly.", 
+								Toast.LENGTH_LONG).show();
+					sharedPreferences = getActivity().getPreferences(1);
+					edt = sharedPreferences.edit();
+					//Paneer
+					edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
 
-				//Chicken Breast
-				edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
+					//Cheese Cube
+					edt.putInt("spinner_cmc", spinner_cmc.getSelectedItemPosition());
 
-				//White Rice
-				edt.putInt("spinner_wr2", spinner_wr2.getSelectedItemPosition());
+					//Ghee
+					edt.putInt("spinner_ghee", spinner_ghee.getSelectedItemPosition());
 
-				//Soy Chunck 2
-				edt.putInt("spinner_sc2", spinner_sc2.getSelectedItemPosition());
+					//Whole Egg
+					edt.putInt("spinner_ew", spinner_ew.getSelectedItemPosition());
 
-				//Curd
-				edt.putInt("spinner_c", spinner_c.getSelectedItemPosition());
+					//Egg White
+					edt.putInt("spinner_ew1", spinner_ew1.getSelectedItemPosition());
 
-				//Ghee 2
-				edt.putInt("spinner_ghee22", spinner_ghee22.getSelectedItemPosition());
+					//Brocolli
+					edt.putInt("spinner_brc", spinner_brc.getSelectedItemPosition());
 
-				//Chicken Breast
-				edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
-				
-				edt.putString("diettype", "gain");
+					//White Rice
+					edt.putInt("spinner_wr", spinner_wr.getSelectedItemPosition());
 
-				edt.apply();
-				
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
+					//Soy Chunck
+					edt.putInt("spinner_sc", spinner_sc.getSelectedItemPosition());
 
-			}
+					//Ghee 2
+					edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
+
+					//Chicken Breast
+					edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
+
+					//White Rice
+					edt.putInt("spinner_wr2", spinner_wr2.getSelectedItemPosition());
+
+					//Soy Chunck 2
+					edt.putInt("spinner_sc2", spinner_sc2.getSelectedItemPosition());
+
+					//Curd
+					edt.putInt("spinner_c", spinner_c.getSelectedItemPosition());
+
+					//Ghee 2
+					edt.putInt("spinner_ghee22", spinner_ghee22.getSelectedItemPosition());
+
+					//Chicken Breast
+					edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
+
+					edt.putString("txt_prom", pro_txtm.getText().toString());
+					edt.putString("txt_fatsm", fats_txtm.getText().toString());
+					edt.putString("txt_carbsm", carbs_txtm.getText().toString());
+
+
+					edt.apply();
+
+					Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);
+
+				}
+			
 		});
 
 		return rootView;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import info.muscle.reboot.R;
 
@@ -92,6 +93,11 @@ public class YourResultFragment extends Fragment {
 		txthealthresult2=(TextView)rootView.findViewById(R.id.txt_health_statusbmi);
 		txthealthresult2.setTypeface(fontR);
 		txthealthresult2.setText(bmi_health);
+		
+		
+		
+		
+		
 
 
 		btn2=(Button)rootView.findViewById(R.id.btn2);

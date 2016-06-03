@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:background="@android:color/white"
+    android:gravity="fill" >
 
     <!-- Header aligned to top -->
 
@@ -101,6 +102,100 @@
                     android:textAppearance="?android:textAppearanceLarge"
                     android:textColor="@color/colorAccent" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/macro_protein_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/macro_fat_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/macro_carb_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAlignment="4"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/highpro"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="High In Protein"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#e74c3c"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/higfats"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="High in Fats"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#f1c40f"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/highcarbs"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="High In Carbs"
+                    android:textAlignment="4"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#8e44ad"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 
@@ -118,7 +213,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="I AM DONE"
+            android:text="NEXT"
             android:textColor="#ECF0F1"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -188,58 +283,6 @@
                         android:textSize="20sp"
                         android:typeface="monospace" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:padding="5dp"
-                        android:text="Paneer / Cottage Cheese(Per Gram)"
-                        android:textSize="14sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="5.0dip" >
-
-                        <Spinner
-                            android:id="@+id/spinner_paneer"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/pro_paneer"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/fats_paneer"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/carbs_paneer"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -250,13 +293,14 @@
                         android:paddingRight="5dp" >
 
                         <TextView
-                            android:id="@+id/textViewwhey"
+                            android:id="@+id/textView3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_horizontal"
                             android:padding="5dp"
-                            android:text="Amul Cheese Cube (Per Cube)"
+                            android:text="Paneer / Cottage Cheese(Per Gram)"
+                            android:textColor="#f1c40f"
                             android:textSize="14sp" />
 
                         <LinearLayout
@@ -266,7 +310,7 @@
                             android:padding="5.0dip" >
 
                             <Spinner
-                                android:id="@+id/spinner_cmc"
+                                android:id="@+id/spinner_paneer"
                                 android:layout_width="0.0dip"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -274,16 +318,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/pro_cmc"
-                                android:layout_width="0.0dip"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/fats_cmc"
+                                android:id="@+id/pro_paneer"
                                 android:layout_width="0.0dip"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -293,7 +328,17 @@
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/carbs_cmc"
+                                android:id="@+id/fats_paneer"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/carbs_paneer"
                                 android:layout_width="0.0dip"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -303,6 +348,72 @@
                                 android:textSize="20sp" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" >
+
+                            <TextView
+                                android:id="@+id/textViewwhey"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:padding="5dp"
+                                android:text="Amul Cheese Cube (Per Cube)"
+                                android:textColor="#f1c40f"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5.0dip" >
+
+                                <Spinner
+                                    android:id="@+id/spinner_cmc"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/pro_cmc"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/fats_cmc"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/carbs_cmc"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
                         <TextView
                             android:id="@+id/txt_panner"
                             android:layout_width="match_parent"
@@ -310,6 +421,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Ghee/Butter/Coconut oil (In Gram)"
+                            android:textColor="#f1c40f"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -332,6 +444,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
+                                android:text="0"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="20sp" />
 
@@ -363,6 +476,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text=" Egg Whole (In QTY)"
+                            android:textColor="#e74c3c"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -417,6 +531,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text=" Egg White (In QTY)"
+                            android:textColor="#e74c3c"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -510,7 +625,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Broccoli (In Gram)"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="#8e44ad"
                                 android:textSize="15sp" />
 
                             <LinearLayout
@@ -533,6 +648,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
+                                    android:text="0"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="20sp" />
 
@@ -573,7 +689,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="White Rice(In Gram)"
-                                    android:textColor="@color/colorAccent"
+                                    android:textColor="#8e44ad"
                                     android:textSize="15sp" />
 
                                 <LinearLayout
@@ -596,6 +712,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -637,7 +754,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="Soya Bean (In Gram)"
-                                    android:textColor="@color/colorAccent"
+                                    android:textColor="#e74c3c"
                                     android:textSize="15sp" />
 
                                 <LinearLayout
@@ -670,6 +787,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -691,6 +809,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="Ghee/Butter/Coconut oil (In Gram)"
+                                    android:textColor="#f1c40f"
                                     android:textSize="15sp" />
 
                                 <LinearLayout
@@ -713,6 +832,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -753,7 +873,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:text="Chicken Breast(In Gram)"
-                                        android:textColor="@color/colorAccent"
+                                        android:textColor="#e74c3c"
                                         android:textSize="15sp" />
 
                                     <LinearLayout
@@ -776,6 +896,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
+                                            android:text="0"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="20sp" />
 
@@ -848,7 +969,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:text="White Rice(In Gram)"
-                                        android:textColor="@color/colorAccent"
+                                        android:textColor="#8e44ad"
                                         android:textSize="15sp" />
 
                                     <LinearLayout
@@ -871,6 +992,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
+                                            android:text="0"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="20sp" />
 
@@ -911,7 +1033,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center"
                                             android:text="Soya Bean (In Gram)"
-                                            android:textColor="@color/colorAccent"
+                                            android:textColor="#e74c3c"
                                             android:textSize="15sp" />
 
                                         <LinearLayout
@@ -944,6 +1066,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
+                                                android:text="0"
                                                 android:textColor="@color/colorPrimary"
                                                 android:textSize="20sp" />
 
@@ -975,7 +1098,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center"
                                             android:text="Curd (In Gram)"
-                                            android:textColor="@color/colorAccent"
+                                            android:textColor="#e74c3c"
                                             android:textSize="15sp" />
 
                                         <LinearLayout
@@ -1008,6 +1131,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
+                                                android:text="0"
                                                 android:textColor="@color/colorPrimary"
                                                 android:textSize="20sp" />
 
@@ -1038,6 +1162,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center"
                                                 android:text="Ghee/Butter/Coconut oil (In Gram)"
+                                                android:textColor="#f1c40f"
                                                 android:textSize="15sp" />
 
                                             <LinearLayout
@@ -1060,6 +1185,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
+                                                    android:text="0"
                                                     android:textColor="@color/colorPrimary"
                                                     android:textSize="20sp" />
 
@@ -1101,7 +1227,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center"
                                                 android:text="Chicken Breast(In Gram)"
-                                                android:textColor="@color/colorAccent"
+                                                android:textColor="#e74c3c"
                                                 android:textSize="15sp" />
 
                                             <LinearLayout
@@ -1124,6 +1250,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
+                                                    android:text="0"
                                                     android:textColor="@color/colorPrimary"
                                                     android:textSize="20sp" />
 
@@ -1155,33 +1282,6 @@
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-
-            <!--
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="50px"
-                android:layout_alignParentBottom="true"
-                android:orientation="horizontal" >
-
-                <FrameLayout
-                    android:id="@+id/your_gain"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
-
-                <Button
-                    android:id="@+id/finish_gain"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@color/colorPrimary"
-                    android:text="I AM DONE"
-                    android:textColor="#ECF0F1"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:typeface="monospace" />
-            </RelativeLayout>
-            -->
         </LinearLayout>
     </ScrollView>
 

@@ -82,7 +82,11 @@
     </string-array>
     <string-array name="diet_gm">
         <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>50</item>
         <item>100</item>
+        <item>150</item>
         <item>200</item>
         <item>300</item>
         <item>400</item>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@android:color/white" >
 
     <!-- Header aligned to top -->
@@ -22,13 +22,23 @@
             android:orientation="vertical"
             android:padding="10.0dip" >
 
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:padding="5dip"
+                android:text="Required Macro"
+                android:textAppearance="?android:textAppearanceMedium" />
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView81"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
@@ -101,6 +111,63 @@
                     android:textAppearance="?android:textAppearanceLarge"
                     android:textColor="@color/colorAccent" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView8s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center_horizontal"
+                android:padding="5dip"
+                android:text="Current Macro"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/macro_protein_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/macro_fat_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/macro_carb_percentage_manualr"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="0"
+                    android:textAlignment="4"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 
@@ -118,7 +185,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="I AM DONE"
+            android:text="NEXT"
             android:textColor="#ECF0F1"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -126,6 +193,7 @@
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/LooseScrollView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/footer"
@@ -164,6 +232,7 @@
                         android:text="Up on  waking Up:"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
+                        android:textStyle="bold"
                         android:typeface="monospace" />
 
                     <TextView
@@ -186,6 +255,7 @@
                         android:text="BREAKFAST"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
+                        android:textStyle="bold"
                         android:typeface="monospace" />
 
                     <TextView
@@ -218,6 +288,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_horizontal"
+                            android:text="0"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20sp" />
 
@@ -227,6 +298,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_horizontal"
+                            android:text="0"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20sp" />
 
@@ -236,6 +308,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_horizontal"
+                            android:text="0"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -259,16 +332,6 @@
                             android:text="Whey Protein (Per Scoope)"
                             android:textSize="14sp" />
 
-                        <TextView
-                            android:id="@+id/txt_bf"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Take 1 tbsp of Isabgol/Psyllium husk with water after Breakfast."
-                            android:textSize="14sp" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -289,6 +352,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
+                                android:text="0"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="20sp" />
 
@@ -342,6 +406,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
+                                android:text="0"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="20sp" />
 
@@ -385,6 +450,7 @@
                                 android:text="LUNCH"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
+                                android:textStyle="bold"
                                 android:typeface="monospace" />
 
                             <TextView
@@ -426,6 +492,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
+                                    android:text="0"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="20sp" />
 
@@ -489,6 +556,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -563,6 +631,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -606,6 +675,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
+                                        android:text="0"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="20sp" />
 
@@ -649,6 +719,7 @@
                                         android:text="DINNER"
                                         android:textColor="@android:color/white"
                                         android:textSize="20sp"
+                                        android:textStyle="bold"
                                         android:typeface="monospace" />
 
                                     <TextView
@@ -689,6 +760,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
+                                            android:text="0"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="20sp" />
 
@@ -752,6 +824,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
+                                                android:text="0"
                                                 android:textColor="@color/colorPrimary"
                                                 android:textSize="20sp" />
 
@@ -860,6 +933,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
+                                            android:text="0"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="20sp" />
 

@@ -106,24 +106,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			break;
 		case 4:
 
-			if(diet_saved=="loss")
-			{
-				fragment = new LoosFragment();
-				title = getString(R.string.title_messages);
-				break;
-			}
-			if(diet_saved=="gain")
-			{
-				fragment = new GainFragment();
-				title = getString(R.string.title_messages);
-				break;
-			}
-			if(diet_saved=="main")
-			{
-				fragment = new KnowYourBodyFragment();
-				title = getString(R.string.title_friends);
-				break;
-			}
+
+			fragment = new DietPlanFragment();
+			title = getString(R.string.title_messages);
+			break;
 
 		default:
 		}

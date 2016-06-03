@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import info.muscle.reboot.R;
 
 
@@ -34,10 +36,16 @@ public class LoosFragment extends Fragment {
 	TextView che_txt_pro,che_txt_fats,che_txt_carbs;
 	TextView ghee_txt_pro2,ghee_br_txt_fats2,ghee_txt_carbs2;
 	TextView paneer2_txt_pro,paneer2_txt_fats,paneer2_txt_carbs;
+	ScrollView loose;
+	Button btnfinish;
 
+	TextView pro_txt;
+	TextView fats_txt,carbs_txt;
 
+	//Adding macro based on user selection
 
-
+	TextView your_macro_pro,your_macro_fats,your_macro_carbs;
+	TextView your_macro_pro1,your_macro_fats1,your_macro_carbs1,your_macro_pro2,your_macro_fats2,your_macro_carbs2;
 
 
 
@@ -54,38 +62,50 @@ public class LoosFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+
+
+
+
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.diet_loose, container, false);
+		/*
+		loose=(ScrollView)rootView.findViewById(R.id.LooseScrollView);
+		loose.setVisibility(View.INVISIBLE);*/
+
 
 		//Shared Preferrance
 
 		sharedPreferences = getActivity().getPreferences(1);
-		
-		
 		String pro_re=sharedPreferences.getString("protein_req", "0");
 		String fats_re=sharedPreferences.getString("fats_req", "0");
 		String carbs_re=sharedPreferences.getString("carbs_req", "0");
 
-        //Adding to Macro View 
-		
-		TextView pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
+		//Adding to Macro View 
+
+		pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
 		pro_txt.setText(pro_re);
-		
-		TextView fats_txt=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manual);
+
+		fats_txt=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manual);
 		fats_txt.setText(fats_re);
-		
-		TextView carbs_txt=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manual);
+
+		carbs_txt=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manual);
 		carbs_txt.setText(carbs_re);
 
-		//Whole Egg Spinner
+
+		your_macro_pro=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manualr);
+		your_macro_fats=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manualr);
+		your_macro_carbs=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manualr);
+
+
 		whole_egg_txt_pro=(TextView)rootView.findViewById(R.id.whole_egg_pro);
 		whole_egg_txt_fats=(TextView)rootView.findViewById(R.id.whole_egg_fats);
 		whole_egg_txt_carbs=(TextView)rootView.findViewById(R.id.whole_egg_carbs);
 		whole_egg_spinner=(Spinner)rootView.findViewById(R.id.spinner_whole_egg);
+
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_qty,
 				android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -109,6 +129,13 @@ public class LoosFragment extends Fragment {
 				whole_egg_txt_fats.setText(""+Math.round(fats));
 				double carbs=Double.parseDouble(selected)*0.4;
 				whole_egg_txt_carbs.setText(""+Math.round(carbs));
+
+				//Calculating
+
+
+
+
+
 			}
 
 			@Override
@@ -478,61 +505,142 @@ public class LoosFragment extends Fragment {
 			}
 		});
 
+		//Getting all Pro text and adding to macro pro
 
 
+		//
 		//Button
 
-		Button btnfinish=(Button)rootView.findViewById(R.id.finish);
+
+
+
+
+		btnfinish=(Button)rootView.findViewById(R.id.finish);
 		btnfinish.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
-				sharedPreferences = getActivity().getPreferences(1);
-				edt = sharedPreferences.edit();
-
-				//For Whole Egg
-
-				edt.putInt("spinner_whole_egg", whole_egg_spinner.getSelectedItemPosition());
-
-				//Whey Protein
-				edt.putInt("spinner_whey_pro", whey_protein_spinner.getSelectedItemPosition());
-
-				//Whole Egg Lunch
-
-				edt.putInt("spinner_whole_egg2", whole_egg2_spinner.getSelectedItemPosition());
-
-				//Chicken Breast
-				edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
-
-				//Paneer
-				edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
-
-				//Paneer2
-				edt.putInt("spinner_paneer2", spinner_paneer2.getSelectedItemPosition());
-
-				//cb 2
-				edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
-
-				//che
-				edt.putInt("spinner_cheeee", spinner_cheese.getSelectedItemPosition());
-
-				//Ghee 2
-				edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
-
-				//Paneer3
-				edt.putInt("spinner_paneer21", spinner_paneer3.getSelectedItemPosition());
 
 
+				if(btnfinish.getText().equals("NEXT"))
+				{
 
-				//Saving 
+					double addpro=(Double.parseDouble(whole_egg_txt_pro.getText().toString()))
+							+(Double.parseDouble(whey_pro_txt_pro.getText().toString()))
+							+(Double.parseDouble(paneer_txt_pro.getText().toString()))
+							+(Double.parseDouble(whole_egg2_txt_pro.getText().toString()))
+							+(Double.parseDouble(chk_br_txt_pro.getText().toString()))
+							+(Double.parseDouble(paneer_txt_pro.getText().toString()))
+							+(Double.parseDouble(paneer_txt_pro2.getText().toString()))
+							+(Double.parseDouble(chk_br2_txt_pro.getText().toString()))
+							+(Double.parseDouble(che_txt_pro.getText().toString()))
+							+(Double.parseDouble(paneer2_txt_pro.getText().toString()));
+					your_macro_pro.setText(""+addpro);	
 
-				edt.putString("diettype", "loss");
+					double addfats=(Double.parseDouble(whole_egg_txt_fats.getText().toString()))
+							+(Double.parseDouble(whole_egg2_txt_fats.getText().toString()))
+							+(Double.parseDouble(chk_br_txt_fats.getText().toString()))
+							+(Double.parseDouble(ghee_br_txt_fats.getText().toString()))
+							+(Double.parseDouble(paneer_txt_fats.getText().toString()))
+							+(Double.parseDouble(paneer_txt_fats2.getText().toString()))
+							+(Double.parseDouble(chk_br2_txt_fats.getText().toString()))
+							+(Double.parseDouble(che_txt_fats.getText().toString()))
+							+(Double.parseDouble(ghee_br_txt_fats2.getText().toString()))
+							+(Double.parseDouble(paneer2_txt_fats.getText().toString()));
+					your_macro_fats.setText(""+addfats);
 
-				edt.apply();
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
 
+					double addcarbs=(Double.parseDouble(whole_egg_txt_carbs.getText().toString()))
+							+(Double.parseDouble(whole_egg2_txt_carbs.getText().toString()))
+							+(Double.parseDouble(chk_br_txt_carbs.getText().toString()))
+							+(Double.parseDouble(paneer_txt_carbs.getText().toString()))
+							+(Double.parseDouble(paneer_txt_carbs2.getText().toString()))
+							+(Double.parseDouble(chk_br2_txt_carbs.getText().toString()))
+							+(Double.parseDouble(che_txt_carbs.getText().toString()))
+							+(Double.parseDouble(paneer2_txt_carbs.getText().toString()));
+					your_macro_carbs.setText(""+addcarbs);
+
+					if(Double.parseDouble(your_macro_pro.getText().toString())<Double.parseDouble(pro_txt.getText().toString()))
+					{
+						Toast.makeText(getActivity(), "You Are Less With Protein Intake ,.", 
+								Toast.LENGTH_SHORT).show();
+					}
+
+					if(Double.parseDouble(your_macro_fats.getText().toString())<Double.parseDouble(fats_txt.getText().toString()))
+					{
+
+						Toast.makeText(getActivity(), "You Are Less With Fats Intake ,.", 
+								Toast.LENGTH_SHORT).show();
+				}
+
+				if(Double.parseDouble(your_macro_carbs.getText().toString())<Double.parseDouble(carbs_txt.getText().toString()))
+				{
+					Toast.makeText(getActivity(), "You Are Less With Carbs Intake ,.", 
+							Toast.LENGTH_SHORT).show();
+				}
+
+				}
+				else
+				{	
+					btnfinish.setText("DONE");
+				}
+
+
+
+				if(btnfinish.getText().equals("DONE")){
+
+					sharedPreferences = getActivity().getPreferences(1);
+					edt = sharedPreferences.edit();
+
+
+
+
+
+
+
+					//Saving all details to shared 
+					//For Whole Eggwhole_egg2_txt_pro
+
+					edt.putInt("spinner_whole_egg", whole_egg_spinner.getSelectedItemPosition());
+
+					//Whey Protein
+					edt.putInt("spinner_whey_pro", whey_protein_spinner.getSelectedItemPosition());
+
+					//Whole Egg Lunch
+
+					edt.putInt("spinner_whole_egg2", whole_egg2_spinner.getSelectedItemPosition());
+
+					//Chicken Breast
+					edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
+
+					//Paneer
+					edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
+
+					//Paneer2
+					edt.putInt("spinner_paneer2", spinner_paneer2.getSelectedItemPosition());
+
+					//cb 2
+					edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
+
+					//che
+					edt.putInt("spinner_cheeee", spinner_cheese.getSelectedItemPosition());
+
+					//Ghee 2
+					edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
+
+					//Paneer3
+					edt.putInt("spinner_paneer21", spinner_paneer3.getSelectedItemPosition());
+
+					//Saving 
+
+					edt.putString("diettype", "loss");
+
+					edt.apply();
+					Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);
+
+				}
 			}
 		});
 

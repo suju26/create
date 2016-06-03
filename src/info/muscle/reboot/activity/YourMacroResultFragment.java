@@ -82,7 +82,7 @@ public class YourMacroResultFragment extends Fragment {
 		spinner_goal.setGravity(Gravity.CENTER);
 
 		spinner_goal.getSelectedItemPosition();
-		
+
 		int indexOfPreviousSelection = pref.getInt("spinner_goal_key", 0);
 
 		spinner_goal.setSelection(indexOfPreviousSelection);
@@ -97,7 +97,7 @@ public class YourMacroResultFragment extends Fragment {
 
 				if(selected_goal.equals("Loose Fat"))
 				{
-					diet_goal=req_diet_goal-10/100;
+					diet_goal=Math.round(req_diet_goal*0.9);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -119,7 +119,7 @@ public class YourMacroResultFragment extends Fragment {
 				}
 				if(selected_goal.equals("Gain Muscle"))
 				{
-					diet_goal=req_diet_goal+10/100;
+					diet_goal=Math.round(req_diet_goal*1.1);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -142,7 +142,7 @@ public class YourMacroResultFragment extends Fragment {
 				}
 				if(selected_goal.equals("Maintain"))
 				{
-					diet_goal=req_diet_goal;
+					diet_goal=Math.round(req_diet_goal);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -164,7 +164,7 @@ public class YourMacroResultFragment extends Fragment {
 				}
 				if(selected_goal.endsWith("Extreme Loss(Consult Doctor)"))
 				{
-					diet_goal=req_diet_goal-10/100;
+					diet_goal=Math.round(req_diet_goal*0.9);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -215,76 +215,28 @@ public class YourMacroResultFragment extends Fragment {
 					edt.putString("carbs_req", carb_cal.getText().toString());
 
 					edt.apply();
-					
-					if(selected_goal.equals("Loose Fat"))
-					{
-						Fragment newFragment = new LoosFragment();
-						FragmentTransaction transaction = getFragmentManager()
-								.beginTransaction();
 
-						// Replace whatever is in the fragment_container view with this
-						// fragment,
-						// and add the transaction to the back stack
-						transaction.replace(android.R.id.content, newFragment);
-						transaction.addToBackStack("tag");
 
-						// Commit the transaction
-						transaction.commitAllowingStateLoss();
-					}
-					
-					if(selected_goal.equals("Extreme Loss(Consult Doctor)"))
-					{
-						Fragment newFragment = new LoosFragment();
-						FragmentTransaction transaction = getFragmentManager()
-								.beginTransaction();
+					Fragment newFragment = new DietPlanFragment();
+					FragmentTransaction transaction = getFragmentManager()
+							.beginTransaction();
 
-						// Replace whatever is in the fragment_container view with this
-						// fragment,
-						// and add the transaction to the back stack
-						transaction.replace(android.R.id.content, newFragment);
-						transaction.addToBackStack("tag");
+					// Replace whatever is in the fragment_container view with this
+					// fragment,
+					// and add the transaction to the back stack
+					transaction.replace(android.R.id.content, newFragment);
+					transaction.addToBackStack("tag");
 
-						// Commit the transaction
-						transaction.commitAllowingStateLoss();
-					}
-					if(selected_goal.equals("Gain Muscle"))
-					{
-						Fragment newFragment = new GainFragment();
-						FragmentTransaction transaction = getFragmentManager()
-								.beginTransaction();
-
-						// Replace whatever is in the fragment_container view with this
-						// fragment,
-						// and add the transaction to the back stack
-						transaction.replace(android.R.id.content, newFragment);
-						transaction.addToBackStack("tag");
-
-						// Commit the transaction
-						transaction.commitAllowingStateLoss();
-					}
-					
-					if(selected_goal.equals("Maintain"))
-					{
-						Fragment newFragment = new GainFragment();
-						FragmentTransaction transaction = getFragmentManager()
-								.beginTransaction();
-
-						// Replace whatever is in the fragment_container view with this
-						// fragment,
-						// and add the transaction to the back stack
-						transaction.replace(android.R.id.content, newFragment);
-						transaction.addToBackStack("tag");
-
-						// Commit the transaction
-						transaction.commitAllowingStateLoss();
-					}
-					/*Intent intent = new Intent(getActivity(), MainActivity.class);
+					// Commit the transaction
+					transaction.commitAllowingStateLoss();
+				}
+				/*Intent intent = new Intent(getActivity(), MainActivity.class);
 					getActivity().startActivity(intent); */
-				}	
-			}
+			}	
+
 		});
 
-		
+
 
 
 		// Inflate the layout for this fragment
