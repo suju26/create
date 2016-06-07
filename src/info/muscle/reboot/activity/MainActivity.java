@@ -110,6 +110,12 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			fragment = new DietPlanFragment();
 			title = getString(R.string.title_messages);
 			break;
+		case 5:
+
+
+			fragment = new Workout_gain();
+			title = getString(R.string.title_messages);
+			break;
 
 		default:
 		}

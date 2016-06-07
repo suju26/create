@@ -13,10 +13,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import info.muscle.reboot.R;
+import info.muscle.reboot.R.id;
 
 
 public class DietPlanFragment extends Fragment {
@@ -24,7 +27,7 @@ public class DietPlanFragment extends Fragment {
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor edt ;
 	String selected;
-	Button btnfinish;
+	Button btnfinish,btnreset;
 	TextView paneer_txt_pro,paneer_txt_fats,paneer_txt_carbs;
 	TextView pro_cmc,fats_cmc,carbs_cmc;
 	TextView ghee_txt_pro,ghee_br_txt_fats,ghee_txt_carbs,ghee_br_txt_fats22;
@@ -39,21 +42,31 @@ public class DietPlanFragment extends Fragment {
 	TextView sc_pro21,sc_fats21,sc_carbs21;
 	TextView sc_proc,sc_fatsc,sc_carbsc;
 	TextView chk_br_txt_pro2,chk_br_txt_fats2,chk_br_txt_carbs2;
+	TextView wp_pro,wp_fats,wp_carbs;
+	TextView wp_pro1,wp_fats1,wp_carbs1;
+	TextView wp_pro11,wp_fats11,wp_carbs11;
+
+
+	double  cp1,cf1,cc1, cp11,cf11,cc11,cp111,cf111,cc111;
+
+
 
 	TextView pro_txt, fats_txt,carbs_txt;
 	TextView pro_txtm, fats_txtm,carbs_txtm;
 
+	EditText pro1,fats1,carbs1, pro11,fats11,carbs11, pro111,fats111,carbs111;
+
+	double p1,p2;
+	CheckBox chk1,chk2;
 
 
 
-
-
-
+	double total_pro_con;
 
 
 
 	Spinner spinner_paneer,spinner_cmc,spinner_ghee,spinner_ew,spinner_ew1,spinner_brc,spinner_wr,spinner_sc,spinner_ghee2,spinner_chk_br;
-	Spinner spinner_wr2,spinner_sc2,spinner_c,spinner_ghee22,spinner_chk_br2;
+	Spinner spinner_wr2,spinner_sc2,spinner_c,spinner_ghee22,spinner_chk_br2,spinner_wp,spinner_wp1;
 
 	public DietPlanFragment() {
 		// Required empty public constructor
@@ -79,6 +92,21 @@ public class DietPlanFragment extends Fragment {
 		String fats_rec=sharedPreferences.getString("txt_fatsm", "0");
 		String carbs_rec=sharedPreferences.getString("txt_carbsm", "0");
 
+		String cp1s=sharedPreferences.getString("cp1", "0");
+		String cf1s=sharedPreferences.getString("cf1", "0");
+		String ccs=sharedPreferences.getString("cc1", "0");
+
+		String cp1s1=sharedPreferences.getString("cp11", "0");
+		String cf1s1=sharedPreferences.getString("cf11", "0");
+		String ccs1=sharedPreferences.getString("cc11", "0");
+
+		String cp1s11=sharedPreferences.getString("cp111", "0");
+		String cf1s11=sharedPreferences.getString("cf111", "0");
+		String ccs11=sharedPreferences.getString("cc111", "0");
+
+
+
+
 		//Adding to Macro View 
 
 		pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
@@ -99,7 +127,28 @@ public class DietPlanFragment extends Fragment {
 		carbs_txtm=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manualr);
 		carbs_txtm.setText(carbs_rec);
 
+		//Custom Micro
 
+		pro1=(EditText)rootView.findViewById(R.id.wp_proc);
+		pro1.setText(cp1s);
+		fats1=(EditText)rootView.findViewById(R.id.wp_fatsc);
+		fats1.setText(cf1s);
+		carbs1=(EditText)rootView.findViewById(R.id.wp_carbsc);
+		carbs1.setText(ccs);
+
+		pro11=(EditText)rootView.findViewById(R.id.wp_proc1);
+		pro11.setText(cp1s1);
+		fats11=(EditText)rootView.findViewById(R.id.wp_fatsc1);
+		fats11.setText(cf1s1);
+		carbs11=(EditText)rootView.findViewById(R.id.wp_carbsc1);
+		carbs11.setText(ccs1);
+
+		pro111=(EditText)rootView.findViewById(R.id.wp_proc11);
+		pro111.setText(cp1s11);
+		fats111=(EditText)rootView.findViewById(R.id.wp_fatsc11);
+		fats111.setText(cf1s11);
+		carbs111=(EditText)rootView.findViewById(R.id.wp_carbsc11);
+		carbs111.setText(ccs11);
 
 
 		//Chk br Spinner
@@ -282,7 +331,72 @@ public class DietPlanFragment extends Fragment {
 
 			}
 		});
+		//Spinner Whey
+		wp_pro=(TextView)rootView.findViewById(R.id.wp_pro);
+		wp_fats=(TextView)rootView.findViewById(R.id.wp_fats);
+		wp_carbs=(TextView)rootView.findViewById(R.id.wp_carbs);
+		spinner_wp=(Spinner)rootView.findViewById(R.id.spinner_wp);
+		ArrayAdapter<CharSequence> adapterewp = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_qty,
+				android.R.layout.simple_spinner_item);
+		adapterewp.setDropDownViewResource(android.R.layout.simple_spinner_item);
+		spinner_wp.setAdapter(adapterewp);
+		spinner_wp.setGravity(Gravity.CENTER);
+		spinner_ew1.getSelectedItemPosition();
+		int indexOfPreviousSelectionewp = sharedPreferences.getInt("spinner_wp", 0);
+		spinner_wp.setSelection(indexOfPreviousSelectionewp);
 
+		spinner_wp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		{
+			@Override
+			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
+			{
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
+				selected = parentView.getItemAtPosition(position).toString();
+
+				double pro=Double.parseDouble(selected)*25;
+				wp_pro.setText(""+Math.round(pro));
+
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parentView) {
+
+
+			}
+		});
+		//Spinner Whey
+		wp_pro1=(TextView)rootView.findViewById(R.id.wp_pro1);
+		wp_fats1=(TextView)rootView.findViewById(R.id.wp_fats1);
+		wp_carbs1=(TextView)rootView.findViewById(R.id.wp_carbs1);
+		spinner_wp1=(Spinner)rootView.findViewById(R.id.spinner_wp1);
+		ArrayAdapter<CharSequence> adapterewp1 = ArrayAdapter.createFromResource(rootView.getContext(), R.array.diet_qty,
+				android.R.layout.simple_spinner_item);
+		adapterewp1.setDropDownViewResource(android.R.layout.simple_spinner_item);
+		spinner_wp1.setAdapter(adapterewp1);
+		spinner_wp1.setGravity(Gravity.CENTER);
+		spinner_wp1.getSelectedItemPosition();
+		int indexOfPreviousSelectionewp1 = sharedPreferences.getInt("spinner_wp1", 0);
+		spinner_wp1.setSelection(indexOfPreviousSelectionewp1);
+
+		spinner_wp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		{
+			@Override
+			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
+			{
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
+				selected = parentView.getItemAtPosition(position).toString();
+
+				double pro=Double.parseDouble(selected)*25;
+				wp_pro1.setText(""+Math.round(pro));
+
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parentView) {
+
+
+			}
+		});
 
 		//Broccoli
 		brc_pro=(TextView)rootView.findViewById(R.id.pro_brc);
@@ -660,8 +774,27 @@ public class DietPlanFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 
-				/*if(btnfinish.getText().equals("NEXT"))
+				if(btnfinish.getText().equals("NEXT"))
+
 				{
+					try {
+
+						cp1=Double.parseDouble(pro1.getText().toString());
+						cf1=Double.parseDouble(fats1.getText().toString());
+						cc1=Double.parseDouble(carbs1.getText().toString());
+						cp11=Double.parseDouble(pro11.getText().toString());
+						cf11=Double.parseDouble(fats11.getText().toString());
+						cc11=Double.parseDouble(carbs11.getText().toString());
+						cp111=Double.parseDouble(pro111.getText().toString());
+						cf111=Double.parseDouble(fats111.getText().toString());
+						cc111=Double.parseDouble(carbs111.getText().toString());
+
+
+					} catch (NumberFormatException e) {
+						Toast.makeText(getActivity(), "Please Check Entered Custom Micro.", 
+								Toast.LENGTH_LONG).show();		
+					}
+
 					double total_pro=Double.parseDouble(paneer_txt_pro.getText().toString())
 							+Double.parseDouble(pro_cmc.getText().toString())
 							+Double.parseDouble(ew_pro.getText().toString())
@@ -674,7 +807,10 @@ public class DietPlanFragment extends Fragment {
 							+Double.parseDouble(sc_pro21.getText().toString())
 							+Double.parseDouble(sc_proc.getText().toString())
 							+Double.parseDouble(chk_br_txt_pro2.getText().toString())
-							+Double.parseDouble(chk_br_txt_pro2.getText().toString());
+							+Double.parseDouble(chk_br_txt_pro2.getText().toString())
+							+Double.parseDouble(wp_pro.getText().toString())
+							+Double.parseDouble(wp_pro1.getText().toString())
+							+cp1+cp11+cp111;
 					pro_txtm.setText(""+total_pro);
 
 
@@ -692,7 +828,7 @@ public class DietPlanFragment extends Fragment {
 							+Double.parseDouble(sc_fats21.getText().toString())
 							+Double.parseDouble(sc_fatsc.getText().toString())
 							+Double.parseDouble(ghee_br_txt_fats22.getText().toString())
-							+Double.parseDouble(chk_br_txt_fats2.getText().toString());
+							+Double.parseDouble(chk_br_txt_fats2.getText().toString())+cf1+cf11+cf111;
 					fats_txtm.setText(""+total_fats);
 
 					double total_carbs=Double.parseDouble(paneer_txt_carbs.getText().toString())
@@ -707,99 +843,115 @@ public class DietPlanFragment extends Fragment {
 							+Double.parseDouble(wr_carbs2.getText().toString())
 							+Double.parseDouble(sc_carbs21.getText().toString())
 							+Double.parseDouble(sc_carbsc.getText().toString())
-							+Double.parseDouble(chk_br_txt_carbs2.getText().toString());
+							+Double.parseDouble(chk_br_txt_carbs2.getText().toString())+cc1+cc11+cc111;
 					carbs_txtm.setText(""+total_carbs);
 
 
-				if(Double.parseDouble(pro_txtm.getText().toString()) < Double.parseDouble(pro_txt.getText().toString()))
-				{
-					Toast.makeText(getActivity(), "You Are Less With Protein Intake , Choose Food With High Protein ,.", 
-							Toast.LENGTH_LONG).show();
-				}
-				if(Double.parseDouble(fats_txtm.getText().toString()) < Double.parseDouble(fats_txt.getText().toString()))
-				{
-					Toast.makeText(getActivity(), "You Are Less With Fats Intake ,Choose Food With High Fats.", 
-							Toast.LENGTH_LONG).show();
-				}
-				if(Double.parseDouble(carbs_txtm.getText().toString()) < Double.parseDouble(carbs_txt.getText().toString()))
-				{
-					Toast.makeText(getActivity(), "You Are Less With Carbs Intake ,Choose Food With High Carbs.", 
-							Toast.LENGTH_LONG).show();
-				}
-				}
-				else
-				{
 					btnfinish.setText("DONE");
-				}
-
-
-					
-					if(btnfinish.getText().equals("DONE"))
-					{*/
-
-						Toast.makeText(getActivity(), "Awesome , Dont Forget To Calculate Your Health Profile Weekly.", 
-								Toast.LENGTH_LONG).show();
-					sharedPreferences = getActivity().getPreferences(1);
-					edt = sharedPreferences.edit();
-					//Paneer
-					edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
-
-					//Cheese Cube
-					edt.putInt("spinner_cmc", spinner_cmc.getSelectedItemPosition());
-
-					//Ghee
-					edt.putInt("spinner_ghee", spinner_ghee.getSelectedItemPosition());
-
-					//Whole Egg
-					edt.putInt("spinner_ew", spinner_ew.getSelectedItemPosition());
-
-					//Egg White
-					edt.putInt("spinner_ew1", spinner_ew1.getSelectedItemPosition());
-
-					//Brocolli
-					edt.putInt("spinner_brc", spinner_brc.getSelectedItemPosition());
-
-					//White Rice
-					edt.putInt("spinner_wr", spinner_wr.getSelectedItemPosition());
-
-					//Soy Chunck
-					edt.putInt("spinner_sc", spinner_sc.getSelectedItemPosition());
-
-					//Ghee 2
-					edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
-
-					//Chicken Breast
-					edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
-
-					//White Rice
-					edt.putInt("spinner_wr2", spinner_wr2.getSelectedItemPosition());
-
-					//Soy Chunck 2
-					edt.putInt("spinner_sc2", spinner_sc2.getSelectedItemPosition());
-
-					//Curd
-					edt.putInt("spinner_c", spinner_c.getSelectedItemPosition());
-
-					//Ghee 2
-					edt.putInt("spinner_ghee22", spinner_ghee22.getSelectedItemPosition());
-
-					//Chicken Breast
-					edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
-
-					edt.putString("txt_prom", pro_txtm.getText().toString());
-					edt.putString("txt_fatsm", fats_txtm.getText().toString());
-					edt.putString("txt_carbsm", carbs_txtm.getText().toString());
-
-
-					edt.apply();
-
-					Intent intent = new Intent(getActivity(), MainActivity.class);
-					getActivity().startActivity(intent);
 
 				}
-			
+
+
+
+				Toast.makeText(getActivity(), "Awesome , Dont Forget To Calculate Your Health Profile Weekly.", 
+						Toast.LENGTH_LONG).show();
+				sharedPreferences = getActivity().getPreferences(1);
+				edt = sharedPreferences.edit();
+				//Paneer
+				edt.putInt("spinner_paneer", spinner_paneer.getSelectedItemPosition());
+
+				//Cheese Cube
+				edt.putInt("spinner_cmc", spinner_cmc.getSelectedItemPosition());
+
+				//Ghee
+				edt.putInt("spinner_ghee", spinner_ghee.getSelectedItemPosition());
+
+				//Whole Egg
+				edt.putInt("spinner_ew", spinner_ew.getSelectedItemPosition());
+
+				//Egg White
+				edt.putInt("spinner_ew1", spinner_ew1.getSelectedItemPosition());
+
+				//Brocolli
+				edt.putInt("spinner_brc", spinner_brc.getSelectedItemPosition());
+
+				//White Rice
+				edt.putInt("spinner_wr", spinner_wr.getSelectedItemPosition());
+
+				//Soy Chunck
+				edt.putInt("spinner_sc", spinner_sc.getSelectedItemPosition());
+
+				//Ghee 2
+				edt.putInt("spinner_ghee2", spinner_ghee2.getSelectedItemPosition());
+
+				//Chicken Breast
+				edt.putInt("spinner_chk_br", spinner_chk_br.getSelectedItemPosition());
+
+				//White Rice
+				edt.putInt("spinner_wr2", spinner_wr2.getSelectedItemPosition());
+
+				//Soy Chunck 2
+				edt.putInt("spinner_sc2", spinner_sc2.getSelectedItemPosition());
+
+				//Curd
+				edt.putInt("spinner_c", spinner_c.getSelectedItemPosition());
+
+				//Ghee 2
+				edt.putInt("spinner_ghee22", spinner_ghee22.getSelectedItemPosition());
+
+				//Chicken Breast
+				edt.putInt("spinner_chk_br2", spinner_chk_br2.getSelectedItemPosition());
+
+
+				//Whey Pro
+
+				edt.putInt("spinner_wp", spinner_wp.getSelectedItemPosition());
+				edt.putInt("spinner_wp1", spinner_wp1.getSelectedItemPosition());
+
+
+
+				edt.putString("txt_prom", pro_txtm.getText().toString());
+				edt.putString("txt_fatsm", fats_txtm.getText().toString());
+				edt.putString("txt_carbsm", carbs_txtm.getText().toString());
+
+				edt.putString("cp1", pro1.getText().toString());
+				edt.putString("cf1", carbs1.getText().toString());
+				edt.putString("cc1", fats1.getText().toString());
+
+				edt.putString("cp11", pro11.getText().toString());
+				edt.putString("cf11", carbs11.getText().toString());
+				edt.putString("cc11", fats11.getText().toString());
+
+				edt.putString("cp111", pro111.getText().toString());
+				edt.putString("cf111", carbs111.getText().toString());
+				edt.putString("cc111", fats111.getText().toString());
+
+
+
+				edt.apply();
+
+				Intent intent = new Intent(getActivity(), MainActivity.class);
+				getActivity().startActivity(intent);
+
+			}
+
+
 		});
 
+		btnreset=(Button)rootView.findViewById(R.id.reset);
+		btnreset.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			
+				sharedPreferences = getActivity().getPreferences(1);
+
+				sharedPreferences.edit().remove("cp1").commit();
+
+			}
+		});
+		
+		
 		return rootView;
 	}
 

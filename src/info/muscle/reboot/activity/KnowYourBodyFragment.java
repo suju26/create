@@ -1,6 +1,7 @@
 package info.muscle.reboot.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -23,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import info.muscle.reboot.R;
+import info.muscle.reboot.activity.Readme_1;
 
 
 public class KnowYourBodyFragment extends Fragment {
@@ -497,6 +499,18 @@ public class KnowYourBodyFragment extends Fragment {
 			}
 		}); 
 
+		Button rd1=(Button)rootView.findViewById(R.id.rd1);
+        rd1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(getActivity(), Readme_1.class);
+				getActivity().startActivity(intent);
+				
+			}
+		});
+		
 		// Inflate the layout for this fragment
 		return rootView;
 	}

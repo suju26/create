@@ -8,7 +8,19 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:paddingTop="5sp" >
+
+        <Button
+            android:id="@+id/rd1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+         android:background="@drawable/ripple_effect"
+            android:onClick="calculation"
+            android:paddingTop="5sp"
+            android:text="Read Me First"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_view"
@@ -31,8 +43,7 @@
                     android:id="@+id/label"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
                     android:text="HELP US TO KNOW YOUR BODY"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
@@ -162,7 +173,7 @@
                         android:gravity="center_vertical"
                         android:text="Days Per Week Plan To Workout."
                         android:textColor="@android:color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -200,10 +211,9 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+         android:background="@drawable/ripple_effect"
         android:onClick="calculation"
         android:text="NEXT"
-        android:background="@color/colorPrimary"
-        android:textColor="#ECF0F1"
         android:textSize="14sp" />
 
 </RelativeLayout>

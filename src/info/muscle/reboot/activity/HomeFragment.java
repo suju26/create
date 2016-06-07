@@ -23,6 +23,9 @@ public class HomeFragment extends Fragment {
 	Typeface fontB,fontR,fontReg,fontThin,fontMed;
 	Button btnhome;
 
+	TextView pro_txt, fats_txt,carbs_txt;
+	TextView pro_txtc, fats_txtm,carbs_txtm;
+
 	public HomeFragment() {
 		// Required empty public constructor
 	}
@@ -58,6 +61,38 @@ public class HomeFragment extends Fragment {
 		String bmi_result=pref.getString("bmi_result", "0");
 		String bmi_status=pref.getString("bmi_status", "0");
 		String macro_req=pref.getString("macro_cal", "0");
+
+		String pro_re=pref.getString("protein_req", "0");
+		String fats_re=pref.getString("fats_req", "0");
+		String carbs_re=pref.getString("carbs_req", "0");
+
+		String pro_recc=pref.getString("txt_prom", "0");
+		String fats_rec=pref.getString("txt_fatsm", "0");
+		String carbs_rec=pref.getString("txt_carbsm", "0");
+
+		//Adding to Macro View 
+
+		pro_txt=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manual);
+		pro_txt.setText(pro_re);
+
+		fats_txt=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manual);
+		fats_txt.setText(fats_re);
+
+		carbs_txt=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manual);
+		carbs_txt.setText(carbs_re);
+
+
+
+		pro_txtc=(TextView)rootView.findViewById(R.id.macro_protein_percentage_manualc);
+		pro_txtc.setText(pro_recc);
+		fats_txtm=(TextView)rootView.findViewById(R.id.macro_fat_percentage_manualr);
+		fats_txtm.setText(fats_rec);
+		carbs_txtm=(TextView)rootView.findViewById(R.id.macro_carb_percentage_manualr);
+		carbs_txtm.setText(carbs_rec);
+
+
+
+
 
 		TextView lbl_weigh=(TextView)rootView.findViewById(R.id.textView);
 		lbl_weigh.setTypeface(fontB);
@@ -135,7 +170,7 @@ public class HomeFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				Fragment newFragment = new KnowYourBodyFragment();
 				FragmentTransaction transaction = getFragmentManager()
 						.beginTransaction();

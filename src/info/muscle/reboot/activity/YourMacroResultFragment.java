@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import info.muscle.reboot.activity.Macro_readme;
 import info.muscle.reboot.R;
 
 
@@ -97,7 +98,7 @@ public class YourMacroResultFragment extends Fragment {
 
 				if(selected_goal.equals("Loose Fat"))
 				{
-					diet_goal=Math.round(req_diet_goal*0.9);
+					diet_goal=Math.round(req_diet_goal*0.8);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -140,7 +141,7 @@ public class YourMacroResultFragment extends Fragment {
 
 
 				}
-				if(selected_goal.equals("Maintain"))
+				/*if(selected_goal.equals("Maintain"))
 				{
 					diet_goal=Math.round(req_diet_goal);
 
@@ -161,10 +162,10 @@ public class YourMacroResultFragment extends Fragment {
 					double carb_req=Math.round(diet_goal*0.4/4);
 					carb_cal.setText(""+carb_req);
 
-				}
+				}*/
 				if(selected_goal.endsWith("Extreme Loss(Consult Doctor)"))
 				{
-					diet_goal=Math.round(req_diet_goal*0.9);
+					diet_goal=Math.round(req_diet_goal*0.8);
 
 					macro_goal.setText(""+diet_goal);
 
@@ -236,7 +237,17 @@ public class YourMacroResultFragment extends Fragment {
 
 		});
 
-
+		Button rd1=(Button)rootView.findViewById(R.id.macro_read_me);
+        rd1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(getActivity(), Macro_readme.class);
+				getActivity().startActivity(intent);
+				
+			}
+		});
 
 
 		// Inflate the layout for this fragment
