@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#4B77BE"
     android:gravity="fill" >
 
     <!-- Header aligned to top -->
@@ -34,12 +34,14 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="@android:color/transparent"
                     android:gravity="center_horizontal"
-                    android:inputType="number"
                     android:selectAllOnFocus="true"
-                    android:text="Required Macro"
+                    android:text="REQUIRED MACRO"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -52,6 +54,7 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="@color/pro"
                     android:gravity="center_horizontal"
                     android:text="Protein"
                     android:textAppearance="?android:textAppearanceMedium" />
@@ -61,6 +64,7 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="@color/fats"
                     android:gravity="center_horizontal"
                     android:text="Fats"
                     android:textAppearance="?android:textAppearanceMedium" />
@@ -70,6 +74,7 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="@color/carb"
                     android:gravity="center_horizontal"
                     android:text="Carbs"
                     android:textAppearance="?android:textAppearanceMedium" />
@@ -92,7 +97,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
 
                 <TextView
                     android:id="@+id/macro_fat_percentage_manual"
@@ -105,7 +110,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
 
                 <TextView
                     android:id="@+id/macro_carb_percentage_manual"
@@ -119,7 +124,7 @@
                     android:text="0"
                     android:textAlignment="4"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
             </LinearLayout>
 
             <LinearLayout
@@ -133,12 +138,14 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="@android:color/transparent"
                     android:gravity="center_horizontal"
                     android:inputType="number"
                     android:selectAllOnFocus="true"
-                    android:text="Your Plan Macro"
+                    android:text="YOUR PLAN MACRO"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -158,7 +165,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
 
                 <TextView
                     android:id="@+id/macro_fat_percentage_manualr"
@@ -171,7 +178,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
 
                 <TextView
                     android:id="@+id/macro_carb_percentage_manualr"
@@ -185,7 +192,7 @@
                     android:text="0"
                     android:textAlignment="4"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="#E4F1FE" />
             </LinearLayout>
 
             <LinearLayout
@@ -195,16 +202,28 @@
                 android:orientation="horizontal" >
 
                 <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@color/other"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
+                    android:text="QTY"
+                    android:textColor="#E4F1FE"
+                    android:textSize="14sp" />
+
+                <TextView
                     android:id="@+id/highpro"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="#E74C3C"
                     android:gravity="center_horizontal"
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="High In Protein"
-                    android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#e74c3c"
+                    android:textColor="#E4F1FE"
                     android:textSize="14sp" />
 
                 <TextView
@@ -212,12 +231,12 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="#F5D76E"
                     android:gravity="center_horizontal"
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="High in Fats"
-                    android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#f1c40f"
+                    android:textColor="#E4F1FE"
                     android:textSize="14sp" />
 
                 <TextView
@@ -225,13 +244,13 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:background="#DCC6E0"
                     android:gravity="center_horizontal"
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="High In Carbs"
                     android:textAlignment="4"
-                    android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#8e44ad"
+                    android:textColor="#E4F1FE"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
@@ -247,35 +266,34 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/reset"
-            android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:paddingEnd="5sp"
-            android:paddingStart="5sp"
-            android:text="New Day"
+            android:id="@+id/re_cal"
             style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0.dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="1.0"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="CALCULATE"
             android:textColor="#ECF0F1"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:typeface="monospace" />
 
         <Button
             android:id="@+id/finish_gain"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0.dip"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
             android:layout_weight="1.0"
-            android:background="@color/colorPrimary"
+            android:background="@android:color/transparent"
             android:gravity="center"
-            android:paddingEnd="5sp"
-            android:paddingStart="5sp"
-            android:text="NEXT"
-            style="?android:attr/borderlessButtonStyle"
-            
+            android:text="FINISH"
             android:textColor="#ECF0F1"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:typeface="monospace" />
     </LinearLayout>
@@ -288,7 +306,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <android.support.v7.widget.CardView
@@ -296,7 +314,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="@android:color/transparent"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -305,20 +323,18 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="vertical"
-                    android:padding="5dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" >
+                    android:padding="5dp" >
 
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#2e8ece"
+                        android:background="@android:color/transparent"
                         android:gravity="center"
-                        android:text="Up on  waking Up:"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp"
+                        android:text="ON WAKING UP"
+                        android:textColor="#E4F1FE"
+                        android:textSize="25sp"
                         android:typeface="monospace" />
 
                     <TextView
@@ -326,6 +342,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:background="@color/other"
                         android:gravity="center"
                         android:padding="5dp"
                         android:text=": Take 5 gm of Glutamine,Vitamine C(1 tab) + 1 Multivitamines(Any) + Liv52(Himalaya)."
@@ -336,11 +353,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="#2e8ece"
+                        android:background="@android:color/transparent"
                         android:gravity="center_horizontal"
                         android:text="BREAKFAST"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp"
+                        android:textColor="#E4F1FE"
+                        android:textSize="25sp"
                         android:typeface="monospace" />
 
                     <LinearLayout
@@ -348,9 +365,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:orientation="vertical"
-                        android:padding="5dp"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp" >
+                        android:padding="5dp" >
 
                         <TextView
                             android:id="@+id/textView3"
@@ -366,6 +381,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/fats"
                             android:orientation="horizontal"
                             android:padding="5.0dip" >
 
@@ -375,7 +391,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:textSize="20sp" />
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/pro_paneer"
@@ -384,8 +400,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/fats_paneer"
@@ -394,8 +410,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/carbs_paneer"
@@ -404,8 +420,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -431,6 +447,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@color/fats"
                                 android:orientation="horizontal"
                                 android:padding="5.0dip" >
 
@@ -440,7 +457,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
-                                    android:textSize="20sp" />
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/pro_cmc"
@@ -449,8 +466,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/fats_cmc"
@@ -459,8 +476,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/carbs_cmc"
@@ -469,8 +486,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -487,6 +504,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/fats"
                             android:orientation="horizontal"
                             android:padding="5.0dip" >
 
@@ -496,7 +514,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:textSize="20sp" />
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ghee_pro"
@@ -505,8 +523,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ghee_fats"
@@ -515,8 +533,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ghee_carbs"
@@ -525,8 +543,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
                         </LinearLayout>
 
                         <TextView
@@ -542,6 +560,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/pro"
                             android:orientation="horizontal"
                             android:padding="5.0dip" >
 
@@ -551,7 +570,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:textSize="20sp" />
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew_pro"
@@ -560,8 +579,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew_fats"
@@ -570,8 +589,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew_carbs"
@@ -580,8 +599,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
                         </LinearLayout>
 
                         <TextView
@@ -597,6 +616,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/pro"
                             android:orientation="horizontal"
                             android:padding="5.0dip" >
 
@@ -606,7 +626,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:textSize="20sp" />
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew1_pro"
@@ -615,8 +635,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew1_fats"
@@ -625,8 +645,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
 
                             <TextView
                                 android:id="@+id/ew1_carbs"
@@ -635,8 +655,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="20sp" />
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -661,6 +681,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@color/carb"
                                 android:orientation="horizontal"
                                 android:padding="5.0dip" >
 
@@ -670,7 +691,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
-                                    android:textSize="20sp" />
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wr_pro"
@@ -679,8 +700,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wr_fats"
@@ -689,8 +710,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wr_carbs"
@@ -699,8 +720,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -709,8 +730,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:background="@color/other"
                             android:gravity="center"
-                            android:text="Spinach / Fenugreek (not counting Macros &amp; Calories) (100 gm)"
+                            android:text="Spinach / Fenugreek (not counting Macros and Calories) (100 gm)"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -735,6 +757,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@color/pro"
                                 android:orientation="horizontal"
                                 android:padding="5.0dip" >
 
@@ -744,7 +767,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
-                                    android:textSize="20sp" />
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wp_pro1"
@@ -753,8 +776,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wp_fats1"
@@ -763,8 +786,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/wp_carbs1"
@@ -773,8 +796,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -792,14 +815,16 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:background="@color/other"
                                 android:gravity="center"
                                 android:text="Others"
-                                android:textColor="#e74c3c"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@color/other"
                                 android:orientation="horizontal"
                                 android:padding="5.0dip" >
 
@@ -810,7 +835,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="Custom Micro"
-                                    android:textColor="@color/colorPrimary"
+                                    android:textColor="#E4F1FE"
                                     android:textSize="14sp" />
 
                                 <EditText
@@ -820,8 +845,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <EditText
                                     android:id="@+id/wp_fatsc"
@@ -830,8 +855,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <EditText
                                     android:id="@+id/wp_carbsc"
@@ -840,8 +865,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -859,11 +884,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:background="#2e8ece"
+                                android:background="@android:color/transparent"
                                 android:gravity="center_horizontal"
                                 android:text="LUNCH"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp"
+                                android:textColor="#E4F1FE"
+                                android:textSize="25sp"
                                 android:typeface="monospace" />
 
                             <TextView
@@ -871,6 +896,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:background="@color/other"
                                 android:gravity="center"
                                 android:text="Add 100 gm of any Green Vegetable of your choice along with Apple Cider Vinegar i spoon."
                                 android:textSize="14sp" />
@@ -888,6 +914,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@color/carb"
                                 android:orientation="horizontal"
                                 android:padding="5.0dip" >
 
@@ -897,7 +924,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
-                                    android:textSize="20sp" />
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/pro_brc"
@@ -906,8 +933,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/fats_brc"
@@ -916,8 +943,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
 
                                 <TextView
                                     android:id="@+id/carbs_brc"
@@ -926,8 +953,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="20sp" />
+                                    android:textColor="#E4F1FE"
+                                    android:textSize="25sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -952,6 +979,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:background="@color/pro"
                                     android:orientation="horizontal"
                                     android:padding="5.0dip" >
 
@@ -961,7 +989,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
-                                        android:textSize="20sp" />
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/wp_pro"
@@ -970,8 +998,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/wp_fats"
@@ -980,8 +1008,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/wp_carbs"
@@ -990,8 +1018,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
                                 </LinearLayout>
                             </LinearLayout>
 
@@ -1017,6 +1045,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:background="@color/pro"
                                     android:orientation="horizontal"
                                     android:padding="5.0dip" >
 
@@ -1026,7 +1055,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
-                                        android:textSize="20sp" />
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/sc_pro"
@@ -1035,8 +1064,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/sc_fats"
@@ -1045,8 +1074,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/sc_carbs"
@@ -1055,8 +1084,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
                                 </LinearLayout>
 
                                 <TextView
@@ -1072,6 +1101,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:background="@color/fats"
                                     android:orientation="horizontal"
                                     android:padding="5.0dip" >
 
@@ -1081,7 +1111,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
-                                        android:textSize="20sp" />
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/ghee_pro2"
@@ -1090,8 +1120,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/ghee_fats2"
@@ -1100,8 +1130,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
 
                                     <TextView
                                         android:id="@+id/ghee_carbs2"
@@ -1110,8 +1140,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20sp" />
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -1136,6 +1166,7 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:background="@color/pro"
                                         android:orientation="horizontal"
                                         android:padding="5.0dip" >
 
@@ -1145,7 +1176,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
-                                            android:textSize="20sp" />
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/chicken_breast_pro"
@@ -1154,8 +1185,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/chicken_breast_fats"
@@ -1164,8 +1195,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/chicken_breast_carbs"
@@ -1174,8 +1205,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -1194,12 +1225,13 @@
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:text="Others"
-                                        android:textColor="#e74c3c"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:background="@color/other"
                                         android:orientation="horizontal"
                                         android:padding="5.0dip" >
 
@@ -1210,7 +1242,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="Custom Micro"
-                                            android:textColor="@color/colorPrimary"
+                                            android:textColor="#E4F1FE"
                                             android:textSize="14sp" />
 
                                         <EditText
@@ -1220,8 +1252,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <EditText
                                             android:id="@+id/wp_fatsc1"
@@ -1230,8 +1262,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <EditText
                                             android:id="@+id/wp_carbsc1"
@@ -1240,8 +1272,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -1259,11 +1291,11 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="#2e8ece"
+                                        android:background="@android:color/transparent"
                                         android:gravity="center_horizontal"
                                         android:text="DINNER"
-                                        android:textColor="@android:color/white"
-                                        android:textSize="20sp"
+                                        android:textColor="#E4F1FE"
+                                        android:textSize="25sp"
                                         android:typeface="monospace" />
 
                                     <TextView
@@ -1271,6 +1303,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:background="@color/other"
                                         android:gravity="center"
                                         android:text="Add 200gm Spinach/brocolli/or any other dark green vegetable of your choice."
                                         android:textSize="14sp" />
@@ -1298,6 +1331,7 @@
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:background="@color/carb"
                                         android:orientation="horizontal"
                                         android:padding="5.0dip" >
 
@@ -1307,7 +1341,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
-                                            android:textSize="20sp" />
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/wr_pro2"
@@ -1316,8 +1350,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/wr_fats2"
@@ -1326,8 +1360,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
 
                                         <TextView
                                             android:id="@+id/wr_carbs2"
@@ -1336,8 +1370,8 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="@color/colorPrimary"
-                                            android:textSize="20sp" />
+                                            android:textColor="#E4F1FE"
+                                            android:textSize="25sp" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -1362,6 +1396,7 @@
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
+                                            android:background="@color/pro"
                                             android:orientation="horizontal"
                                             android:padding="5.0dip" >
 
@@ -1371,7 +1406,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
-                                                android:textSize="20sp" />
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_pro2"
@@ -1380,8 +1415,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_fats2"
@@ -1390,8 +1425,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_carbs2"
@@ -1400,8 +1435,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
                                         </LinearLayout>
                                     </LinearLayout>
 
@@ -1427,6 +1462,7 @@
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
+                                            android:background="@color/pro"
                                             android:orientation="horizontal"
                                             android:padding="5.0dip" >
 
@@ -1436,7 +1472,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
-                                                android:textSize="20sp" />
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_proc"
@@ -1445,8 +1481,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_fatsc"
@@ -1455,8 +1491,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
 
                                             <TextView
                                                 android:id="@+id/sc_carbsc"
@@ -1465,8 +1501,8 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="20sp" />
+                                                android:textColor="#E4F1FE"
+                                                android:textSize="25sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
@@ -1491,6 +1527,7 @@
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
+                                                android:background="@color/fats"
                                                 android:orientation="horizontal"
                                                 android:padding="5.0dip" >
 
@@ -1500,7 +1537,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
-                                                    android:textSize="20sp" />
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/ghee_pro22"
@@ -1509,8 +1546,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/ghee_fats22"
@@ -1519,8 +1556,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/ghee_carbs22"
@@ -1529,8 +1566,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
                                             </LinearLayout>
                                         </LinearLayout>
 
@@ -1556,6 +1593,7 @@
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
+                                                android:background="@color/pro"
                                                 android:orientation="horizontal"
                                                 android:padding="5.0dip" >
 
@@ -1565,7 +1603,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
-                                                    android:textSize="20sp" />
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/chicken_breast_pro2"
@@ -1574,8 +1612,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/chicken_breast_fats2"
@@ -1584,8 +1622,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <TextView
                                                     android:id="@+id/chicken_breast_carbs2"
@@ -1594,8 +1632,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
                                             </LinearLayout>
                                         </LinearLayout>
 
@@ -1614,12 +1652,13 @@
                                                 android:layout_height="wrap_content"
                                                 android:gravity="center"
                                                 android:text="Others"
-                                                android:textColor="#e74c3c"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
 
                                             <LinearLayout
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
+                                                android:background="@color/other"
                                                 android:orientation="horizontal"
                                                 android:padding="5.0dip" >
 
@@ -1630,7 +1669,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="Custom Micro"
-                                                    android:textColor="@color/colorPrimary"
+                                                    android:textColor="#E4F1FE"
                                                     android:textSize="14sp" />
 
                                                 <EditText
@@ -1640,8 +1679,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <EditText
                                                     android:id="@+id/wp_fatsc11"
@@ -1650,8 +1689,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
 
                                                 <EditText
                                                     android:id="@+id/wp_carbsc11"
@@ -1660,8 +1699,8 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="@color/colorPrimary"
-                                                    android:textSize="20sp" />
+                                                    android:textColor="#E4F1FE"
+                                                    android:textSize="25sp" />
                                             </LinearLayout>
                                         </LinearLayout>
                                     </LinearLayout>

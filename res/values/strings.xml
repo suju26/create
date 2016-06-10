@@ -11,7 +11,9 @@
     <string name="nav_item_notifications">Body Status</string>
     <string name="nav_item_macro">Your Macro</string>
     <string name="nav_item_info">Diet Plan</string>
-    <string name="nav_item_workout">Muscle Mass</string>
+    <string name="nav_item_workout">Workout Gain</string>
+    <string name="nav_item_workout_lose">Workout Loose</string>
+    <string name="nav_item_close">Exit</string>
 
     <!-- navigation drawer item labels -->
     <string-array name="nav_drawer_labels">
@@ -21,6 +23,8 @@
         <item>@string/nav_item_macro</item>
         <item>@string/nav_item_info</item>
         <item>@string/nav_item_workout</item>
+        <item>@string/nav_item_workout_lose</item>
+        <item>@string/nav_item_close</item>
     </string-array>
 
     <string name="title_messages">Diet Plan</string>
@@ -29,6 +33,8 @@
     <string name="title_macro">Your Macro</string>
     <string name="title_Diet">My Diet</string>
     <string name="title_gain">Workout Gain</string>
+    <string name="title_loose">Workout Loose</string>
+    <string name="title_Exit">Exit</string>
 
     <string-array name="activity_level">
         <item>Select Your Activity Level</item>
@@ -111,5 +117,6 @@
     <string name="title_activity_page_fragment">PageFragment</string>
     <string name="title_activity_readme_1">Readme_1</string>
     <string name="title_activity_macro_readme">Macro_readme</string>
+    <string name="title_activity_main_activity_login">MainActivityLogin</string>
 
 </resources>

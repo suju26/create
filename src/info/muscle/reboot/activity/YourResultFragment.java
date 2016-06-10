@@ -50,8 +50,8 @@ public class YourResultFragment extends Fragment {
 
 		//Setting Custom Fonts
 
-		Typeface fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
-		Typeface fontR = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto_Light.ttf");
+		/*Typeface fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
+		Typeface fontR = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto_Light.ttf");*/
 
 		//View all Component
 
@@ -59,69 +59,69 @@ public class YourResultFragment extends Fragment {
 		//txtlable.setTypeface(fontB);
 
 		txtdiet=(TextView)rootView.findViewById(R.id.textView);
-		txtdiet.setTypeface(fontB);
-
+		/*		txtdiet.setTypeface(fontB);
+		 */
 
 		txtcalresult=(TextView)rootView.findViewById(R.id.txt_cal);
-		txtcalresult.setTypeface(fontR);
-		txtcalresult.setText(diet);
+		/*		txtcalresult.setTypeface(fontR);
+		 */		txtcalresult.setText(diet);
 
-		txtper=(TextView)rootView.findViewById(R.id.textView2);
-		txtper.setTypeface(fontB);
+		 txtper=(TextView)rootView.findViewById(R.id.textView2);
+		 /*		txtper.setTypeface(fontB);
+		  */
+		 txtbf=(TextView)rootView.findViewById(R.id.textView3);
+		 /*		txtbf.setTypeface(fontB);
+		  */
+		 txtbfresult=(TextView)rootView.findViewById(R.id.txt_body_fat);
+		 /*		txtbfresult.setTypeface(fontR);
+		  */		txtbfresult.setText(bf);
 
-		txtbf=(TextView)rootView.findViewById(R.id.textView3);
-		txtbf.setTypeface(fontB);
+		  txtbmi=(TextView)rootView.findViewById(R.id.textView5);
+		  /*		txtbmi.setTypeface(fontB);
+		   */
+		  txtbmiresult=(TextView)rootView.findViewById(R.id.txt_bmi);
+		  /*		txtbmiresult.setTypeface(fontR);
+		   */		txtbmiresult.setText(bmi_get);
 
-		txtbfresult=(TextView)rootView.findViewById(R.id.txt_body_fat);
-		txtbfresult.setTypeface(fontR);
-		txtbfresult.setText(bf);
+		   txthealth=(TextView)rootView.findViewById(R.id.textView6);
+		   /*		txthealth.setTypeface(fontB);
+		    */
+		   txthealthresult=(TextView)rootView.findViewById(R.id.txt_health_statusbf);
+		   /*		txthealthresult.setTypeface(fontR);
+		    */		txthealthresult.setText(bf_health);
 
-		txtbmi=(TextView)rootView.findViewById(R.id.textView5);
-		txtbmi.setTypeface(fontB);
-
-		txtbmiresult=(TextView)rootView.findViewById(R.id.txt_bmi);
-		txtbmiresult.setTypeface(fontR);
-		txtbmiresult.setText(bmi_get);
-
-		txthealth=(TextView)rootView.findViewById(R.id.textView6);
-		txthealth.setTypeface(fontB);
-
-		txthealthresult=(TextView)rootView.findViewById(R.id.txt_health_statusbf);
-		txthealthresult.setTypeface(fontR);
-		txthealthresult.setText(bf_health);
-
-		txthealthresult2=(TextView)rootView.findViewById(R.id.txt_health_statusbmi);
-		txthealthresult2.setTypeface(fontR);
-		txthealthresult2.setText(bmi_health);
-		
-		
-		
-		
-		
+		    txthealthresult2=(TextView)rootView.findViewById(R.id.txt_health_statusbmi);
+		    /*		txthealthresult2.setTypeface(fontR);
+		     */		txthealthresult2.setText(bmi_health);
 
 
-		btn2=(Button)rootView.findViewById(R.id.btn2);
-		btn2.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
 
 
-				Fragment newFragment = new YourMacroResultFragment();
 
-				FragmentTransaction transaction = getFragmentManager()
-						.beginTransaction();
 
-				transaction.replace(android.R.id.content, newFragment);
 
-				transaction.addToBackStack("tag");
+		     btn2=(Button)rootView.findViewById(R.id.btn2);
+		     btn2.setOnClickListener(new OnClickListener() {
 
-				transaction.commitAllowingStateLoss();
+		    	 @Override
+		    	 public void onClick(View v) {
 
-			}
-		});
-		// Inflate the layout for this fragment
-		return rootView;
+
+		    		 Fragment newFragment = new YourMacroResultFragment();
+
+		    		 FragmentTransaction transaction = getFragmentManager()
+		    				 .beginTransaction();
+
+		    		 transaction.replace(android.R.id.content, newFragment);
+
+		    		 transaction.addToBackStack("tag");
+
+		    		 transaction.commitAllowingStateLoss();
+
+		    	 }
+		     });
+		     // Inflate the layout for this fragment
+		     return rootView;
 	}
 
 	@Override

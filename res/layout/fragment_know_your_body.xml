@@ -3,24 +3,29 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white" >
+    android:background="#4B77BE" >
+
+    <Button
+        android:id="@+id/rd1"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="5sp"
+        android:background="#E4F1FE"
+        android:onClick="calculation"
+        android:text="Read Me First"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="5sp" >
-
-        <Button
-            android:id="@+id/rd1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-         android:background="@drawable/ripple_effect"
-            android:onClick="calculation"
-            android:paddingTop="5sp"
-            android:text="Read Me First"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        android:layout_above="@+id/footers"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_view"
@@ -28,26 +33,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            card_view:cardBackgroundColor="#ECECEC"
+            card_view:cardBackgroundColor="@android:color/transparent"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="10dp" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:paddingTop="10dp" >
-
-                <TextView
-                    android:id="@+id/label"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="HELP US TO KNOW YOUR BODY"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                android:orientation="vertical" >
 
                 <EditText
                     android:id="@+id/edit_age"
@@ -60,8 +55,8 @@
                     android:hint="Enter Your Age"
                     android:inputType="number"
                     android:padding="10dp"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@android:color/black"
+                    android:textColor="#E4F1FE"
+                    android:textColorHint="#E4F1FE"
                     android:textSize="16dip" >
                 </EditText>
 
@@ -88,14 +83,14 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="MALE"
-                            android:textColor="@android:color/black" />
+                            android:textColor="#E4F1FE" />
 
                         <RadioButton
                             android:id="@+id/radioButton2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="FEMALE"
-                            android:textColor="@android:color/black" />
+                            android:textColor="#E4F1FE" />
                     </RadioGroup>
                 </LinearLayout>
 
@@ -115,8 +110,8 @@
                         android:hint="Enter Your Weight In KG"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/black"
+                        android:textColor="#E4F1FE"
+                        android:textColorHint="#E4F1FE"
                         android:textSize="16dip" />
                 </LinearLayout>
 
@@ -137,8 +132,8 @@
                         android:hint="Height (In Feet)"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/black"
+                        android:textColor="#E4F1FE"
+                        android:textColorHint="#E4F1FE"
                         android:textSize="16dip" />
 
                     <EditText
@@ -152,28 +147,26 @@
                         android:hint="Height (In Inch)"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/black"
+                        android:textColor="#E4F1FE"
+                        android:textColorHint="#E4F1FE"
                         android:textSize="16dip" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp" >
+                    android:orientation="horizontal" >
 
                     <TextView
                         android:id="@+id/label1"
-                        android:layout_width="0dp"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="Days Per Week Plan To Workout."
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp" />
+                        android:gravity="center_horizontal"
+                        android:text="Days Per Week."
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -190,30 +183,39 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/black" />
+                        android:textColor="#E4F1FE"
+                        android:textColorHint="#E4F1FE" />
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
-    <FrameLayout
+    <!--
+         <FrameLayout
         android:id="@+id/know_your_body_container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+    -->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/footers"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-         android:background="@drawable/ripple_effect"
-        android:onClick="calculation"
-        android:text="NEXT"
-        android:textSize="14sp" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorbtn"
+            android:onClick="calculation"
+            android:text="NEXT"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </LinearLayout>
 
 </RelativeLayout>

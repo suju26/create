@@ -19,10 +19,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import info.muscle.reboot.R;
-import info.muscle.reboot.R.id;
 
 
 public class DietPlanFragment extends Fragment {
+	private PrefManager prefManager;
 
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor edt ;
@@ -81,6 +81,7 @@ public class DietPlanFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		View rootView = inflater.inflate(R.layout.fragment_gain, container, false);
 		sharedPreferences = getActivity().getPreferences(1);
 
@@ -764,7 +765,84 @@ public class DietPlanFragment extends Fragment {
 			}
 		});
 
+		Button re_calbtn=(Button)rootView.findViewById(R.id.re_cal);
+		re_calbtn.setOnClickListener(new View.OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+
+				try {
+
+					cp1=Double.parseDouble(pro1.getText().toString());
+					cf1=Double.parseDouble(fats1.getText().toString());
+					cc1=Double.parseDouble(carbs1.getText().toString());
+					cp11=Double.parseDouble(pro11.getText().toString());
+					cf11=Double.parseDouble(fats11.getText().toString());
+					cc11=Double.parseDouble(carbs11.getText().toString());
+					cp111=Double.parseDouble(pro111.getText().toString());
+					cf111=Double.parseDouble(fats111.getText().toString());
+					cc111=Double.parseDouble(carbs111.getText().toString());
+
+
+				} catch (NumberFormatException e)
+				{
+					Toast.makeText(getActivity(), "Please Check Entered Custom Micro.", 
+							Toast.LENGTH_LONG).show();		
+				}
+
+				double total_pro=Double.parseDouble(paneer_txt_pro.getText().toString())
+						+Double.parseDouble(pro_cmc.getText().toString())
+						+Double.parseDouble(ew_pro.getText().toString())
+						+Double.parseDouble(ew1_pro.getText().toString())
+						+Double.parseDouble(brc_pro.getText().toString())
+						+Double.parseDouble(wr_pro.getText().toString())
+						+Double.parseDouble(sc_pro.getText().toString())
+						+Double.parseDouble(chk_br_txt_pro.getText().toString())
+						+Double.parseDouble(wr_pro2.getText().toString())
+						+Double.parseDouble(sc_pro21.getText().toString())
+						+Double.parseDouble(sc_proc.getText().toString())
+						+Double.parseDouble(chk_br_txt_pro2.getText().toString())
+						+Double.parseDouble(chk_br_txt_pro2.getText().toString())
+						+Double.parseDouble(wp_pro.getText().toString())
+						+Double.parseDouble(wp_pro1.getText().toString())
+						+cp1+cp11+cp111;
+				pro_txtm.setText(""+total_pro);
+
+
+				double total_fats=Double.parseDouble(paneer_txt_fats.getText().toString())
+						+Double.parseDouble(fats_cmc.getText().toString())
+						+Double.parseDouble(ghee_br_txt_fats.getText().toString())
+						+Double.parseDouble(ew_fats.getText().toString())
+						+Double.parseDouble(ew1_fats.getText().toString())
+						+Double.parseDouble(brc_fats.getText().toString())
+						+Double.parseDouble(wr_fats.getText().toString())
+						+Double.parseDouble(sc_fats.getText().toString())
+						+Double.parseDouble(ghee_br_txt_fats2.getText().toString())
+						+Double.parseDouble(chk_br_txt_fats.getText().toString())
+						+Double.parseDouble(wr_fats2.getText().toString())
+						+Double.parseDouble(sc_fats21.getText().toString())
+						+Double.parseDouble(sc_fatsc.getText().toString())
+						+Double.parseDouble(ghee_br_txt_fats22.getText().toString())
+						+Double.parseDouble(chk_br_txt_fats2.getText().toString())+cf1+cf11+cf111;
+				fats_txtm.setText(""+total_fats);
+
+				double total_carbs=Double.parseDouble(paneer_txt_carbs.getText().toString())
+						+Double.parseDouble(carbs_cmc.getText().toString())
+						+Double.parseDouble(ghee_br_txt_fats.getText().toString())
+						+Double.parseDouble(ew_carbs.getText().toString())
+						+Double.parseDouble(ew1_carbs.getText().toString())
+						+Double.parseDouble(brc_carbs.getText().toString())
+						+Double.parseDouble(wr_carbs.getText().toString())
+						+Double.parseDouble(sc_carbs.getText().toString())
+						+Double.parseDouble(chk_br_txt_carbs.getText().toString())
+						+Double.parseDouble(wr_carbs2.getText().toString())
+						+Double.parseDouble(sc_carbs21.getText().toString())
+						+Double.parseDouble(sc_carbsc.getText().toString())
+						+Double.parseDouble(chk_br_txt_carbs2.getText().toString())+cc1+cc11+cc111;
+				carbs_txtm.setText(""+total_carbs);
+
+			}
+		});
 
 		//Button
 
@@ -773,84 +851,6 @@ public class DietPlanFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
-				if(btnfinish.getText().equals("NEXT"))
-
-				{
-					try {
-
-						cp1=Double.parseDouble(pro1.getText().toString());
-						cf1=Double.parseDouble(fats1.getText().toString());
-						cc1=Double.parseDouble(carbs1.getText().toString());
-						cp11=Double.parseDouble(pro11.getText().toString());
-						cf11=Double.parseDouble(fats11.getText().toString());
-						cc11=Double.parseDouble(carbs11.getText().toString());
-						cp111=Double.parseDouble(pro111.getText().toString());
-						cf111=Double.parseDouble(fats111.getText().toString());
-						cc111=Double.parseDouble(carbs111.getText().toString());
-
-
-					} catch (NumberFormatException e) {
-						Toast.makeText(getActivity(), "Please Check Entered Custom Micro.", 
-								Toast.LENGTH_LONG).show();		
-					}
-
-					double total_pro=Double.parseDouble(paneer_txt_pro.getText().toString())
-							+Double.parseDouble(pro_cmc.getText().toString())
-							+Double.parseDouble(ew_pro.getText().toString())
-							+Double.parseDouble(ew1_pro.getText().toString())
-							+Double.parseDouble(brc_pro.getText().toString())
-							+Double.parseDouble(wr_pro.getText().toString())
-							+Double.parseDouble(sc_pro.getText().toString())
-							+Double.parseDouble(chk_br_txt_pro.getText().toString())
-							+Double.parseDouble(wr_pro2.getText().toString())
-							+Double.parseDouble(sc_pro21.getText().toString())
-							+Double.parseDouble(sc_proc.getText().toString())
-							+Double.parseDouble(chk_br_txt_pro2.getText().toString())
-							+Double.parseDouble(chk_br_txt_pro2.getText().toString())
-							+Double.parseDouble(wp_pro.getText().toString())
-							+Double.parseDouble(wp_pro1.getText().toString())
-							+cp1+cp11+cp111;
-					pro_txtm.setText(""+total_pro);
-
-
-					double total_fats=Double.parseDouble(paneer_txt_fats.getText().toString())
-							+Double.parseDouble(fats_cmc.getText().toString())
-							+Double.parseDouble(ghee_br_txt_fats.getText().toString())
-							+Double.parseDouble(ew_fats.getText().toString())
-							+Double.parseDouble(ew1_fats.getText().toString())
-							+Double.parseDouble(brc_fats.getText().toString())
-							+Double.parseDouble(wr_fats.getText().toString())
-							+Double.parseDouble(sc_fats.getText().toString())
-							+Double.parseDouble(ghee_br_txt_fats2.getText().toString())
-							+Double.parseDouble(chk_br_txt_fats.getText().toString())
-							+Double.parseDouble(wr_fats2.getText().toString())
-							+Double.parseDouble(sc_fats21.getText().toString())
-							+Double.parseDouble(sc_fatsc.getText().toString())
-							+Double.parseDouble(ghee_br_txt_fats22.getText().toString())
-							+Double.parseDouble(chk_br_txt_fats2.getText().toString())+cf1+cf11+cf111;
-					fats_txtm.setText(""+total_fats);
-
-					double total_carbs=Double.parseDouble(paneer_txt_carbs.getText().toString())
-							+Double.parseDouble(carbs_cmc.getText().toString())
-							+Double.parseDouble(ghee_br_txt_fats.getText().toString())
-							+Double.parseDouble(ew_carbs.getText().toString())
-							+Double.parseDouble(ew1_carbs.getText().toString())
-							+Double.parseDouble(brc_carbs.getText().toString())
-							+Double.parseDouble(wr_carbs.getText().toString())
-							+Double.parseDouble(sc_carbs.getText().toString())
-							+Double.parseDouble(chk_br_txt_carbs.getText().toString())
-							+Double.parseDouble(wr_carbs2.getText().toString())
-							+Double.parseDouble(sc_carbs21.getText().toString())
-							+Double.parseDouble(sc_carbsc.getText().toString())
-							+Double.parseDouble(chk_br_txt_carbs2.getText().toString())+cc1+cc11+cc111;
-					carbs_txtm.setText(""+total_carbs);
-
-
-					btnfinish.setText("DONE");
-
-				}
-
 
 
 				Toast.makeText(getActivity(), "Awesome , Dont Forget To Calculate Your Health Profile Weekly.", 
@@ -927,31 +927,36 @@ public class DietPlanFragment extends Fragment {
 				edt.putString("cc111", fats111.getText().toString());
 
 
-
 				edt.apply();
+
+				
 
 				Intent intent = new Intent(getActivity(), MainActivity.class);
 				getActivity().startActivity(intent);
 
+
+
+
 			}
+
 
 
 		});
 
-		btnreset=(Button)rootView.findViewById(R.id.reset);
+		/*btnreset=(Button)rootView.findViewById(R.id.reset);
 		btnreset.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-			
+
 				sharedPreferences = getActivity().getPreferences(1);
 
 				sharedPreferences.edit().remove("cp1").commit();
 
 			}
-		});
-		
-		
+		});*/
+
+
 		return rootView;
 	}
 

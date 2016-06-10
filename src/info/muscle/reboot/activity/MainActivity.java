@@ -102,19 +102,24 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			break;
 		case 3:
 			fragment = new YourMacroResultFragment();
-			title = getString(R.string.title_messages);
+			title = getString(R.string.title_macro);
 			break;
 		case 4:
-
-
 			fragment = new DietPlanFragment();
-			title = getString(R.string.title_messages);
+			title = getString(R.string.title_Diet);
 			break;
 		case 5:
+			fragment = new Wrk_plan_gain();
+			title = getString(R.string.title_gain);
+			break;
+		case 6:
+			fragment = new Wrk_plan_loose();
+			title = getString(R.string.title_loose);
+			break;
 
-
-			fragment = new Workout_gain();
-			title = getString(R.string.title_messages);
+		case 7:
+			title = getString(R.string.title_Exit);
+			finish();
 			break;
 
 		default:

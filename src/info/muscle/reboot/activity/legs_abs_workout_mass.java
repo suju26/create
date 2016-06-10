@@ -11,9 +11,9 @@ import info.muscle.reboot.R;
 /**
  * Created by Ravi on 29/07/15.
  */
-public class Workout_gain extends Fragment {
+public class legs_abs_workout_mass extends Fragment {
 
-    public Workout_gain() {
+    public legs_abs_workout_mass() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class Workout_gain extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_gain_workout, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_c_t_workout, container, false);
 
 
         // Inflate the layout for this fragment

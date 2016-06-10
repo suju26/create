@@ -7,6 +7,9 @@ import android.annotation.SuppressLint;
  */
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -14,12 +17,17 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.ImageView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,6 +82,8 @@ public class FragmentDrawer extends Fragment {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+        
+      
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
@@ -91,6 +101,34 @@ public class FragmentDrawer extends Fragment {
             }
         }));
 
+        
+        /**
+    	 * Background Async task to load user profile picture from url
+    	 * */
+    	class LoadProfileImage extends AsyncTask<String, Void, Bitmap> {
+    		ImageView bmImage;
+
+    		public LoadProfileImage(ImageView bmImage) {
+    			this.bmImage = bmImage;
+    		}
+
+    		protected Bitmap doInBackground(String... urls) {
+    			String urldisplay = urls[0];
+    			Bitmap mIcon11 = null;
+    			try {
+    				InputStream in = new java.net.URL(urldisplay).openStream();
+    				mIcon11 = BitmapFactory.decodeStream(in);
+    			} catch (Exception e) {
+    				Log.e("Error", e.getMessage());
+    				e.printStackTrace();
+    			}
+    			return mIcon11;
+    		}
+
+    		protected void onPostExecute(Bitmap result) {
+    			bmImage.setImageBitmap(result);
+    		}
+    	}
         return layout;
     }
 
@@ -187,5 +225,6 @@ public class FragmentDrawer extends Fragment {
 
     public interface FragmentDrawerListener {
         public void onDrawerItemSelected(View view, int position);
+
     }
 }

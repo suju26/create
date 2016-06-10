@@ -14,16 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        
         android:gravity="center" >
 
         <Button
             android:id="@+id/close_macro"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-          android:background="@drawable/ripple_effect"
+          android:background="@color/colorbtn"
             android:text="BACK"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:typeface="monospace" />
     </RelativeLayout>
 
@@ -144,13 +146,6 @@
                     android:text="Certain types of fat can help a bodybuilder maintain lean muscle mass, especially during a dieting phase. Ironically, adequate fat consumption can also maximize fat loss and help you build lean muscle. Fat in your diet supports hormone production, which is essential to muscle-building. It also helps you absorb and store essential vitamins, such as A, D, E and K. Fat is your primary energy source. Depriving your body of fat also encourages it to store extra fat whenever the opportunity arises to offset potential scarcity. "
                     android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5sp"
-                    android:text="Certain types of fat can help a bodybuilder maintain lean muscle mass, especially during a dieting phase. Ironically, adequate fat consumption can also maximize fat loss and help you build lean muscle. Fat in your diet supports hormone production, which is essential to muscle-building. It also helps you absorb and store essential vitamins, such as A, D, E and K. Fat is your primary energy source. Depriving your body of fat also encourages it to store extra fat whenever the opportunity arises to offset potential scarcity. "
-                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="fill_parent"

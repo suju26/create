@@ -20,8 +20,8 @@ public class HomeFragment extends Fragment {
 
 	//Fonts Declaration
 
-	Typeface fontB,fontR,fontReg,fontThin,fontMed;
-	Button btnhome;
+/*	Typeface fontB,fontR,fontReg,fontThin,fontMed;
+*/	Button btnhome;
 
 	TextView pro_txt, fats_txt,carbs_txt;
 	TextView pro_txtc, fats_txtm,carbs_txtm;
@@ -47,11 +47,11 @@ public class HomeFragment extends Fragment {
 
 		//Fonts call
 
-		fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
+	/*	fontB = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BEBAS.TTF");
 		fontR = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto_Light.ttf");
 		fontReg = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Regular.ttf");
 		fontThin = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
-		fontMed = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
+		fontMed = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");*/
 
 		SharedPreferences pref = getActivity().getPreferences(1);
 		String cur_weight=pref.getString("weight", "0");
@@ -91,44 +91,48 @@ public class HomeFragment extends Fragment {
 		carbs_txtm.setText(carbs_rec);
 
 
-
-
+       TextView lbl1=(TextView)rootView.findViewById(R.id.ddf);
+/*       lbl1.setTypeface(fontB);
+*/       
+       TextView lbl11=(TextView)rootView.findViewById(R.id.dd);
+/*       lbl11.setTypeface(fontB);
+*/
 
 		TextView lbl_weigh=(TextView)rootView.findViewById(R.id.textView);
-		lbl_weigh.setTypeface(fontB);
-
+/*		lbl_weigh.setTypeface(fontB);
+*/
 		TextView txt_tdde=(TextView)rootView.findViewById(R.id.txt_tdde);
 		txt_tdde.setText(macro_req);
-		txt_tdde.setTypeface(fontThin);
-
+/*		txt_tdde.setTypeface(fontThin);
+*/
 		TextView current_weight=(TextView)rootView.findViewById(R.id.txt_current_weight);
 		current_weight.setText(cur_weight);
-		current_weight.setTypeface(fontThin);
-
+/*		current_weight.setTypeface(fontThin);
+*/
 
 
 		TextView ideal_weight1=(TextView)rootView.findViewById(R.id.txt_ideal_weight);
 		ideal_weight1.setText(ideal_weight);
-		ideal_weight1.setTypeface(fontThin);
-
+/*		ideal_weight1.setTypeface(fontThin);
+*/
 		TextView bf_result_txt=(TextView)rootView.findViewById(R.id.txt_body_fat);
 		bf_result_txt.setText(bf_result);
-		bf_result_txt.setTypeface(fontThin);
-
+/*		bf_result_txt.setTypeface(fontThin);
+*/
 		TextView bf_result_txt_status=(TextView)rootView.findViewById(R.id.txt_body_fat_status);
 		bf_result_txt_status.setText(bf_status);
-		bf_result_txt_status.setTypeface(fontThin);
-
+/*		bf_result_txt_status.setTypeface(fontThin);
+*/
 
 
 		TextView bmi_result_txt=(TextView)rootView.findViewById(R.id.txt_bmi);
 		bmi_result_txt.setText(bmi_result);
-		bmi_result_txt.setTypeface(fontThin);
-
+/*		bmi_result_txt.setTypeface(fontThin);
+*/
 		TextView bmi_result_txt_status=(TextView)rootView.findViewById(R.id.txt_bmi_status);
 		bmi_result_txt_status.setText(bmi_status);
-		bmi_result_txt_status.setTypeface(fontThin);
-
+/*		bmi_result_txt_status.setTypeface(fontThin);
+*/
 
 
 		//Calculating , weather to You Need To Loose or YOU NEED TO GAIN
@@ -136,22 +140,22 @@ public class HomeFragment extends Fragment {
 		if(Double.parseDouble(cur_weight)< Double.parseDouble(ideal_weight))
 		{
 			TextView goal=(TextView)rootView.findViewById(R.id.txt_recommended_goal);
-			goal.setText("YOU Need To GAIN");
+			goal.setText("HEALTHY GAIN");
 			Double weight_goal=Double.parseDouble(ideal_weight)- Double.parseDouble(cur_weight);
 			TextView txtGoalweight=(TextView)rootView.findViewById(R.id.txt_recommended_goal_weight);
 			txtGoalweight.setText(""+Math.round(weight_goal));
-			txtGoalweight.setTypeface(fontThin);
-
+/*			txtGoalweight.setTypeface(fontThin);
+*/
 		}
 		if(Double.parseDouble(cur_weight)>Double.parseDouble(ideal_weight))
 		{
 			TextView goal=(TextView)rootView.findViewById(R.id.txt_recommended_goal);
-			goal.setText("You Need To LOSE");
+			goal.setText("HEALTHY LOSE");
 			Double weight_goal=Double.parseDouble(cur_weight)- Double.parseDouble(ideal_weight);
 			TextView txtGoalweight=(TextView)rootView.findViewById(R.id.txt_recommended_goal_weight);
 			txtGoalweight.setText(""+Math.round(weight_goal));
-			txtGoalweight.setTypeface(fontThin);
-
+/*			txtGoalweight.setTypeface(fontThin);
+*/
 		}
 		if(Double.parseDouble(cur_weight) == Double.parseDouble(ideal_weight))
 		{
@@ -159,8 +163,8 @@ public class HomeFragment extends Fragment {
 			goal.setText("Keep It");
 			TextView txtGoalweight=(TextView)rootView.findViewById(R.id.txt_recommended_goal_weight);
 			txtGoalweight.setText(cur_weight);
-			txtGoalweight.setTypeface(fontThin);
-
+/*			txtGoalweight.setTypeface(fontThin);
+*/
 		}
 
 		//Calculating Difference now

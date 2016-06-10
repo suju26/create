@@ -3,6 +3,7 @@ package info.muscle.reboot.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -93,6 +94,7 @@ public class YourMacroResultFragment extends Fragment {
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 			{
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
 				selected_goal = parentView.getItemAtPosition(position).toString();
 
 
@@ -238,14 +240,14 @@ public class YourMacroResultFragment extends Fragment {
 		});
 
 		Button rd1=(Button)rootView.findViewById(R.id.macro_read_me);
-        rd1.setOnClickListener(new View.OnClickListener() {
-			
+		rd1.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				
+
 				Intent intent = new Intent(getActivity(), Macro_readme.class);
 				getActivity().startActivity(intent);
-				
+
 			}
 		});
 
