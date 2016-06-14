@@ -247,7 +247,7 @@ public class DietPlanFragment extends Fragment {
 			}
 		});
 
-		//Ghee
+		//Ghee macro
 
 		ghee_br_txt_fats=(TextView)rootView.findViewById(R.id.ghee_fats);
 		spinner_ghee=(Spinner)rootView.findViewById(R.id.spinner_ghee);
