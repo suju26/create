@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -45,7 +47,21 @@ public class YourMacroResultFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_macro, container, false);
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
 
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);
+					getActivity().finish();
+					}
+				}
+				return false;
+			}
+		});
 		macro_goal=(TextView)rootView.findViewById(R.id.macro_goal_calories_calculated);
 
 		//Macro Percent 

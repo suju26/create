@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#4B77BE" >
+    android:background="#F27935" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -14,28 +14,26 @@
         <Button
             android:id="@+id/macro_read_me"
             android:layout_width="fill_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
-            android:background="#E4F1FE"
             android:layout_marginTop="5dp"
             android:text="Read Me First"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:typeface="monospace" />
 
         <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@+id/footers"
-            android:layout_centerInParent="true" >
+            android:layout_height="fill_parent" >
 
             <LinearLayout
                 android:id="@+id/macro"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_centerInParent="true"
+                android:layout_above="@+id/footers"
                 android:animateLayoutChanges="true"
                 android:orientation="vertical"
                 android:padding="5.0dip" >
@@ -78,10 +76,9 @@
                                 android:layout_gravity="center_horizontal"
                                 android:background="@android:color/transparent"
                                 android:text="Goal Calorie"
-                                        android:textSize="25sp"
-                                
                                 android:textAppearance="?android:textAppearanceMedium"
-                                android:textColor="@android:color/white" />
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp" />
 
                             <TextView
                                 android:id="@+id/macro_goal_calories_calculated"
@@ -108,11 +105,10 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:color/transparent"
                                 android:gravity="center"
-                                        android:textSize="25sp"
-                                
                                 android:text="Require Macro Split %"
                                 android:textAppearance="?android:textAppearanceMedium"
-                                android:textColor="@android:color/white" />
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp" />
 
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -204,11 +200,10 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:color/transparent"
                                 android:gravity="center"
-                                        android:textSize="25sp"
-                                
                                 android:text="Macro Split"
                                 android:textAppearance="?android:textAppearanceMedium"
-                                android:textColor="@android:color/white" />
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp" />
 
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -319,7 +314,7 @@
                 android:background="@color/colorPrimary"
                 android:onClick="calculation"
                 android:text="DONE"
-                android:textColor="#ECF0F1"
+                android:textColor="@android:color/white"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:typeface="monospace" />

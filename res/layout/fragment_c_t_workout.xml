@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#F27935"
     android:gravity="fill" >
 
     <!-- Header aligned to top -->
@@ -38,8 +38,8 @@
                     android:gravity="center_horizontal"
                     android:selectAllOnFocus="true"
                     android:text="CHEST and TRICEPS"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
@@ -64,7 +64,7 @@
             android:background="@color/colorPrimary"
             android:onClick="calculation"
             android:text="FINISH"
-            android:textColor="#ECF0F1"
+            android:textColor="@android:color/white"
             android:textSize="20dp"
             android:textStyle="bold"
             android:typeface="monospace" />
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -109,7 +109,8 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 1"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
                         android:textStyle="bold" />
 
                     <TextView
@@ -119,6 +120,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:padding="2dp"
+                        android:textColor="@android:color/white"
                         android:text="INCLINE BENCH PRESS"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -149,7 +151,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -160,7 +162,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -197,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -217,7 +219,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 2"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -256,7 +258,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -267,7 +269,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -304,7 +306,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -324,7 +326,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 3"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -363,7 +365,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -374,7 +376,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -411,7 +413,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -431,7 +433,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 4"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -470,7 +472,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -481,7 +483,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -517,7 +519,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -536,7 +538,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 5"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -572,7 +574,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -582,7 +584,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -618,7 +620,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -637,7 +639,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 6"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -673,7 +675,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -683,7 +685,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -719,7 +721,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                card_view:cardBackgroundColor="#ECECEC"
+                card_view:cardBackgroundColor="#F27935"
                 card_view:cardCornerRadius="2dp"
                 card_view:contentPadding="5dp" >
 
@@ -738,7 +740,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="Exercise 7"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -774,7 +776,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="3 SETS"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -784,7 +786,7 @@
                             android:gravity="center_horizontal"
                             android:padding="2dp"
                             android:text="8-10 Reps"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
 

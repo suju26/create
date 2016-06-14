@@ -7,9 +7,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.TextView;
 import info.muscle.reboot.R;
@@ -41,7 +43,23 @@ public class HomeFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
 
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {
+						
+						
+						 getActivity().finish();
+						 return true;
+					}
+				}
+				return false;
+			}
+		});
 
 
 

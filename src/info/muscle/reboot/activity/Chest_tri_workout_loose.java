@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 import info.muscle.reboot.R;
@@ -40,6 +43,7 @@ public class Chest_tri_workout_loose extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 
 	}
 
@@ -47,7 +51,23 @@ public class Chest_tri_workout_loose extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_c_t_loose, container, false);
+		
+		
+		
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
 
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);
+					getActivity().finish();}
+				}
+				return false;
+			}
+		});
 		//Getting Store Value From shared
 
 				sharedPreferences = getActivity().getPreferences(1);
@@ -162,8 +182,18 @@ public class Chest_tri_workout_loose extends Fragment {
 
 				edt.apply();
 
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
+				Fragment newFragment = new Wrk_plan_loose();
+  			  FragmentTransaction transaction = getFragmentManager()
+  					  .beginTransaction();
+
+  			  // Replace whatever is in the fragment_container view with this
+  			  // fragment,
+  			  // and add the transaction to the back stack
+  			  transaction.replace(android.R.id.content, newFragment);
+  			  transaction.addToBackStack("tag").commit();
+
+  			  // Commit the transaction
+  			  transaction.commitAllowingStateLoss();
 
 			}
 		});

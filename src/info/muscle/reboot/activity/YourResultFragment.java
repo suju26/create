@@ -1,18 +1,20 @@
 package info.muscle.reboot.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import info.muscle.reboot.R;
 
 
@@ -36,6 +38,20 @@ public class YourResultFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_your_result, container, false);
+
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
+
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);getActivity().finish();}
+				}
+				return false;
+			}
+		});
 
 		//Getting Calculated Result
 
@@ -121,6 +137,9 @@ public class YourResultFragment extends Fragment {
 		    	 }
 		     });
 		     // Inflate the layout for this fragment
+
+
+
 		     return rootView;
 	}
 
@@ -133,4 +152,7 @@ public class YourResultFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 	}
+
+
+
 }

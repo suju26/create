@@ -1,12 +1,15 @@
 package info.muscle.reboot.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import info.muscle.reboot.R;
 
@@ -30,7 +33,19 @@ public class Wrk_plan_loose extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.wrk_plan_layout_loose, container, false);
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
 
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					getActivity().startActivity(intent);getActivity().finish();}
+				}
+				return false;
+			}
+		});
 		Button chest_btn=(Button)rootView.findViewById(R.id.chest_tri_btn);
 		chest_btn.setOnClickListener(new View.OnClickListener() {
 

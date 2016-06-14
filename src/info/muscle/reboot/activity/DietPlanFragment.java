@@ -6,10 +6,13 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -83,6 +86,24 @@ public class DietPlanFragment extends Fragment {
 			Bundle savedInstanceState) {
 
 		View rootView = inflater.inflate(R.layout.fragment_gain, container, false);
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
+
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) {
+						
+						
+						
+						Intent intent = new Intent(getActivity(), MainActivity.class);
+						getActivity().startActivity(intent);
+						getActivity().finish();}
+				}
+				return false;
+			}
+		});
 		sharedPreferences = getActivity().getPreferences(1);
 
 		String pro_re=sharedPreferences.getString("protein_req", "0");
@@ -929,7 +950,7 @@ public class DietPlanFragment extends Fragment {
 
 				edt.apply();
 
-				
+
 
 				Intent intent = new Intent(getActivity(), MainActivity.class);
 				getActivity().startActivity(intent);

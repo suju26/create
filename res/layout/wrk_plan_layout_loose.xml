@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4B77BE" >
+    android:background="#F27935" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -19,7 +19,7 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:layout_margin="2dp"
-            card_view:cardBackgroundColor="@android:color/transparent"
+            card_view:cardBackgroundColor="#F27935"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="10dp" >
 
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:hint="Start With Light Warm Up Set , Take Comfortable Weight From Which You Can Permorm Excpected Reps , Keep Weight Same Through All Sets ,If You Can&apos;t Able to Perform Desire Reps , Wait FOr 10 Second , Then Continue , till You Attain required Reps , Log your last working Sets , So Next Time When You Hit It Again , Weight Must Be Increase By 10%-20% (5lbs/2.5kg), Keeping Reps Same."
-                    android:textColor="#E4F1FE"
+                    android:textColor="@android:color/white"
                     android:typeface="monospace" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            card_view:cardBackgroundColor="@android:color/transparent"
+            card_view:cardBackgroundColor="#F27935"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="10dp" >
 
@@ -62,11 +62,11 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorbtn"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:text="Chest And Triceps"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/Legs_btn"
@@ -74,11 +74,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5sp"
                     android:layout_weight="1"
-                    android:background="@color/colorbtn"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:text="LEGS,CALVES AND ABS"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/delts_btn"
@@ -86,11 +86,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5sp"
                     android:layout_weight="1"
-                    android:background="@color/colorbtn"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:text="SHOULDER AND TRAPS"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/back_biceps_btn"
@@ -98,11 +98,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5sp"
                     android:layout_weight="1"
-                    android:background="@color/colorbtn"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:text="BACK AND BICEPS"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

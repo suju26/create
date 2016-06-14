@@ -34,6 +34,11 @@
             android:label="@string/title_activity_welcome"
             android:screenOrientation="portrait" >
         </activity>
+        <!--  <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_welcome"
+            android:screenOrientation="portrait" >
+        </activity> -->
         <activity
             android:name=".InfoActivity"
             android:label="@string/title_activity_info"

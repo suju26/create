@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import info.muscle.reboot.R;
@@ -57,28 +58,44 @@ ConnectionCallbacks, OnConnectionFailedListener {
 	SharedPreferences.Editor edt ;
 	SharedPreferences sharedPreferences;
 	SharedPreferences pref;
+	Button btnstartnow;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
-	super.onCreate(savedInstanceState);
-		
-	
-			setContentView(R.layout.welcome_slide1);
+		super.onCreate(savedInstanceState);
 
-			btnSignIn = (SignInButton) findViewById(R.id.btn_sign_in);
-			
-			// Button click listeners
-			btnSignIn.setOnClickListener(this);
-			/*btnSignOut.setOnClickListener(this);
+
+		sharedPreferences=MainActivityLogin.this.getPreferences(1);
+		String saved = sharedPreferences.getString("isfirst", "");
+		if(saved=="Yes")
+		{
+			Toast.makeText(this, "Welcome Back!", Toast.LENGTH_LONG).show();
+			launchHomeScreen();
+
+		}
+
+		Toast.makeText(this, "Loggin Please", Toast.LENGTH_LONG).show();
+
+		setContentView(R.layout.activity_main_activity_login);
+
+		btnSignIn = (SignInButton) findViewById(R.id.btn_sign_in);
+
+		// Button click listeners
+		btnSignIn.setOnClickListener(this);
+		/*btnSignOut.setOnClickListener(this);
 			btnRevokeAccess.setOnClickListener(this);*/
 
-			mGoogleApiClient = new GoogleApiClient.Builder(this)
-					.addConnectionCallbacks(this)
-					.addOnConnectionFailedListener(this).addApi(Plus.API, null)
-					.addScope(Plus.SCOPE_PLUS_LOGIN).build();
-		}
-	
+		mGoogleApiClient = new GoogleApiClient.Builder(this)
+				.addConnectionCallbacks(this)
+				.addOnConnectionFailedListener(this).addApi(Plus.API, null)
+				.addScope(Plus.SCOPE_PLUS_LOGIN).build();
+	}
+
+	private void launchHomeScreen() {
+		startActivity(new Intent(MainActivityLogin.this, MainActivity.class));
+		finish();
+	}
 
 	protected void onStart() {
 		super.onStart();
@@ -154,12 +171,11 @@ ConnectionCallbacks, OnConnectionFailedListener {
 		getProfileInformation();
 
 		// Update the UI after signin
-		updateUI(true);
-
-		pref = this.getPreferences(1);
+		pref = MainActivityLogin.this.getPreferences(1);
 		edt = pref.edit();
-		edt.putInt("isfirst", 2);
+		edt.putString("isfirst", "Yes");
 		edt.apply();
+
 
 	}
 
@@ -168,13 +184,27 @@ ConnectionCallbacks, OnConnectionFailedListener {
 	 * */
 	private void updateUI(boolean isSignedIn) {
 		if (isSignedIn) {
-			btnSignIn.setVisibility(View.GONE);
-			
+			btnstartnow.setVisibility(View.VISIBLE);
+			btnstartnow.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					pref = MainActivityLogin.this.getPreferences(1);
+					edt = pref.edit();
+					edt.putString("isfirst", "Yes");
+					edt.apply();
+				}
+			});
+
+
+
+
 
 		} else {
 			btnSignIn.setVisibility(View.VISIBLE);
+			btnstartnow.setVisibility(View.GONE);
 		}
-			
+
 	}
 
 	/**
@@ -189,7 +219,7 @@ ConnectionCallbacks, OnConnectionFailedListener {
 				String personPhotoUrl = currentPerson.getImage().getUrl();
 				String personGooglePlusProfile = currentPerson.getUrl();
 				String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
-				
+
 				sharedPreferences=this.getPreferences(1);
 				edt = sharedPreferences.edit();
 				edt.putString("personName", personName);

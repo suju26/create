@@ -1,12 +1,15 @@
 package info.muscle.reboot.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import info.muscle.reboot.R;
 
@@ -30,6 +33,21 @@ public class Wrk_plan_gain extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.wrk_plan_layout_gain, container, false);
+		rootView.setFocusableInTouchMode(true);
+		rootView.requestFocus();
+
+		rootView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (keyCode == KeyEvent.KEYCODE_BACK) 
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		});
 
 		Button chest_btn=(Button)rootView.findViewById(R.id.chest_tri_btn);
 		chest_btn.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +59,6 @@ public class Wrk_plan_gain extends Fragment {
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
 				transaction.addToBackStack("tag");
-
 				transaction.commitAllowingStateLoss();				
 			}
 		});
@@ -55,7 +72,7 @@ public class Wrk_plan_gain extends Fragment {
 				FragmentTransaction transaction = getFragmentManager()
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
-				transaction.addToBackStack("tag");
+				transaction.addToBackStack(null);
 
 				transaction.commitAllowingStateLoss();				
 			}
@@ -84,7 +101,9 @@ public class Wrk_plan_gain extends Fragment {
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
 				transaction.addToBackStack("tag");
-				transaction.commitAllowingStateLoss();				
+				transaction.commitAllowingStateLoss();	
+			    getFragmentManager().beginTransaction().remove(newFragment).commit();
+
 			}
 		});
 		// Inflate the layout for this fragment

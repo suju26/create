@@ -51,7 +51,7 @@
         <item>Extreme Loss(Consult Doctor)</item>
     </string-array>
 
-    <string name="title_activity_welcome">Home Screen</string>
+    <string name="title_activity_welcome">Home</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
