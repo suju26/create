@@ -122,8 +122,12 @@ public class YourResultFragment extends Fragment {
 		    	 @Override
 		    	 public void onClick(View v) {
 
+		    		 
+		    		 
+		    		 Toast.makeText(getActivity(), "Cool , Now Its Time To Check Your Macro !!!", 
+								Toast.LENGTH_LONG).show();
 
-		    		 Fragment newFragment = new YourMacroResultFragment();
+		    		/* Fragment newFragment = new YourMacroResultFragment();
 
 		    		 FragmentTransaction transaction = getFragmentManager()
 		    				 .beginTransaction();
@@ -132,7 +136,7 @@ public class YourResultFragment extends Fragment {
 
 		    		 transaction.addToBackStack("tag");
 
-		    		 transaction.commitAllowingStateLoss();
+		    		 transaction.commitAllowingStateLoss();*/
 
 		    	 }
 		     });

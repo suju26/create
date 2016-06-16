@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F27935"
+    android:background="@android:color/transparent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:text="BACK"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold"
             android:typeface="monospace" />
@@ -56,7 +56,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="What Is MACRONUTRIENTS"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -74,7 +74,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="Role Of Protein"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
                     android:padding="5sp"
                     android:scrollbars="vertical"
                     android:text="Protein is used in every single cell in our body and is critical for building muscle mass, supporting neurological function, aiding in digestion, helping to balance hormones naturally and keeping our mood upbeat."
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -94,7 +94,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="Role Of Carbohydrates"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -106,7 +106,7 @@
                     android:padding="5sp"
                     android:scrollbars="vertical"
                     android:text="If you&apos;re looking to build muscle, you may want to re-evaluate your carbohydrate intake, as they are the key to building sculpted muscles. Protein is often over emphasized in muscle-building diets, and carbohydrates are given little attention. However, carbohydrates play an important role in building lean body mass and shouldn&apos;t be overlooked."
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/tdsees1"
@@ -116,7 +116,7 @@
                     android:padding="5sp"
                     android:scrollbars="vertical"
                     android:text="Carbohydrates Provide Energy : During exercise your body converts carbohydrates that are stored in your muscles and liver into ATP molecules to use them as energy. Not eating enough or the right type of carbohydrates means your workouts may potentially suffer because you will have less energy to train at a higher intensity. Training at a higher intensity has a greater effect on building larger and stronger muscles. Muscle overload is the only stimulus for muscle growth, and exercising at a higher intensity will boost growth hormone levels."
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/tdsee21"
@@ -126,7 +126,7 @@
                     android:padding="5sp"
                     android:scrollbars="vertical"
                     android:text="After your weight training workout, it is important to drive nutrients into your bloodstream and feed your muscles. This is best accomplished by spiking your insulin levels, and the best way to do so is by ingesting simple carbohydrates within one to two hours after your workout. During this time, your body is in the anabolic phase, which means your muscle cells are primed for muscle building. Carbohydrates stimulate the release of insulin, which pushes amino acids into muscle cells to begin the process of repair."
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -134,7 +134,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="Role Of FATS"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -144,7 +144,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="Dietary fat, however, is also essential to maximal performance in the sport. Not just any fat will bring about positive health and physique changes. You need to focus on the right kinds and sources of fat to support your bodybuilding goals."
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -153,7 +153,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="Certain types of fat can help a bodybuilder maintain lean muscle mass, especially during a dieting phase. Ironically, adequate fat consumption can also maximize fat loss and help you build lean muscle. Fat in your diet supports hormone production, which is essential to muscle-building. It also helps you absorb and store essential vitamins, such as A, D, E and K. Fat is your primary energy source. Depriving your body of fat also encourages it to store extra fat whenever the opportunity arises to offset potential scarcity. "
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -162,7 +162,7 @@
                     android:gravity="center"
                     android:padding="5sp"
                     android:text="WHAT IS MACRO PERCENT RATIO"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -173,7 +173,7 @@
                     android:padding="5sp"
                     android:text="Low carb (25:45:30):
 This would be required to trim excess body fat, while making slow lean gains. it is effective however takes a lot of time to show results (ideal for anyone who’s new)"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -183,7 +183,7 @@ This would be required to trim excess body fat, while making slow lean gains. it
                     android:padding="5sp"
                     android:text="Zone diet (40:30:30):
 This would be required to build up lean muscle throughout the year (For people who are already muscular)"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -193,7 +193,7 @@ This would be required to build up lean muscle throughout the year (For people w
                     android:padding="5sp"
                     android:text="Depletion Diet (Dynamic)
 To reduce body fat% dramatically and bring definition to your muscles in very short period (not for people with body fat above 10%)"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>

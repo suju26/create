@@ -110,7 +110,7 @@ public class YourMacroResultFragment extends Fragment {
 			@Override
 			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 			{
-				((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
+				((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
 				selected_goal = parentView.getItemAtPosition(position).toString();
 
 
@@ -234,9 +234,13 @@ public class YourMacroResultFragment extends Fragment {
 					edt.putString("carbs_req", carb_cal.getText().toString());
 
 					edt.apply();
+					
+					
+					Toast.makeText(getActivity(), "Awesome Almost , Set Your Desire Diet Plan !!!", 
+							Toast.LENGTH_LONG).show();
 
 
-					Fragment newFragment = new DietPlanFragment();
+					/*Fragment newFragment = new DietPlanFragment();
 					FragmentTransaction transaction = getFragmentManager()
 							.beginTransaction();
 
@@ -247,7 +251,7 @@ public class YourMacroResultFragment extends Fragment {
 					transaction.addToBackStack("tag");
 
 					// Commit the transaction
-					transaction.commitAllowingStateLoss();
+					transaction.commitAllowingStateLoss();*/
 				}
 				/*Intent intent = new Intent(getActivity(), MainActivity.class);
 					getActivity().startActivity(intent); */

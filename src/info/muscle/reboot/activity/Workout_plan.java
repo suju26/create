@@ -17,9 +17,9 @@ import info.muscle.reboot.R;
 /**
  * Created by Ravi on 29/07/15.
  */
-public class Wrk_plan_gain extends Fragment {
+public class Workout_plan extends Fragment {
 
-	public Wrk_plan_gain() {
+	public Workout_plan() {
 		// Required empty public constructor
 	}
 
@@ -40,15 +40,11 @@ public class Wrk_plan_gain extends Fragment {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if (event.getAction() == KeyEvent.ACTION_DOWN) {
-					if (keyCode == KeyEvent.KEYCODE_BACK) 
-					{
-						return true;
-					}
+					if (keyCode == KeyEvent.KEYCODE_BACK) {}
 				}
 				return false;
 			}
 		});
-
 		Button chest_btn=(Button)rootView.findViewById(R.id.chest_tri_btn);
 		chest_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -59,6 +55,7 @@ public class Wrk_plan_gain extends Fragment {
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
 				transaction.addToBackStack("tag");
+
 				transaction.commitAllowingStateLoss();				
 			}
 		});
@@ -72,7 +69,7 @@ public class Wrk_plan_gain extends Fragment {
 				FragmentTransaction transaction = getFragmentManager()
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
-				transaction.addToBackStack(null);
+				transaction.addToBackStack("tag");
 
 				transaction.commitAllowingStateLoss();				
 			}
@@ -101,9 +98,7 @@ public class Wrk_plan_gain extends Fragment {
 						.beginTransaction();
 				transaction.replace(android.R.id.content, newFragment);
 				transaction.addToBackStack("tag");
-				transaction.commitAllowingStateLoss();	
-			    getFragmentManager().beginTransaction().remove(newFragment).commit();
-
+				transaction.commitAllowingStateLoss();				
 			}
 		});
 		// Inflate the layout for this fragment

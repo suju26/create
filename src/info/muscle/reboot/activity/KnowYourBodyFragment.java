@@ -1,15 +1,10 @@
 package info.muscle.reboot.activity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
@@ -77,19 +72,19 @@ public class KnowYourBodyFragment extends Fragment {
 			 Bundle savedInstanceState) {
 		 View rootView = inflater.inflate(R.layout.fragment_know_your_body, container, false);
 		 rootView.setFocusableInTouchMode(true);
-			rootView.requestFocus();
+		 rootView.requestFocus();
 
-			rootView.setOnKeyListener(new OnKeyListener() {
-				@Override
-				public boolean onKey(View v, int keyCode, KeyEvent event) {
-					if (event.getAction() == KeyEvent.ACTION_DOWN) {
-						if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
-						getActivity().startActivity(intent);
-						getActivity().finish();}
-					}
-					return false;
-				}
-			});
+		 rootView.setOnKeyListener(new OnKeyListener() {
+			 @Override
+			 public boolean onKey(View v, int keyCode, KeyEvent event) {
+				 if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					 if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					 getActivity().startActivity(intent);
+					 getActivity().finish();}
+				 }
+				 return false;
+			 }
+		 });
 		 //Saved Value
 
 
@@ -194,7 +189,7 @@ public class KnowYourBodyFragment extends Fragment {
 		    	 @Override
 		    	 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 		    	 {
-		    		 ((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
+		    		 ((TextView) parentView.getChildAt(0)).setTextColor(Color.BLACK);
 		    		 /*				((TextView) parentView.getChildAt(0)).setTypeface(fontThin);
 		    		  */
 		    		 selected = parentView.getItemAtPosition(position).toString();
@@ -499,22 +494,12 @@ public class KnowYourBodyFragment extends Fragment {
 		    		  if (cal_req==0)
 		    		  {}
 		    		  else{
-		    			  Fragment newFragment = new YourResultFragment();
-		    			  FragmentTransaction transaction = getFragmentManager()
-		    					  .beginTransaction();
+		    			 
 
-		    			  // Replace whatever is in the fragment_container view with this
-		    			  // fragment,
-		    			  // and add the transaction to the back stack
-		    			  transaction.replace(android.R.id.content, newFragment);
-		    			  transaction.addToBackStack("tag").commit();
-
-		    			  // Commit the transaction
-		    			  transaction.commitAllowingStateLoss();
-		    			  
 		    			  edt.apply();
 
-
+		    			  Toast.makeText(getActivity(), "Good , Check Your Body Status , Where Your Health Stand Now !!!", 
+		    					  Toast.LENGTH_LONG).show();
 		    		  }
 		    	  }
 		      }); 
@@ -544,14 +529,14 @@ public class KnowYourBodyFragment extends Fragment {
 	 public void onAttach(Context context) {
 		 super.onAttach(context);
 
-		
+
 	 }
 
 	 @Override
 	 public void onDetach() {
 		 super.onDetach();
-		 
-		
+
+
 	 }
 
 

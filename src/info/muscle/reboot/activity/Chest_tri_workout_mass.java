@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import info.muscle.reboot.R;
 
 public class Chest_tri_workout_mass extends Fragment {
@@ -24,13 +24,13 @@ public class Chest_tri_workout_mass extends Fragment {
 
 
 	EditText i_c,f_p,p_d,i_f,c_g,l_t,t_p;
-	
+
 	EditText i_c1,f_p1,p_d1,i_f1,c_g1,l_t1,t_p1;
-	
+
 	String i_c1s,f_ps,p_ds,i_fs,c_gs,l_ts,t_ps;
-	
+
 	String i_c1s1,f_ps1,p_ds1,i_fs1,c_gs1,l_ts1,t_ps1;
-	
+
 	Button finish;
 
 
@@ -66,39 +66,39 @@ public class Chest_tri_workout_mass extends Fragment {
 		});
 		//Getting Store Value From shared
 
-				sharedPreferences = getActivity().getPreferences(1);
-				
-				//For weight
+		sharedPreferences = getActivity().getPreferences(1);
 
-				i_c1s=sharedPreferences.getString("ex1", "");
+		//For weight
 
-				f_ps=sharedPreferences.getString("ex2", "");
+		i_c1s=sharedPreferences.getString("ex1", "");
 
-				p_ds=sharedPreferences.getString("ex3", "");
+		f_ps=sharedPreferences.getString("ex2", "");
 
-				i_fs=sharedPreferences.getString("ex4", "");
+		p_ds=sharedPreferences.getString("ex3", "");
 
-				c_gs=sharedPreferences.getString("ex5", "");
+		i_fs=sharedPreferences.getString("ex4", "");
 
-				l_ts=sharedPreferences.getString("ex6", "");
+		c_gs=sharedPreferences.getString("ex5", "");
 
-				t_ps=sharedPreferences.getString("ex7", "");
+		l_ts=sharedPreferences.getString("ex6", "");
 
-				//For rep
+		t_ps=sharedPreferences.getString("ex7", "");
 
-				i_c1s1=sharedPreferences.getString("r1", "");
+		//For rep
 
-				f_ps1=sharedPreferences.getString("r2", "");
+		i_c1s1=sharedPreferences.getString("r1", "");
 
-				p_ds1=sharedPreferences.getString("r3", "");
+		f_ps1=sharedPreferences.getString("r2", "");
 
-				i_fs1=sharedPreferences.getString("r4", "");
+		p_ds1=sharedPreferences.getString("r3", "");
 
-				c_gs1=sharedPreferences.getString("r5", "");
+		i_fs1=sharedPreferences.getString("r4", "");
 
-				l_ts1=sharedPreferences.getString("r6", "");
+		c_gs1=sharedPreferences.getString("r5", "");
 
-				t_ps1=sharedPreferences.getString("r7", "");
+		l_ts1=sharedPreferences.getString("r6", "");
+
+		t_ps1=sharedPreferences.getString("r7", "");
 
 
 
@@ -141,8 +141,8 @@ public class Chest_tri_workout_mass extends Fragment {
 		t_p1=(EditText)rootView.findViewById(R.id.t_p_r);
 		t_p1.setText(t_ps1);
 
-		
-		
+
+
 
 		//Button finish
 
@@ -178,10 +178,12 @@ public class Chest_tri_workout_mass extends Fragment {
 
 				edt.apply();
 
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
+				Toast.makeText(getActivity(), "Today Workout Saved Succesfully !!!", 
+						Toast.LENGTH_SHORT).show();
 
 			}
+
+
 		});
 
 

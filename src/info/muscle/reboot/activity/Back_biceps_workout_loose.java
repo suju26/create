@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +25,13 @@ public class Back_biceps_workout_loose extends Fragment {
 
 
 	EditText i_c,f_p,p_d,i_f,c_g,l_t,t_p;
-	
+
 	EditText i_c1,f_p1,p_d1,i_f1,c_g1,l_t1,t_p1;
-	
+
 	String i_c1s,f_ps,p_ds,i_fs,c_gs,l_ts,t_ps;
-	
+
 	String i_c1s1,f_ps1,p_ds1,i_fs1,c_gs1,l_ts1,t_ps1;
-	
+
 	Button finish;
 
 
@@ -44,6 +45,11 @@ public class Back_biceps_workout_loose extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		android.app.ActionBar actionBar = getActivity().getActionBar();
+
+		// Enabling Up / Back navigation
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
 	}
 
 	@Override
@@ -52,53 +58,52 @@ public class Back_biceps_workout_loose extends Fragment {
 		View rootView = inflater.inflate(R.layout.back_biceps_layout_loose, container, false);
 		rootView.setFocusableInTouchMode(true);
 		rootView.requestFocus();
-
 		rootView.setOnKeyListener(new OnKeyListener() {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if (event.getAction() == KeyEvent.ACTION_DOWN) {
-					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
-					getActivity().startActivity(intent);
-					getActivity().finish();}
+					if (keyCode == KeyEvent.KEYCODE_BACK) {/*
+						getActivity().onBackPressed();
+					*/}
 				}
 				return false;
 			}
 		});
 		//Getting Store Value From shared
 
-				sharedPreferences = getActivity().getPreferences(1);
-				
-				//For weight
+		sharedPreferences = getActivity().getPreferences(1);
 
-				i_c1s=sharedPreferences.getString("exb1l", "");
+		//For weight
 
-				f_ps=sharedPreferences.getString("exb2l", "");
+		i_c1s=sharedPreferences.getString("exb1l", "");
 
-				p_ds=sharedPreferences.getString("exb3l", "");
+		f_ps=sharedPreferences.getString("exb2l", "");
 
-				i_fs=sharedPreferences.getString("exb4l", "");
+		p_ds=sharedPreferences.getString("exb3l", "");
 
-				c_gs=sharedPreferences.getString("exb5l", "");
+		i_fs=sharedPreferences.getString("exb4l", "");
 
-				l_ts=sharedPreferences.getString("exb6l", "");
+		c_gs=sharedPreferences.getString("exb5l", "");
 
-				t_ps=sharedPreferences.getString("exb7l", "");
+		l_ts=sharedPreferences.getString("exb6l", "");
 
-				//For rep
+		t_ps=sharedPreferences.getString("exb7l", "");
 
-				i_c1s1=sharedPreferences.getString("rb1l", "");
+		//For rep
 
-				f_ps1=sharedPreferences.getString("rb2l", "");
+		i_c1s1=sharedPreferences.getString("rb1l", "");
 
-				p_ds1=sharedPreferences.getString("rb3l", "");
+		f_ps1=sharedPreferences.getString("rb2l", "");
 
-				i_fs1=sharedPreferences.getString("rb4l", "");
+		p_ds1=sharedPreferences.getString("rb3l", "");
 
-				c_gs1=sharedPreferences.getString("rb5l", "");
+		i_fs1=sharedPreferences.getString("rb4l", "");
 
-				l_ts1=sharedPreferences.getString("rb6l", "");
+		c_gs1=sharedPreferences.getString("rb5l", "");
 
-				t_ps1=sharedPreferences.getString("rb7l", "");
+		l_ts1=sharedPreferences.getString("rb6l", "");
+
+		t_ps1=sharedPreferences.getString("rb7l", "");
 
 
 
@@ -141,8 +146,8 @@ public class Back_biceps_workout_loose extends Fragment {
 		t_p1=(EditText)rootView.findViewById(R.id.t_p_r);
 		t_p1.setText(t_ps1);
 
-		
-		
+
+
 
 		//Button finish
 
@@ -178,8 +183,7 @@ public class Back_biceps_workout_loose extends Fragment {
 
 				edt.apply();
 
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
+				getActivity().getFragmentManager().popBackStack();
 
 			}
 		});

@@ -34,11 +34,13 @@
             android:label="@string/title_activity_welcome"
             android:screenOrientation="portrait" >
         </activity>
-        <!--  <activity
+        <!--
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_welcome"
             android:screenOrientation="portrait" >
-        </activity> -->
+        </activity>
+        -->
         <activity
             android:name=".InfoActivity"
             android:label="@string/title_activity_info"
@@ -66,6 +68,21 @@
         </activity>
         <activity
             android:name=".MainActivityLogin"
+            android:label="@string/title_activity_main_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Chest_tri_workout_mass"
+            android:label="@string/title_activity_main_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Back_biceps_workout_mass"
+            android:label="@string/title_activity_main_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".legs_abs_workout_mass"
             android:label="@string/title_activity_main_activity_login"
             android:screenOrientation="portrait" >
         </activity>

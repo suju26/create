@@ -861,6 +861,9 @@ public class DietPlanFragment extends Fragment {
 						+Double.parseDouble(sc_carbsc.getText().toString())
 						+Double.parseDouble(chk_br_txt_carbs2.getText().toString())+cc1+cc11+cc111;
 				carbs_txtm.setText(""+total_carbs);
+				
+				Toast.makeText(getActivity(), "Awesome , If Required Macro Match Click On Finish !!!", 
+						Toast.LENGTH_LONG).show();
 
 			}
 		});
@@ -950,10 +953,11 @@ public class DietPlanFragment extends Fragment {
 
 				edt.apply();
 
-
-
+				Toast.makeText(getActivity(), "Congradualation !!! You Are Done , Keep Updating Every Week !!!", 
+						Toast.LENGTH_LONG).show();	
+/*
 				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
+				getActivity().startActivity(intent);*/
 
 
 

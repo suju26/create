@@ -13,9 +13,11 @@ import android.view.ViewGroup;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import info.muscle.reboot.R;
+import info.muscle.reboot.activity.MainActivity;
 
-public class Back_biceps_workout_mass extends Fragment {
+public class Back_biceps_workout_mass extends Fragment  {
 
 	SharedPreferences.Editor edt ;
 	SharedPreferences sharedPreferences;
@@ -58,9 +60,9 @@ public class Back_biceps_workout_mass extends Fragment {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				if (event.getAction() == KeyEvent.ACTION_DOWN) {
-					if (keyCode == KeyEvent.KEYCODE_BACK) {Intent intent = new Intent(getActivity(), MainActivity.class);
+					if (keyCode == KeyEvent.KEYCODE_BACK) {/*Intent intent = new Intent(getActivity(), MainActivity.class);
 					getActivity().startActivity(intent);
-					getActivity().finish();}
+					getActivity().finish();*/}
 				}
 				return false;
 			}
@@ -178,9 +180,10 @@ public class Back_biceps_workout_mass extends Fragment {
 				edt.putString("rb7", t_p1.getText().toString());
 
 				edt.apply();
+				
+				Toast.makeText(getActivity(), "Today Workout Saved Succesfully !!!", 
+						Toast.LENGTH_SHORT).show();
 
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
 
 			}
 		});

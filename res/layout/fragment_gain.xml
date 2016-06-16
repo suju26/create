@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#F27935"
+    android:background="@android:color/transparent"
     android:gravity="fill" >
 
     <!-- Header aligned to top -->
@@ -40,7 +40,7 @@
                     android:selectAllOnFocus="true"
                     android:text="REQUIRED MACRO"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -98,7 +98,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/macro_fat_percentage_manual"
@@ -111,7 +111,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/macro_carb_percentage_manual"
@@ -125,7 +125,7 @@
                     android:text="0"
                     android:textAlignment="4"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,7 +145,7 @@
                     android:selectAllOnFocus="true"
                     android:text="YOUR PLAN MACRO"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -166,7 +166,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/macro_fat_percentage_manualr"
@@ -179,7 +179,7 @@
                     android:selectAllOnFocus="true"
                     android:text="0"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/macro_carb_percentage_manualr"
@@ -193,7 +193,7 @@
                     android:text="0"
                     android:textAlignment="4"
                     android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#E4F1FE" />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -211,7 +211,7 @@
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="QTY"
-                    android:textColor="#E4F1FE"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -224,7 +224,7 @@
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="High In Protein"
-                    android:textColor="#E4F1FE"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -237,7 +237,7 @@
                     android:inputType="number"
                     android:selectAllOnFocus="true"
                     android:text="High in Fats"
-                    android:textColor="#E4F1FE"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
                 <TextView
@@ -251,7 +251,7 @@
                     android:selectAllOnFocus="true"
                     android:text="High In Carbs"
                     android:textAlignment="4"
-                    android:textColor="#E4F1FE"
+                    android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
@@ -274,10 +274,10 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:layout_weight="1.0"
-            android:background="@android:color/transparent"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="CALCULATE"
-            android:textColor="#ECF0F1"
+            android:textColor="@android:color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             android:typeface="monospace" />
@@ -290,10 +290,10 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:layout_weight="1.0"
-            android:background="@android:color/transparent"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="FINISH"
-            android:textColor="#ECF0F1"
+            android:textColor="@android:color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             android:typeface="monospace" />
@@ -334,7 +334,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="ON WAKING UP"
-                        android:textColor="#E4F1FE"
+                        android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:typeface="monospace" />
 
@@ -357,7 +357,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center_horizontal"
                         android:text="BREAKFAST"
-                        android:textColor="#E4F1FE"
+                        android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:typeface="monospace" />
 
@@ -401,7 +401,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -411,7 +411,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -421,7 +421,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -467,7 +467,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -477,7 +477,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -487,7 +487,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -524,7 +524,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -534,7 +534,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -544,7 +544,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -580,7 +580,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -590,7 +590,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -600,17 +600,17 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/txt_egg_white"
+                            android:id="@+id/txt_egg_black"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text=" Egg White (In QTY)"
+                            android:text=" Egg black (In QTY)"
                             android:textColor="#e74c3c"
                             android:textSize="15sp" />
 
@@ -636,7 +636,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -646,7 +646,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
 
                             <TextView
@@ -656,7 +656,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:text="0"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -675,7 +675,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="White Rice(In Gram)"
+                                android:text="black Rice(In Gram)"
                                 android:textColor="#8e44ad"
                                 android:textSize="15sp" />
 
@@ -701,7 +701,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -711,7 +711,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -721,7 +721,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -777,7 +777,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -787,7 +787,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -797,7 +797,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -836,7 +836,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="Custom Micro"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="14sp" />
 
                                 <EditText
@@ -846,7 +846,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <EditText
@@ -856,7 +856,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <EditText
@@ -866,7 +866,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -888,7 +888,7 @@
                                 android:background="@android:color/transparent"
                                 android:gravity="center_horizontal"
                                 android:text="LUNCH"
-                                android:textColor="#E4F1FE"
+                                android:textColor="@android:color/black"
                                 android:textSize="15sp"
                                 android:typeface="monospace" />
 
@@ -934,7 +934,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -944,7 +944,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
 
                                 <TextView
@@ -954,7 +954,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center_horizontal"
                                     android:text="0"
-                                    android:textColor="#E4F1FE"
+                                    android:textColor="@android:color/black"
                                     android:textSize="15sp" />
                             </LinearLayout>
 
@@ -999,7 +999,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1009,7 +1009,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1019,7 +1019,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -1065,7 +1065,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1075,7 +1075,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1085,7 +1085,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
                                 </LinearLayout>
 
@@ -1121,7 +1121,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1131,7 +1131,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
 
                                     <TextView
@@ -1141,7 +1141,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center_horizontal"
                                         android:text="0"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp" />
                                 </LinearLayout>
 
@@ -1186,7 +1186,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <TextView
@@ -1196,7 +1196,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <TextView
@@ -1206,7 +1206,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -1243,7 +1243,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="Custom Micro"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="14sp" />
 
                                         <EditText
@@ -1253,7 +1253,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <EditText
@@ -1263,7 +1263,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <EditText
@@ -1273,7 +1273,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -1295,7 +1295,7 @@
                                         android:background="@android:color/transparent"
                                         android:gravity="center_horizontal"
                                         android:text="DINNER"
-                                        android:textColor="#E4F1FE"
+                                        android:textColor="@android:color/black"
                                         android:textSize="15sp"
                                         android:typeface="monospace" />
 
@@ -1325,7 +1325,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="White Rice(In Gram)"
+                                        android:text="black Rice(In Gram)"
                                         android:textColor="#8e44ad"
                                         android:textSize="15sp" />
 
@@ -1351,7 +1351,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <TextView
@@ -1361,7 +1361,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
 
                                         <TextView
@@ -1371,7 +1371,7 @@
                                             android:layout_weight="1"
                                             android:gravity="center_horizontal"
                                             android:text="0"
-                                            android:textColor="#E4F1FE"
+                                            android:textColor="@android:color/black"
                                             android:textSize="15sp" />
                                     </LinearLayout>
 
@@ -1416,7 +1416,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
 
                                             <TextView
@@ -1426,7 +1426,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
 
                                             <TextView
@@ -1436,7 +1436,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
                                         </LinearLayout>
                                     </LinearLayout>
@@ -1482,7 +1482,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
 
                                             <TextView
@@ -1492,7 +1492,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
 
                                             <TextView
@@ -1502,7 +1502,7 @@
                                                 android:layout_weight="1"
                                                 android:gravity="center_horizontal"
                                                 android:text="0"
-                                                android:textColor="#E4F1FE"
+                                                android:textColor="@android:color/black"
                                                 android:textSize="15sp" />
                                         </LinearLayout>
 
@@ -1547,7 +1547,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <TextView
@@ -1557,7 +1557,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <TextView
@@ -1567,7 +1567,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
                                             </LinearLayout>
                                         </LinearLayout>
@@ -1613,7 +1613,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <TextView
@@ -1623,7 +1623,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <TextView
@@ -1633,7 +1633,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
                                             </LinearLayout>
                                         </LinearLayout>
@@ -1670,7 +1670,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="Custom Micro"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="14sp" />
 
                                                 <EditText
@@ -1680,7 +1680,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <EditText
@@ -1690,7 +1690,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
 
                                                 <EditText
@@ -1700,7 +1700,7 @@
                                                     android:layout_weight="1"
                                                     android:gravity="center_horizontal"
                                                     android:text="0"
-                                                    android:textColor="#E4F1FE"
+                                                    android:textColor="@android:color/black"
                                                     android:textSize="15sp" />
                                             </LinearLayout>
                                         </LinearLayout>

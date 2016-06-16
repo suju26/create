@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#F27935" >
+    android:background="@android:color/transparent" >
 
     <Button
         android:id="@+id/rd1"
@@ -55,8 +55,8 @@
                     android:hint="Enter Your Age"
                     android:inputType="number"
                     android:padding="10dp"
-                    android:textColor="#E4F1FE"
-                    android:textColorHint="#E4F1FE"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
                     android:textSize="15sp" >
                 </EditText>
 
@@ -83,14 +83,14 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="MALE"
-                            android:textColor="#E4F1FE" />
+                            android:textColor="@android:color/black" />
 
                         <RadioButton
                             android:id="@+id/radioButton2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="FEMALE"
-                            android:textColor="#E4F1FE" />
+                            android:textColor="@android:color/black" />
                     </RadioGroup>
                 </LinearLayout>
 
@@ -110,8 +110,8 @@
                         android:hint="Enter Your Weight In KG"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="#E4F1FE"
-                        android:textColorHint="#E4F1FE"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -132,8 +132,8 @@
                         android:hint="Height (In Feet)"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="#E4F1FE"
-                        android:textColorHint="#E4F1FE"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:textSize="15sp" />
 
                     <EditText
@@ -147,8 +147,8 @@
                         android:hint="Height (In Inch)"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="#E4F1FE"
-                        android:textColorHint="#E4F1FE"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -165,7 +165,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="Days Per Week."
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -183,8 +183,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="10dp"
-                        android:textColor="#E4F1FE"
-                        android:textColorHint="#E4F1FE" />
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black" />
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -213,7 +213,7 @@
             android:layout_marginRight="5dp"
             android:background="@color/colorPrimary"
             android:onClick="calculation"
-            android:text="NEXT"
+            android:text="SAVE"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="15sp" />

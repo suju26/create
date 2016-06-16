@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import info.muscle.reboot.R;
 
 public class Shoulder_workout_mass2 extends Fragment {
@@ -176,10 +177,8 @@ public class Shoulder_workout_mass2 extends Fragment {
 				edt.putString("rs7", t_p1.getText().toString());
 
 				edt.apply();
-
-				Intent intent = new Intent(getActivity(), MainActivity.class);
-				getActivity().startActivity(intent);
-
+				Toast.makeText(getActivity(), "Today Workout Saved Succesfully !!!", 
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 

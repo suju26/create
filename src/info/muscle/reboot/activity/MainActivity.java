@@ -1,5 +1,6 @@
 package info.muscle.reboot.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -66,9 +67,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 		int id = item.getItemId();
 
 		//noinspection SimplifiableIfStatement
-		/* if (id == R.id.action_settings) {
-            return true;
-        }*/
+		/*if (id == R.id.workout_menu) {
+
+			startActivity(new Intent(MainActivity.this, MainActivity.class));
+			finish();
+
+			return true;
+		}*/
 
 		/*if(id == R.id.action_search){
             Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
@@ -85,11 +90,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 	private void displayView(int position) {
 		Fragment fragment = null;
 		String title = getString(R.string.app_name);
+
 		switch (position) {
 
 
 		case 0:
 			fragment = new HomeFragment();
+
 			title = getString(R.string.title_home);
 			break;
 		case 1:
@@ -108,22 +115,15 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 			fragment = new DietPlanFragment();
 			title = getString(R.string.title_Diet);
 			break;
-		case 5:
-			fragment = new Wrk_plan_gain();
-			title = getString(R.string.title_gain);
-			break;
-		case 6:
-			fragment = new Wrk_plan_loose();
-			title = getString(R.string.title_loose);
-			break;
 
-		case 7:
+		case 5:
 			title = getString(R.string.title_Exit);
 			finish();
 			break;
 
 		default:
 		}
+
 
 		if (fragment != null) {
 			FragmentManager fragmentManager = getSupportFragmentManager();

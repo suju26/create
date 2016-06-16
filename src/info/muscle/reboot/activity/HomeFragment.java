@@ -185,7 +185,7 @@ public class HomeFragment extends Fragment {
 */
 		}
 
-		//Calculating Difference now
+		/*//Calculating Difference now
 		btnhome=(Button)rootView.findViewById(R.id.btnhome);
 		btnhome.setOnClickListener(new View.OnClickListener() 
 		{
@@ -201,7 +201,7 @@ public class HomeFragment extends Fragment {
 				transaction.commitAllowingStateLoss();
 
 			}
-		});
+		});*/
 
 
 
